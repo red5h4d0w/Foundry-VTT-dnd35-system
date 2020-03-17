@@ -59,7 +59,6 @@
   "secondaryTokenAttribute": null,
   "minimumCoreVersion": "0.5.0",
   "compatibleCoreVersion": "0.5.1",
-  "url": "https://gitlab.com/foundrynet/dnd5e",
-  "manifest": "https://gitlab.com/foundrynet/dnd5e/raw/master/system.json",
-  "download": "https://gitlab.com/foundrynet/dnd5e/-/archive/release-0.8.4/dnd5e-release-0.8.4.zip"
+  "url": "https://github.com/red5h4d0w/Foundry-VTT-dnd3.5-system",
+  "manifest": "https://github.com/red5h4d0w/Foundry-VTT-dnd3.5-system/blob/master/system.json"
 }

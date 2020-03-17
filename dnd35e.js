@@ -1,24 +1,24 @@
 /**
- * The Dungeons & Dragons 5th Edition game system for Foundry Virtual Tabletop
- * Author: Atropos
+ * The Dungeons & Dragons 3.5th Edition game system for Foundry Virtual Tabletop
+ * Author: red5h4d0w
  * Software License: GNU GPLv3
  * Content License: https://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf
- * Repository: https://gitlab.com/foundrynet/dnd5e
- * Issue Tracker: https://gitlab.com/foundrynet/dnd5e/issues
+ * Repository: https://github.com/red5h4d0w/Foundry-VTT-dnd3.5-system
+ * Issue Tracker: https://github.com/red5h4d0w/Foundry-VTT-dnd3.5-system/issues
  */
 
 // Import Modules
-import { DND5E } from "./module/config.js";
+import { DND35E } from "./module/config.js";
 import { registerSystemSettings } from "./module/settings.js";
 import { preloadHandlebarsTemplates } from "./module/templates.js";
 import { _getInitiativeFormula } from "./module/combat.js";
 import { measureDistance, getBarAttribute } from "./module/canvas.js";
-import { Actor5e } from "./module/actor/entity.js";
-import { ActorSheet5eCharacter } from "./module/actor/sheets/character.js";
-import { Item5e } from "./module/item/entity.js";
-import { ItemSheet5e } from "./module/item/sheet.js";
-import { ActorSheet5eNPC } from "./module/actor/sheets/npc.js";
-import { Dice5e } from "./module/dice.js";
+import { Actor35e } from "./module/actor/entity.js";
+import { ActorSheet35eCharacter } from "./module/actor/sheets/character.js";
+import { Item35e } from "./module/item/entity.js";
+import { ItemSheet35e } from "./module/item/sheet.js";
+import { ActorSheet35eNPC } from "./module/actor/sheets/npc.js";
+import { Dice35e } from "./module/dice.js";
 import * as chat from "./module/chat.js";
 import * as migrations from "./module/migration.js";
 
@@ -27,21 +27,21 @@ import * as migrations from "./module/migration.js";
 /* -------------------------------------------- */
 
 Hooks.once("init", function() {
-  console.log(`D&D5e | Initializing Dungeons & Dragons 5th Edition System\n${DND5E.ASCII}`);
+  console.log(`D&D3.5e | Initializing Dungeons & Dragons 3.5th Edition System\n${DND35E.ASCII}`);
 
-  // Create a D&D5E namespace within the game global
-  game.dnd5e = {
-    Actor5e,
-    Dice5e,
-    Item5e,
+  // Create a D&D3.5E namespace within the game global
+  game.dnd35e = {
+    Actor35e,
+    Dice35e,
+    Item35e,
     migrations,
     rollItemMacro,
   };
 
   // Record Configuration Values
-  CONFIG.DND5E = DND5E;
-  CONFIG.Actor.entityClass = Actor5e;
-  CONFIG.Item.entityClass = Item5e;
+  CONFIG.DND35E = DND35E;
+  CONFIG.Actor.entityClass = Actor35e;
+  CONFIG.Item.entityClass = Item35e;
 
   // Register System Settings
   registerSystemSettings();
@@ -51,10 +51,10 @@ Hooks.once("init", function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("dnd5e", ActorSheet5eCharacter, { types: ["character"], makeDefault: true });
-  Actors.registerSheet("dnd5e", ActorSheet5eNPC, { types: ["npc"], makeDefault: true });
+  Actors.registerSheet("dnd35e", ActorSheet35eCharacter, { types: ["character"], makeDefault: true });
+  Actors.registerSheet("dnd35e", ActorSheet35eNPC, { types: ["npc"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("dnd5e", ItemSheet5e, {makeDefault: true});
+  Items.registerSheet("dnd35e", ItemSheet35e, {makeDefault: true});
 
   // Preload Handlebars Templates
   preloadHandlebarsTemplates();
@@ -77,7 +77,7 @@ Hooks.once("setup", function() {
     "spellSchools", "spellScalingModes", "targetTypes", "timePeriods", "weaponProperties", "weaponTypes"
   ];
   for ( let o of toLocalize ) {
-    CONFIG.DND5E[o] = Object.entries(CONFIG.DND5E[o]).reduce((obj, e) => {
+    CONFIG.DND35E[o] = Object.entries(CONFIG.DND35E[o]).reduce((obj, e) => {
       obj[e[0]] = game.i18n.localize(e[1]);
       return obj;
     }, {});
@@ -91,11 +91,11 @@ Hooks.once("setup", function() {
  */
 Hooks.once("ready", function() {
   const NEEDS_MIGRATION_VERSION = 0.84;
-  let needMigration = game.settings.get("dnd5e", "systemMigrationVersion") < NEEDS_MIGRATION_VERSION;
+  let needMigration = game.settings.get("dnd35e", "systemMigrationVersion") < NEEDS_MIGRATION_VERSION;
   if ( needMigration && game.user.isGM ) migrations.migrateWorld();
 
   // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
-  Hooks.on("hotbarDrop", (bar, data, slot) => create5eMacro(data, slot));
+  Hooks.on("hotbarDrop", (bar, data, slot) => create35eMacro(data, slot));
 });
 
 /* -------------------------------------------- */
@@ -105,7 +105,7 @@ Hooks.once("ready", function() {
 Hooks.on("canvasInit", function() {
 
   // Extend Diagonal Measurement
-  canvas.grid.diagonalRule = game.settings.get("dnd5e", "diagonalMovement");
+  canvas.grid.diagonalRule = game.settings.get("dnd35e", "diagonalMovement");
   SquareGrid.prototype.measureDistance = measureDistance;
 
   // Extend Token Resource Bars
@@ -126,7 +126,7 @@ Hooks.on("renderChatMessage", (app, html, data) => {
   chat.highlightCriticalSuccessFailure(app, html, data);
 
   // Optionally collapse the content
-  if (game.settings.get("dnd5e", "autoCollapseItemCards")) html.find(".card-content").hide();
+  if (game.settings.get("dnd35e", "autoCollapseItemCards")) html.find(".card-content").hide();
 });
 Hooks.on("getChatLogEntryContext", chat.addChatMessageContextOptions);
 Hooks.on("renderChatLog", (app, html, data) => Item5e.chatListeners(html));
@@ -149,7 +149,7 @@ async function create5eMacro(data, slot) {
   const item = data.data;
 
   // Create the macro command
-  const command = `game.dnd5e.rollItemMacro("${item.name}");`;
+  const command = `game.dnd35e.rollItemMacro("${item.name}");`;
   let macro = game.macros.entities.find(m => (m.name === item.name) && (m.command === command));
   if ( !macro ) {
     macro = await Macro.create({
@@ -157,7 +157,7 @@ async function create5eMacro(data, slot) {
       type: "script",
       img: item.img,
       command: command,
-      flags: {"dnd5e.itemMacro": true}
+      flags: {"dnd35e.itemMacro": true}
     });
   }
   game.user.assignHotbarMacro(macro, slot);
