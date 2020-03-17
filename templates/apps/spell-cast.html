@@ -1,0 +1,34 @@
+<form id="spell-config-form">
+    <p>Configure how you would like to cast the <strong>{{item.name}}</strong> spell.</p>
+
+    {{#unless canCast}}
+    <p class="notification error">You have no available spell slots to cast this spell</p>
+    {{/unless}}
+
+    <div class="form-group">
+        <label>Cast at Level</label>
+        <div class="form-fields">
+            <select name="level">
+                {{#select item.data.level}}
+                {{#each spellLevels as |l|}}
+                <option value="{{l.level}}" {{#unless l.canCast}}disabled{{/unless}}>{{l.label}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{#if canUpcast}}
+        <label class="checkbox">Consume Spell Slot? <input type="checkbox" name="consume" {{checked canCast}}/></label>
+        {{/if}}
+
+        {{#if hasPlaceableTemplate}}
+        <div class="form-group">
+            <label class="checkbox">{{ localize "DND5E.ChatPlaceTemplate" }}
+                <input type="checkbox" name="placeTemplate" checked/>
+            </label>
+        </div>
+        {{/if}}
+    </div>
+</form>

@@ -1,0 +1,558 @@
+{
+  "Actor": {
+    "types": ["character", "npc"],
+    "templates": {
+      "common": {
+        "abilities": {
+          "str": {
+            "value": 10,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 10,
+            "proficient": 0
+          },
+          "con": {
+            "value": 10,
+            "proficient": 0
+          },
+          "int": {
+            "value": 10,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 10,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 10,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "min": 0
+          },
+          "hp": {
+            "value": 10,
+            "min": 0,
+            "max": 10,
+            "temp": 0,
+            "tempmax": 0
+          },
+          "init": {
+            "value": 0,
+            "bonus": 0
+          },
+          "speed": {
+            "value": "30 ft",
+            "special": ""
+          },
+          "spellcasting": "int"
+        },
+        "details": {
+          "alignment": "",
+          "biography": {
+            "value": "",
+            "public": ""
+          },
+          "race": ""
+        },
+        "skills": {
+          "acr": {
+            "value": 0,
+            "ability": "dex"
+          },
+          "ani": {
+            "value": 0,
+            "ability": "wis"
+          },
+          "arc": {
+            "value": 0,
+            "ability": "int"
+          },
+          "ath": {
+            "value": 0,
+            "ability": "str"
+          },
+          "dec": {
+            "value": 0,
+            "ability": "cha"
+          },
+          "his": {
+            "value": 0,
+            "ability": "int"
+          },
+          "ins": {
+            "value": 0,
+            "ability": "wis"
+          },
+          "itm": {
+            "value": 0,
+            "ability": "cha"
+          },
+          "inv": {
+            "value": 0,
+            "ability": "int"
+          },
+          "med": {
+            "value": 0,
+            "ability": "wis"
+          },
+          "nat": {
+            "value": 0,
+            "ability": "int"
+          },
+          "prc": {
+            "value": 0,
+            "ability": "wis"
+          },
+          "prf": {
+            "value": 0,
+            "ability": "cha"
+          },
+          "per": {
+            "value": 0,
+            "ability": "cha"
+          },
+          "rel": {
+            "value": 0,
+            "ability": "int"
+          },
+          "slt": {
+            "value": 0,
+            "ability": "dex"
+          },
+          "ste": {
+            "value": 0,
+            "ability": "dex"
+          },
+          "sur": {
+            "value": 0,
+            "ability": "wis"
+          }
+        },
+        "traits": {
+          "size": "med",
+          "senses": "",
+          "languages": {
+            "value": [],
+            "custom": ""
+          },
+          "di": {
+            "value": [],
+            "custom": ""
+          },
+          "dr": {
+            "value": [],
+            "custom": ""
+          },
+          "dv": {
+            "value": [],
+            "custom": ""
+          },
+          "ci": {
+            "value": [],
+            "custom": ""
+          },
+          "perception": {
+            "_deprecated": true
+          }
+        },
+        "currency": {
+          "pp": 0,
+          "gp": 0,
+          "ep": 0,
+          "sp": 0,
+          "cp": 0
+        },
+        "spells": {
+          "spell0": {
+            "_deprecated": true
+          },
+          "spell1": {
+            "value": 0,
+            "max": 0
+          },
+          "spell2": {
+            "value": 0,
+            "max": 0
+          },
+          "spell3": {
+            "value": 0,
+            "max": 0
+          },
+          "spell4": {
+            "value": 0,
+            "max": 0
+          },
+          "spell5": {
+            "value": 0,
+            "max": 0
+          },
+          "spell6": {
+            "value": 0,
+            "max": 0
+          },
+          "spell7": {
+            "value": 0,
+            "max": 0
+          },
+          "spell8": {
+            "value": 0,
+            "max": 0
+          },
+          "spell9": {
+            "value": 0,
+            "max": 0
+          }
+        },
+        "bonuses": {
+          "mwak": {
+            "attack": "",
+            "damage": ""
+          },
+          "rwak": {
+            "attack": "",
+            "damage": ""
+          },
+          "msak": {
+            "attack": "",
+            "damage": ""
+          },
+          "rsak": {
+            "attack": "",
+            "damage": ""
+          },
+          "abilities": {
+            "check": "",
+            "save": "",
+            "skill": ""
+          }
+        }
+      }
+    },
+    "character": {
+      "templates": ["common"],
+      "attributes": {
+        "death": {
+          "success": 0,
+          "failure": 0
+        },
+        "exhaustion": 0,
+        "inspiration": 0
+      },
+      "details": {
+        "background": "",
+        "xp": {
+          "value": 0,
+          "min": 0,
+          "max": 300
+        },
+        "trait": "",
+        "ideal": "",
+        "bond": "",
+        "flaw": "",
+        "level": {
+          "_deprecated": true
+        },
+        "hd": {
+          "_deprecated": true
+        }
+      },
+      "resources": {
+        "primary": {
+          "value": 0,
+          "max": 0,
+          "sr": 0,
+          "lr": 0
+        },
+        "secondary": {
+          "value": 0,
+          "max": 0,
+          "sr": 0,
+          "lr": 0
+        },
+        "tertiary": {
+          "value": 0,
+          "max": 0,
+          "sr": 0,
+          "lr": 0
+        }
+      },
+      "traits": {
+        "weaponProf": {
+          "value": [],
+          "custom": ""
+        },
+        "armorProf": {
+          "value": [],
+          "custom": ""
+        },
+        "toolProf": {
+          "value": [],
+          "custom": ""
+        }
+      }
+    },
+    "npc": {
+      "templates": ["common"],
+      "details": {
+        "type": "",
+        "environment": "",
+        "cr": 1,
+        "spellLevel": 0,
+        "xp": {
+          "value": 10
+        },
+        "source": ""
+      },
+      "resources": {
+        "legact": {
+          "value": 0,
+          "max": 0
+        },
+        "legres": {
+          "value": 0,
+          "max": 0
+        },
+        "lair": {
+          "value": 0,
+          "initiative": 0
+        }
+      }
+    }
+  },
+  "Item": {
+    "types": ["weapon", "equipment", "consumable", "tool", "loot", "class", "spell", "feat", "backpack"],
+    "templates": {
+      "itemDescription": {
+        "description": {
+          "value": "",
+          "chat": "",
+          "unidentified": ""
+        },
+        "source": ""
+      },
+      "physicalItem": {
+        "quantity": 1,
+        "weight": 0,
+        "price": 0,
+        "attuned": false,
+        "equipped": false,
+        "rarity": "",
+        "identified": true
+      },
+      "activatedEffect": {
+        "activation": {
+          "type": "",
+          "cost": 0,
+          "condition": ""
+        },
+        "duration": {
+          "value": null,
+          "units": ""
+        },
+        "target": {
+          "value": null,
+          "units": "",
+          "type": ""
+        },
+        "range": {
+          "value": null,
+          "long": null,
+          "units": ""
+        },
+        "uses": {
+          "value": 0,
+          "max": 0,
+          "per": null
+        }
+      },
+      "action": {
+        "ability": null,
+        "actionType": null,
+        "attackBonus": 0,
+        "chatFlavor": "",
+        "critical": null,
+        "damage": {
+          "parts": [],
+          "versatile": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        }
+      }
+    },
+    "backpack": {
+      "templates": ["itemDescription", "physicalItem"],
+      "capacity": {
+        "type": "weight",
+        "value": 0,
+        "weightless": false
+      },
+      "currency": {
+        "cp": 0,
+        "sp": 0,
+        "ep": 0,
+        "gp": 0,
+        "pp": 0
+      }
+    },
+    "class": {
+      "templates": ["itemDescription"],
+      "levels": 1,
+      "subclass": "",
+      "hitDice": "d6",
+      "hitDiceUsed": 0
+    },
+    "consumable": {
+      "templates": ["itemDescription", "physicalItem", "activatedEffect", "action"],
+      "consumableType": "potion",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "per": null,
+        "autoUse": true,
+        "autoDestroy": true
+      },
+      "charges": {
+        "value": 1,
+        "max": 1,
+        "_deprecated": true
+      },
+      "consume": {
+        "value": "",
+        "_deprecated": true
+      },
+      "autoUse": {
+        "value": true,
+        "_deprecated": true
+      },
+      "autoDestroy": {
+        "value": true,
+        "_deprecated": true
+      }
+    },
+    "equipment": {
+      "templates": ["itemDescription", "physicalItem", "activatedEffect", "action"],
+      "armor": {
+        "type": "light",
+        "value": 10,
+        "dex": null
+      },
+      "strength": 0,
+      "stealth": false,
+      "proficient": true,
+      "armorType": {
+        "value": "",
+        "_deprecated": true
+      }
+    },
+    "feat": {
+      "templates": ["itemDescription", "activatedEffect", "action"],
+      "featType": {
+        "value": "",
+        "_deprecated": true
+      },
+      "requirements": "",
+      "recharge": {
+        "value": null,
+        "charged": false
+      },
+      "time": {
+        "value": "",
+        "_deprecated": true
+      },
+      "damageType": {
+        "value": "",
+        "_deprecated": true
+      }
+    },
+    "loot": {
+      "templates": ["itemDescription", "physicalItem"]
+    },
+    "tool": {
+      "templates": ["itemDescription", "physicalItem"],
+      "ability": "int",
+      "chatFlavor": "",
+      "proficient": 0
+    },
+    "spell": {
+      "templates": ["itemDescription", "activatedEffect", "action"],
+      "level": 1,
+      "school": "",
+      "components": {
+        "value": "",
+        "vocal": false,
+        "somatic": false,
+        "material": false,
+        "ritual": false,
+        "concentration": false
+      },
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "preparation": {
+        "mode": null,
+        "prepared": false
+      },
+      "scaling": {
+        "mode": null,
+        "formula": null
+      },
+      "spellType": {
+        "value": "",
+        "_deprecated": true
+      },
+      "time": {
+        "value": "",
+        "_deprecated": true
+      },
+      "damageType": {
+        "value": "",
+        "_deprecated": true
+      },
+      "concentration": {
+        "value": null,
+        "_deprecated": true
+      },
+      "ritual": {
+        "value": null,
+        "_deprecated": true
+      },
+      "prepared": {
+        "value": null,
+        "_deprecated": true
+      }
+    },
+    "weapon": {
+      "templates": ["itemDescription", "physicalItem" ,"activatedEffect", "action"],
+      "weaponType": "simpleM",
+      "properties": {},
+      "proficient": true,
+      "bonus": {
+        "value": 0,
+        "_deprecated": true
+      },
+      "damageType": {
+        "value": "",
+        "_deprecated": true
+      },
+      "damage2": {
+        "value": "",
+        "_deprecated": true
+      },
+      "damage2Type": {
+        "value": "",
+        "_deprecated": true
+      }
+    }
+  }
+}
