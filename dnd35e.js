@@ -113,6 +113,14 @@ Hooks.on("canvasInit", function() {
   Token.prototype.getBarAttribute = getBarAttribute;
 });
 
+/* -------------------------------------------- */
+/*  Combat Hooks                                */
+/* -------------------------------------------- */
+
+Hooks.on("deleteCombat", (combat, combatId, options, userId) => {
+  Combat35e.hookOnDeleteCombat(combat, combatId, options, userId);
+});
+
 
 /* -------------------------------------------- */
 /*  Other Hooks                                 */

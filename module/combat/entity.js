@@ -1,6 +1,12 @@
 
 export class Combat35e extends Combat{
 
+    static hookOnDeleteCombat(combat, combatId, options, userId){
+        if (game.settings.xpModule && game.userId == userId) {
+            combat.giveXP;
+        }
+    };
+
     _getInitiativeFormula = function(combatant) {
         const actor = combatant.actor;
         if ( !actor ) return "1d20";
