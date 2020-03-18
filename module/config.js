@@ -1,7 +1,10 @@
 // Namespace D&D3.5e Configuration Values
 export const DND35E = {};
 
-// ASCII Artwork !!!TO BE WORKED ON!!!
+/**ASCII Artwork 
+ * @todo make it a 3.5e ascii
+ */ 
+
 DND35E.ASCII = `_______________________________
 ______      ______ _____ _____ 
 |  _  \\___  |  _  \\  ___|  ___|
@@ -137,15 +140,16 @@ DND35E.tokenSizes = {
  * @type {Object}
  */
 DND35E.itemActionTypes = {
-  "mwak": "DND35E.ActionMWAK",
-  "rwak": "DND35E.ActionRWAK",
-  "msak": "DND35E.ActionMSAK",
-  "rsak": "DND35E.ActionRSAK",
+  "mnak": "DND35E.ActionMNAK",
+  "rnak": "DND35E.ActionRNAK",
+  "mtak": "DND35E.ActionMTAK",
+  "rtak": "DND35E.ActionRTAK",
+  "brea": "DND35E.ActionBREA",
   "save": "DND35E.ActionSave",
   "heal": "DND35E.ActionHeal",
   "abil": "DND35E.ActionAbil",
   "util": "DND35E.ActionUtil",
-  "other": "DND35E.ActionOther"
+  "misc": "DND35E.ActionMisc"
 };
 
 /* -------------------------------------------- */

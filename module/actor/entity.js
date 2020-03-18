@@ -46,7 +46,6 @@ export class Actor35e extends Actor {
     // Initiative
     const init = data.attributes.init;
     init.mod = data.abilities.dex.mod;
-    init.prof = getProperty(flags, "dnd35e.initiativeHalfProf") ? Math.floor(0.5 * data.attributes.prof) : 0;
     init.bonus = init.value + (getProperty(flags, "dnd35e.initiativeAlert") ? 5 : 0);
     init.total = init.mod + init.prof + init.bonus;
 
