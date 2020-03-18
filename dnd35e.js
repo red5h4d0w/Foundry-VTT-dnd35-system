@@ -15,6 +15,7 @@ import { _getInitiativeFormula } from "./module/combat.js";
 import { measureDistance, getBarAttribute } from "./module/canvas.js";
 import { Actor35e } from "./module/actor/entity.js";
 import { ActorSheet35eCharacter } from "./module/actor/sheets/character.js";
+import { Combat35e } from "./module/combat/entity.js";
 import { Item35e } from "./module/item/entity.js";
 import { ItemSheet35e } from "./module/item/sheet.js";
 import { ActorSheet35eNPC } from "./module/actor/sheets/npc.js";
@@ -32,6 +33,7 @@ Hooks.once("init", function() {
   // Create a D&D3.5E namespace within the game global
   game.dnd35e = {
     Actor35e,
+    Combat35e,
     Dice35e,
     Item35e,
     migrations,
@@ -41,13 +43,12 @@ Hooks.once("init", function() {
   // Record Configuration Values
   CONFIG.DND35E = DND35E;
   CONFIG.Actor.entityClass = Actor35e;
+  CONFIG.Combat.entityClass = Combat35e
   CONFIG.Item.entityClass = Item35e;
 
   // Register System Settings
   registerSystemSettings();
 
-  // Patch Core Functions
-  Combat.prototype._getInitiativeFormula = _getInitiativeFormula;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
