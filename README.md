@@ -15,7 +15,7 @@ dialog on the Setup menu of the application.
 
 https://github.com/red5h4d0w/Foundry-VTT-dnd3.5-system/blob/master/system.json
 
-If you wish to manually install the system, you must clone or extract it into the ``Data/systems/dnd3.5e`` folder. You
+If you wish to manually install the system, you must clone or extract it into the ``Data/systems/dnd35e`` folder. You
 may do this by cloning the repository or downloading a zip archive from the
 
 ## Attribution
