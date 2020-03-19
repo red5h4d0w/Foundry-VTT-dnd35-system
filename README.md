@@ -1,4 +1,4 @@
-# Foundry VTT 3.5th Edition
+# Foundry VTT D&D 3.5th Edition
 
 An implementation of the Dungeons & Dragons 3.5th Edition game system for [Foundry Virtual Tabletop](http://foundryvtt.com).
 
