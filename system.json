@@ -24,6 +24,6 @@
   "minimumCoreVersion": "0.5.0",
   "compatibleCoreVersion": "0.5.1",
   "url": "https://github.com/red5h4d0w/Foundry-VTT-dnd3.5-system",
-  "manifest": "https://github.com/red5h4d0w/Foundry-VTT-dnd3.5-system/blob/master/system.json",
+  "manifest": "https://raw.githubusercontent.com/red5h4d0w/Foundry-VTT-dnd35-system/master/system.json",
   "download": "https://github.com/red5h4d0w/Foundry-VTT-dnd35-system/archive/master.zip"
 }
