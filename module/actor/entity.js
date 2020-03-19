@@ -297,8 +297,7 @@ export class Actor35e extends Actor {
       parts: parts,
       data: data,
       title: `${CONFIG.DND35E.skills[skillId]} Skill Check`,
-      speaker: ChatMessage.getSpeaker({actor: this}),
-      halflingLucky: this.getFlag("dnd35e", "halflingLucky")
+      speaker: ChatMessage.getSpeaker({actor: this})
     });
   }
 
@@ -356,8 +355,7 @@ export class Actor35e extends Actor {
       parts: parts,
       data: data,
       title: `${label} Ability Test`,
-      speaker: ChatMessage.getSpeaker({actor: this}),
-      halflingLucky: this.getFlag("dnd35e", "halflingLucky")
+      speaker: ChatMessage.getSpeaker({actor: this})
     });
   }
 
@@ -365,8 +363,8 @@ export class Actor35e extends Actor {
 
   /**
    * Roll a Saving Throw
-   * Prompt the user for input regarding Advantage/Disadvantage and any Situational Bonus
-   * @param {String} saveId    The ability ID (e.g. "wil")
+   * Prompt the user for input regarding any Situational Bonus
+   * @param {String} saveId    The save ID (e.g. "wil")
    * @param {Object} options      Options which configure how ability tests are rolled
    * @return {Promise.<Roll>}   A Promise which resolves to the created Roll instance
    */

@@ -41,7 +41,7 @@ export class Item35e extends Item {
    * @type {boolean}
    */
   get hasAttack() {
-    return ["mwak", "rwak", "msak", "rsak"].includes(this.data.data.actionType);
+    return ["mnak", "rnak", "mtak", "rtak"].includes(this.data.data.actionType);
   }
 
   /* -------------------------------------------- */
@@ -52,16 +52,6 @@ export class Item35e extends Item {
    */
   get hasDamage() {
     return !!(this.data.data.damage && this.data.data.damage.parts.length);
-  }
-
-  /* -------------------------------------------- */
-
-  /**
-   * Does the Item implement a versatile damage roll as part of its usage
-   * @type {boolean}
-   */
-  get isVersatile() {
-    return !!(this.hasDamage && this.data.data.damage.versatile);
   }
 
   /* -------------------------------------------- */
@@ -459,7 +449,7 @@ export class Item35e extends Item {
 
   /**
    * Place an attack roll using an item (weapon, feat, spell, or equipment)
-   * Rely upon the Dice5e.d20Roll logic for the core implementation
+   * Rely upon the Dice35e.d20Roll logic for the core implementation
    *
    * @return {Promise.<Roll>}   A Promise which resolves to the created Roll instance
    */
@@ -516,14 +506,14 @@ export class Item35e extends Item {
     if ( flags.halflingLucky ) rollConfig.halflingLucky = true;
 
     // Invoke the d20 roll helper
-    return Dice5e.d20Roll(rollConfig);
+    return Dice35e.d20Roll(rollConfig);
   }
 
   /* -------------------------------------------- */
 
   /**
    * Place a damage roll using an item (weapon, feat, spell, or equipment)
-   * Rely upon the Dice5e.damageRoll logic for the core implementation
+   * Rely upon the Dice35e.damageRoll logic for the core implementation
    *
    * @return {Promise.<Roll>}   A Promise which resolves to the created Roll instance
    */
@@ -557,7 +547,7 @@ export class Item35e extends Item {
     // Call the roll helper utility
     const title = `${this.name} - Damage Roll`;
     const flavor = this.labels.damageTypes.length ? `${title} (${this.labels.damageTypes})` : title;
-    return Dice5e.damageRoll({
+    return Dice35e.damageRoll({
       event: event,
       parts: parts,
       actor: this.actor,
@@ -611,7 +601,7 @@ export class Item35e extends Item {
 
   /**
    * Place an attack roll using an item (weapon, feat, spell, or equipment)
-   * Rely upon the Dice5e.d20Roll logic for the core implementation
+   * Rely upon the Dice35e.d20Roll logic for the core implementation
    *
    * @return {Promise.<Roll>}   A Promise which resolves to the created Roll instance
    */
@@ -716,7 +706,7 @@ export class Item35e extends Item {
 
   /**
    * Roll a Tool Check
-   * Rely upon the Dice5e.d20Roll logic for the core implementation
+   * Rely upon the Dice35e.d20Roll logic for the core implementation
    *
    * @return {Promise.<Roll>}   A Promise which resolves to the created Roll instance
    */
@@ -729,7 +719,7 @@ export class Item35e extends Item {
     const title = `${this.name} - Tool Check`;
 
     // Call the roll helper utility
-    return Dice5e.d20Roll({
+    return Dice35e.d20Roll({
       event: options.event,
       parts: parts,
       data: rollData,
@@ -741,8 +731,7 @@ export class Item35e extends Item {
         width: 400,
         top: options.event ? options.event.clientY - 80 : null,
         left: window.innerWidth - 710,
-      },
-      halflingLucky: this.actor.getFlag("dnd5e", "halflingLucky" ) || false
+      }
     });
   }
 

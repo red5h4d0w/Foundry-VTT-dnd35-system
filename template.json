@@ -339,24 +339,15 @@
     "character": {
       "templates": ["common"],
       "attributes": {
-        "death": {
-          "success": 0,
-          "failure": 0
-        },
-        "exhaustion": 0,
-        "inspiration": 0
+        "death": 0,
+        "exhaustion": 0
       },
       "details": {
-        "background": "",
         "xp": {
           "value": 0,
           "min": 0,
           "max": 300
         },
-        "trait": "",
-        "ideal": "",
-        "bond": "",
-        "flaw": "",
         "level": {
           "_deprecated": true
         },
@@ -406,9 +397,6 @@
         "environment": "",
         "cr": 1,
         "spellLevel": 0,
-        "xp": {
-          "value": 10
-        },
         "source": ""
       },
       "resources": {
@@ -428,7 +416,7 @@
     }
   },
   "Item": {
-    "types": ["weapon", "equipment", "consumable", "tool", "loot", "class", "spell", "feat", "backpack"],
+    "types": ["class", "feat", "physicalitem", "prestigeclass", "spell"],
     "templates": {
       "itemDescription": {
         "description": {
@@ -437,15 +425,6 @@
           "unidentified": ""
         },
         "source": ""
-      },
-      "physicalItem": {
-        "quantity": 1,
-        "weight": 0,
-        "price": 0,
-        "attuned": false,
-        "equipped": false,
-        "rarity": "",
-        "identified": true
       },
       "activatedEffect": {
         "activation": {
@@ -501,7 +480,6 @@
       "currency": {
         "cp": 0,
         "sp": 0,
-        "ep": 0,
         "gp": 0,
         "pp": 0
       }
@@ -509,7 +487,6 @@
     "class": {
       "templates": ["itemDescription"],
       "levels": 1,
-      "subclass": "",
       "hitDice": "d6",
       "hitDiceUsed": 0
     },
@@ -557,33 +534,32 @@
       }
     },
     "feat": {
-      "templates": ["itemDescription", "activatedEffect", "action"],
-      "featType": {
-        "value": "",
-        "_deprecated": true
-      },
-      "requirements": "",
-      "recharge": {
-        "value": null,
-        "charged": false
-      },
-      "time": {
-        "value": "",
-        "_deprecated": true
-      },
-      "damageType": {
-        "value": "",
-        "_deprecated": true
+      "templates": ["itemDescription"],
+      "type": ["general", "itemcreation", "metamagic"],
+      "requirements": {
+        "feat": {
+          "value": "",
+          "name": ""
+        },
+        "skill": {
+          "value": "",
+          "name": "",
+          "rank": 0
+        },
+        "fighterbonus": false
       }
     },
     "loot": {
       "templates": ["itemDescription", "physicalItem"]
     },
-    "tool": {
-      "templates": ["itemDescription", "physicalItem"],
-      "ability": "int",
-      "chatFlavor": "",
-      "proficient": 0
+    "physicalitem":{
+      "quantity": 1,
+      "weight": 0,
+      "price": 0,
+      "attuned": false,
+      "equipped": false,
+      "rarity": "",
+      "identified": true
     },
     "spell": {
       "templates": ["itemDescription", "activatedEffect", "action"],
