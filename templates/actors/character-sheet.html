@@ -31,7 +31,7 @@
                     <input type="text" name="data.details.race" value="{{data.details.race}}" placeholder="Race"/>
                 </li>
                 <li>
-                    <input type="text" name="data.details.background" value="{{data.details.background}}" placeholder="Background"/>
+                    <input type="text" name="data.details.classes" value="{{data.details.classes}}" placeholder="Background"/>
                 </li>
                 <li>
                     <input type="text" name="data.details.alignment" value="{{data.details.alignment}}" placeholder="Alignment"/>
@@ -63,10 +63,6 @@
                         <input name="data.attributes.ac.value" type="text" value="{{data.attributes.ac.value}}"
                                data-dtype="Number" placeholder="10"/>
                     </div>
-                    <footer class="attribute-footer">
-                        <span>{{ localize "DND5E.Proficiency" }}</span>
-                        <span>{{numberFormat data.attributes.prof decimals=0 sign=true}}</span>
-                    </footer>
                 </li>
 
                 <li class="attribute">
