@@ -29,5 +29,5 @@ https://github.com/death-save/combat-utility-belt
 ## Community Contribution
 
 Code and content contributions are accepted. Please feel free to submit issues to the issue tracker or submit merge
-requests for code changes. Approval for such requests involves code and (if necessary) design review by Atropos. Please
+requests for code changes. Approval for such requests involves code and (if necessary) design review by red5h4d0w. Please
 reach out on the Foundry Community Discord with any questions.
