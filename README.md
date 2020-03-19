@@ -13,11 +13,10 @@ content is available in full from Wizards of the Coast.
 To install the D&D3.5E system for Foundry Virtual Tabletop, simply paste the following URL into the **Install System**
 dialog on the Setup menu of the application.
 
-https://gitlab.com/foundrynet/dnd5e/raw/master/system.json
+https://github.com/red5h4d0w/Foundry-VTT-dnd3.5-system/blob/master/system.json
 
 If you wish to manually install the system, you must clone or extract it into the ``Data/systems/dnd3.5e`` folder. You
 may do this by cloning the repository or downloading a zip archive from the
-[Releases Page](https://gitlab.com/foundrynet/dnd5e/-/releases).
 
 ## Attribution
 
