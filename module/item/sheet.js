@@ -1,5 +1,5 @@
 /**
- * Override and extend the core ItemSheet implementation to handle D&D35e specific item types
+ * Override and extend the core ItemSheet implementation to handle D&D3.5e specific item types
  * @type {ItemSheet}
  */
 export class ItemSheet35e extends ItemSheet {
