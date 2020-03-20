@@ -1,8 +1,8 @@
 /**
- * Override and extend the core ItemSheet implementation to handle D&D5E specific item types
+ * Override and extend the core ItemSheet implementation to handle D&D35e specific item types
  * @type {ItemSheet}
  */
-export class ItemSheet5e extends ItemSheet {
+export class ItemSheet35e extends ItemSheet {
   constructor(...args) {
     super(...args);
 
@@ -19,7 +19,7 @@ export class ItemSheet5e extends ItemSheet {
 	  return mergeObject(super.defaultOptions, {
       width: 560,
       height: 420,
-      classes: ["dnd5e", "sheet", "item"],
+      classes: ["dnd35e", "sheet", "item"],
       resizable: false,
       scrollY: [".tab.details"]
     });
@@ -32,7 +32,7 @@ export class ItemSheet5e extends ItemSheet {
    * @return {string}
    */
   get template() {
-    const path = "systems/dnd5e/templates/items/";
+    const path = "systems/dnd35e/templates/items/";
     return `${path}/${this.item.data.type}.html`;
   }
 
@@ -47,7 +47,7 @@ export class ItemSheet5e extends ItemSheet {
     data.labels = this.item.labels;
 
     // Include CONFIG values
-    data.config = CONFIG.DND5E;
+    data.config = CONFIG.DND35E;
 
     // Item Type, Status, and Details
     data.itemType = data.item.type.titleCase();
@@ -89,7 +89,7 @@ export class ItemSheet5e extends ItemSheet {
     if ( item.type === "weapon" ) {
       props.push(...Object.entries(item.data.properties)
         .filter(e => e[1] === true)
-        .map(e => CONFIG.DND5E.weaponProperties[e[0]]));
+        .map(e => CONFIG.DND35E.weaponProperties[e[0]]));
     }
 
     else if ( item.type === "spell" ) {
@@ -102,7 +102,7 @@ export class ItemSheet5e extends ItemSheet {
     }
 
     else if ( item.type === "equipment" ) {
-      props.push(CONFIG.DND5E.equipmentTypes[item.data.armor.type]);
+      props.push(CONFIG.DND35E.equipmentTypes[item.data.armor.type]);
       props.push(labels.armor);
     }
 
@@ -112,7 +112,7 @@ export class ItemSheet5e extends ItemSheet {
 
     // Action type
     if ( item.data.actionType ) {
-      props.push(CONFIG.DND5E.itemActionTypes[item.data.actionType]);
+      props.push(CONFIG.DND35E.itemActionTypes[item.data.actionType]);
     }
 
     // Action usage
