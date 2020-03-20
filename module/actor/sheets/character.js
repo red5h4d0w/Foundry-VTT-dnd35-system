@@ -45,16 +45,6 @@ export class ActorSheet35eCharacter extends ActorSheet35e {
     if (hp.temp === 0) delete hp.temp;
     if (hp.tempmax === 0) delete hp.tempmax;
 
-    // Resources
-    sheetData["resources"] = ["primary", "secondary", "tertiary"].reduce((arr, r) => {
-      const res = sheetData.data.resources[r] || {};
-      res.name = r;
-      res.placeholder = game.i18n.localize("DND5E.Resource"+r.titleCase());
-      if (res && res.value === 0) delete res.value;
-      if (res && res.max === 0) delete res.max;
-      return arr.concat([res]);
-    }, []);
-
     // Experience Tracking
     sheetData["disableExperience"] = game.settings.get("dnd35e", "disableExperienceTracking");
 
