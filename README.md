@@ -13,14 +13,16 @@ content is available in full from Wizards of the Coast.
 To install the D&D3.5E system for Foundry Virtual Tabletop, simply paste the following URL into the **Install System**
 dialog on the Setup menu of the application.
 
-https://github.com/red5h4d0w/Foundry-VTT-dnd3.5-system/blob/master/system.json
+https://raw.githubusercontent.com/red5h4d0w/Foundry-VTT-dnd35-system/master/system.json
 
 If you wish to manually install the system, you must clone or extract it into the ``Data/systems/dnd35e`` folder. You
 may do this by cloning the repository or downloading a zip archive from the
 
+https://github.com/red5h4d0w/Foundry-VTT-dnd35-system/archive/master.zip
+
 ## Attribution
 
-The vast majority of this system is based on D&D5 system by Foundry Network 
+The vast majority of this system is based on D&D5 system by Foundry Network (specifically Atropos)
 https://gitlab.com/foundrynet/dnd5e
 
 Also, some elements were borrowed from the Combat Utility Belt by death-save

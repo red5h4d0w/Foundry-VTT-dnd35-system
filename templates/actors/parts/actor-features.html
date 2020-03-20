@@ -1,9 +1,9 @@
 <div class="inventory-filters">
     <ul class="filter-list flexrow" data-filter="features">
-        <li class="filter-title">{{localize "DND5E.FilterTitle"}}</li>
-        <li class="filter-item" data-filter="action">{{localize "DND5E.FilterAction"}}</li>
-        <li class="filter-item" data-filter="bonus">{{localize "DND5E.FilterBonus"}}</li>
-        <li class="filter-item" data-filter="reaction">{{localize "DND5E.FilterReaction"}}</li>
+        <li class="filter-title">{{localize "DND35E.FilterTitle"}}</li>
+        <li class="filter-item" data-filter="action">{{localize "DND35E.FilterAction"}}</li>
+        <li class="filter-item" data-filter="bonus">{{localize "DND35E.FilterBonus"}}</li>
+        <li class="filter-item" data-filter="reaction">{{localize "DND35E.FilterReaction"}}</li>
     </ul>
 </div>
 
@@ -13,8 +13,8 @@
         <h3 class="item-name flexrow">{{section.label}}</h3>
 
         {{#if section.hasActions}}
-        <div class="item-detail item-uses">{{localize "DND5E.Uses"}}</div>
-        <div class="item-detail item-action">{{localize "DND5E.Usage"}}</div>
+        <div class="item-detail item-uses">{{localize "DND35E.Uses"}}</div>
+        <div class="item-detail item-action">{{localize "DND35E.Usage"}}</div>
         {{/if}}
 
         {{#if ../owner}}
@@ -39,7 +39,7 @@
                 {{#if item.isOnCooldown}}
                 <a class="item-recharge rollable">{{item.labels.recharge}}</a>
                 {{else if item.data.recharge.value}}
-                {{localize "DND5E.Charged"}}
+                {{localize "DND35E.Charged"}}
 
                 {{else if item.hasUses}}
                 <input type="text" value="{{item.data.uses.value}}" placeholder="0"/>/ {{item.data.uses.max}}

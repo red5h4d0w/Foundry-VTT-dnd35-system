@@ -5,7 +5,7 @@ import { AbilityTemplate } from "../pixi/ability-template.js";
 
 
 /**
- * Extend the base Actor class to implement additional logic specialized for D&D35e.
+ * Extend the base Actor class to implement additional logic specialized for D&D3.5e.
  */
 export class Actor35e extends Actor {
 

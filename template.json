@@ -25,6 +25,7 @@
         },
         "attributes": {
           "ac": {
+            "value": 10,
             "min": 0
           },
           "bab": {
@@ -350,26 +351,6 @@
         },
         "hd": {
           "_deprecated": true
-        }
-      },
-      "resources": {
-        "primary": {
-          "value": 0,
-          "max": 0,
-          "sr": 0,
-          "lr": 0
-        },
-        "secondary": {
-          "value": 0,
-          "max": 0,
-          "sr": 0,
-          "lr": 0
-        },
-        "tertiary": {
-          "value": 0,
-          "max": 0,
-          "sr": 0,
-          "lr": 0
         }
       },
       "traits": {
