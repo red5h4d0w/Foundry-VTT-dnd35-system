@@ -36,7 +36,7 @@ Hooks.once("init", function() {
     Combat35e,
     Dice35e,
     Item35e,
-    migrations,
+    /*migrations,*/
     rollItemMacro,
   };
 
@@ -90,14 +90,14 @@ Hooks.once("setup", function() {
 /**
  * Once the entire VTT framework is initialized, check to see if we should perform a data migration
  */
-Hooks.once("ready", function() {
+/*Hooks.once("ready", function() {
   const NEEDS_MIGRATION_VERSION = 0.84;
   let needMigration = game.settings.get("dnd35e", "systemMigrationVersion") < NEEDS_MIGRATION_VERSION;
   if ( needMigration && game.user.isGM ) migrations.migrateWorld();
 
   // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
   Hooks.on("hotbarDrop", (bar, data, slot) => create35eMacro(data, slot));
-});
+});*/
 
 /* -------------------------------------------- */
 /*  Canvas Initialization                       */
