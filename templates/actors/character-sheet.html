@@ -1,11 +1,12 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
-
+    {{console log "start"}}
     {{!-- Sheet Header --}}
     <header class="sheet-header flexrow">
         <img class="profile" src="{{actor.img}}" title="{{actor.name}}" data-edit="img"/>
 
         <div class="header-details flexrow">
             <h1 class="charname">
+                {{console log "before name"}}
                 <input name="actor.name" type="text" value="{{actor.name}}" placeholder="Character Name"/>
             </h1>
 
