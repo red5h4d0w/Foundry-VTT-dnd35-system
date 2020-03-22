@@ -4,7 +4,6 @@
   "description": "A comprehensive game system for running games of Dungeons & Dragons 3.5th Edition in the Foundry VTT environment.",
   "version": 0.2,
   "author": "red5h4d0w",
-  "scripts": [],
   "esmodules": ["dnd35e.js"],
   "styles": ["dnd35e.css"],
   "packs": [],
