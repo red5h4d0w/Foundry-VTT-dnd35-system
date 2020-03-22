@@ -1,4 +1,4 @@
-import { DND5E } from "../config.js";
+import { DND35E } from "../config.js";
 
 /**
  * A helper class for building MeasuredTemplates for 5e spells and abilities
@@ -8,12 +8,12 @@ export class AbilityTemplate extends MeasuredTemplate {
 
   /**
    * A factory method to create an AbilityTemplate instance using provided data from an Item5e instance
-   * @param {Item5e} item               The Item object for which to construct the template
+   * @param {Item35e} item               The Item object for which to construct the template
    * @return {AbilityTemplate|null}     The template object, or null if the item does not produce a template
    */
   static fromItem(item) {
     const target = getProperty(item.data, "data.target") || {};
-    const templateShape = DND5E.areaTargetTypes[target.type];
+    const templateShape = DND35E.areaTargetTypes[target.type];
     if ( !templateShape ) return null;
 
     // Prepare template data
