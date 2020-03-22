@@ -33,3 +33,33 @@ https://github.com/death-save/combat-utility-belt
 Code and content contributions are accepted. Please feel free to submit issues to the issue tracker or submit merge
 requests for code changes. Approval for such requests involves code and (if necessary) design review by red5h4d0w. Please
 reach out on the Foundry Community Discord with any questions.
+
+
+///        {{!-- Details Tab --}}
+        <div class="tab details" data-group="primary" data-tab="details">
+
+            <h3 class="form-header">Feature Usage</h3>
+
+            {{!-- Item Activation Template --}}
+            {{> "systems/dnd35e/templates/items/parts/item-activation.html"}}
+
+            {{!-- Recharge Requirement --}}
+            {{#if data.activation.type}}
+            <div class="form-group recharge">
+                <label>Action Recharge</label>
+                <div class="form-fields">
+                    <span>Recharge On</span>
+                    <input type="text" name="data.recharge.value" value="{{data.recharge.value}}"
+                           data-dtype="Number" placeholder="1d6 Result"/>
+                    <label class="checkbox">
+                        Charged
+                        <input type="checkbox" name="data.recharge.charged" {{checked data.recharge.charged}}/>
+                    </label>
+                </div>
+            </div>
+            {{/if}}
+
+            <h3 class="form-header">Feature Attack</h3>
+
+            {{!-- Item Action Template --}}
+            {{> "systems/dnd35e/templates/items/parts/item-action.html"}}

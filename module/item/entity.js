@@ -47,6 +47,15 @@ export class Item35e extends Item {
   /* -------------------------------------------- */
 
   /**
+  * Does the Item implement a versatile damage roll as part of its usage
+  * @type {boolean}
+  */
+  get isVersatile() {
+    return !!(this.hasDamage && this.data.data.damage.versatile);
+  }
+
+  /* -------------------------------------------- */
+  /**
    * Does the Item implement a damage roll as part of its usage
    * @type {boolean}
    */
@@ -61,7 +70,7 @@ export class Item35e extends Item {
    * @return {boolean}
    */
   get isHealing() {
-    return (this.data.data.actionType === "heal") && this.data.data.damage.parts.length;
+    return !!(this.data.data.actionType === "heal") && this.data.data.damage.parts.length;
   }
 
   /* -------------------------------------------- */
@@ -136,11 +145,7 @@ export class Item35e extends Item {
 
     // Feat Items
     else if ( itemData.type === "feat" ) {
-      const act = data.activation;
-      if ( act && (act.type === C.abilityActivationTypes.legendary) ) labels.featType = "Legendary Action";
-      else if ( act && (act.type === C.abilityActivationTypes.lair) ) labels.featType = "Lair Action";
-      else if ( act && act.type ) labels.featType = data.damage.length ? "Attack" : "Action";
-      else labels.featType = "Passive";
+      labels.featType = data.type
     }
 
     // Equipment Items
@@ -375,7 +380,7 @@ export class Item35e extends Item {
    */
   _weaponChatData(data, labels, props) {
     props.push(
-      CONFIG.DND5E.weaponTypes[data.weaponType],
+      CONFIG.DND35E.weaponTypes[data.weaponType],
     );
   }
 
@@ -387,7 +392,7 @@ export class Item35e extends Item {
    */
   _consumableChatData(data, labels, props) {
     props.push(
-      CONFIG.DND5E.consumableTypes[data.consumableType],
+      CONFIG.DND35E.consumableTypes[data.consumableType],
       data.uses.value + "/" + data.uses.max + " Charges"
     );
     data.hasCharges = data.uses.value >= 0;
@@ -401,8 +406,8 @@ export class Item35e extends Item {
    */
   _toolChatData(data, labels, props) {
     props.push(
-      CONFIG.DND5E.abilities[data.ability] || null,
-      CONFIG.DND5E.proficiencyLevels[data.proficient || 0]
+      CONFIG.DND35E.abilities[data.ability] || null,
+      CONFIG.DND35E.proficiencyLevels[data.proficient || 0]
     );
   }
 
