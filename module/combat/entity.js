@@ -7,15 +7,6 @@ export class Combat35e extends Combat{
         }
     };
 
-    _getInitiativeFormula = function(combatant) {
-        const actor = combatant.actor;
-        if ( !actor ) return "1d20";
-        const init = actor.data.data.attributes.init;
-        const parts = ["1d20", init.mod, (init.bonus !== 0) ? init.bonus : null];
-        if ( CONFIG.Combat.initiative.tiebreaker ) parts.push(actor.data.data.abilities.dex.value / 100);
-        return parts.filter(p => p !== null).join(" + ");
-    };
-
     giveXP() {
         const defeatedEnemies = this.turns.filter(object => (!object.actor.isPC && object.defeated && object.token.disposition === -1));
         const players = this.turns.filter(object => (object.actor.isPC && !object.defeated));
@@ -44,4 +35,12 @@ export class Combat35e extends Combat{
             });
         }
     }
-}
+};
+export function _getInitiativeFormula(combatant) {
+    const actor = combatant.actor;
+    if ( !actor ) return "1d20";
+    const init = actor.data.data.attributes.init;
+    const parts = ["1d20", init.mod, (init.bonus !== 0) ? init.bonus : null];
+    if ( CONFIG.Combat.initiative.tiebreaker ) parts.push(actor.data.data.abilities.dex.value / 100);
+    return parts.filter(p => p !== null).join(" + ");
+};
