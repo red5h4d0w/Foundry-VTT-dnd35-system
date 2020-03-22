@@ -32,7 +32,7 @@ export class ItemSheet35e extends ItemSheet {
    * @return {string}
    */
   get template() {
-    const path = "systems/dnd35e/templates/items/";
+    const path = "systems/dnd35e/templates/items";
     return `${path}/${this.item.data.type}/${this.item.data.type}-sheet.html`;
   }
 
