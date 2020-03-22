@@ -145,7 +145,7 @@ export class Item35e extends Item {
 
     // Feat Items
     else if ( itemData.type === "feat" ) {
-      labels.featType = data.type
+      labels.featTypes = data.type
     }
 
     // Equipment Items

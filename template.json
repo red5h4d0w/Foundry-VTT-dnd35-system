@@ -394,7 +394,7 @@
     }
   },
   "Item": {
-    "type": ["class", "feat", "physicalitem", "prestigeclass", "spell"],
+    "types": ["class", "feat", "physicalitem", "prestigeclass", "spell"],
     "templates": {
       "itemDescription": {
         "description": {
