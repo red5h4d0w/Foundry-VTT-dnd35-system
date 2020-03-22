@@ -11,7 +11,7 @@
 import { DND35E } from "./module/config.js";
 import { registerSystemSettings } from "./module/settings.js";
 import { preloadHandlebarsTemplates } from "./module/templates.js";
-import { _getInitiativeFormula } from "./module/combat.js";
+import { _getInitiativeFormula } from "./module/combat/entity.js";
 import { measureDistance, getBarAttribute } from "./module/canvas.js";
 import { Actor35e } from "./module/actor/entity.js";
 import { ActorSheet35eCharacter } from "./module/actor/sheets/character.js";
