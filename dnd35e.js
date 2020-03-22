@@ -120,6 +120,7 @@ Hooks.on("canvasInit", function() {
 Hooks.on("deleteCombat", (combat, combatId, options, userId) => {
   Combat35e.hookOnDeleteCombat(combat, combatId, options, userId);
 });
+console.log("combat ready");
 
 
 /* -------------------------------------------- */
@@ -138,7 +139,7 @@ Hooks.on("renderChatMessage", (app, html, data) => {
   if (game.settings.get("dnd35e", "autoCollapseItemCards")) html.find(".card-content").hide();
 });
 Hooks.on("getChatLogEntryContext", chat.addChatMessageContextOptions);
-Hooks.on("renderChatLog", (app, html, data) => Item5e.chatListeners(html));
+Hooks.on("renderChatLog", (app, html, data) => Item35e.chatListeners(html));
 
 
 /* -------------------------------------------- */
@@ -152,7 +153,7 @@ Hooks.on("renderChatLog", (app, html, data) => Item5e.chatListeners(html));
  * @param {number} slot     The hotbar slot to use
  * @returns {Promise}
  */
-async function create5eMacro(data, slot) {
+async function create35eMacro(data, slot) {
   if ( data.type !== "Item" ) return;
   if (!( "data" in data ) ) return ui.notifications.warn("You can only create macro buttons for owned Items");
   const item = data.data;
