@@ -104,7 +104,7 @@ export class ItemSheet35e extends ItemSheet {
 
     else if ( item.type === "equipment" ) {
       props.equipementTypes = CONFIG.DND35E.equipmentTypes[item.data.armor.type];
-      props.push(labels.armor);
+      props.armor = labels.armor;
     }
 
     else if ( item.type === "feat" ) {
