@@ -46,7 +46,7 @@ export class ItemSheet35e extends ItemSheet {
   getData() {
     const data = super.getData();
     data.labels = this.item.labels;
-
+    
     // Include CONFIG values
     data.config = CONFIG.DND35E;
 
@@ -84,7 +84,7 @@ export class ItemSheet35e extends ItemSheet {
    * @private
    */
   _getItemProperties(item) {
-    const props = {};
+    const props = [];
     const labels = this.item.labels;
 
     if ( item.type === "weapon" ) {
@@ -94,18 +94,21 @@ export class ItemSheet35e extends ItemSheet {
     }
 
     else if ( item.type === "spell" ) {
-      props.components = labels.components;
-      props.materials = labels.materials;
-      props.concentration = item.data.components.concentration ? "Concentration" : null;
+      props.push(
+        labels.components,
+        labels.materials,
+        item.data.components.concentration ? "Concentration" : null,
+        item.data.components.ritual ? "Ritual" : null
+      )
     }
 
     else if ( item.type === "equipment" ) {
-      props.equipementTypes = CONFIG.DND35E.equipmentTypes[item.data.armor.type];
-      props.armor = labels.armor;
+      props.push(CONFIG.DND35E.equipmentTypes[item.data.armor.type]);
+      props.push(labels.armor);
     }
 
     else if ( item.type === "feat" ) {
-      props.featTypes = labels.featTypes;
+      props.push(labels.featTypes);
     }
 
     // Action type
@@ -122,7 +125,7 @@ export class ItemSheet35e extends ItemSheet {
         labels.duration
       )
     }
-    return props;
+    return props.filter(p => !!p);
   }
 
   /* -------------------------------------------- */
