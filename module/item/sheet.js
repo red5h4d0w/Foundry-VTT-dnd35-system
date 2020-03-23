@@ -84,7 +84,7 @@ export class ItemSheet35e extends ItemSheet {
    * @private
    */
   _getItemProperties(item) {
-    const props = [];
+    const props = {};
     const labels = this.item.labels;
 
     if ( item.type === "weapon" ) {
@@ -108,7 +108,7 @@ export class ItemSheet35e extends ItemSheet {
     }
 
     else if ( item.type === "feat" ) {
-      props.push(labels.featTypes);
+      props.featTypes = labels.featTypes;
     }
 
     // Action type
@@ -125,7 +125,7 @@ export class ItemSheet35e extends ItemSheet {
         labels.duration
       )
     }
-    return props.filter(p => !!p);
+    return props;
   }
 
   /* -------------------------------------------- */
