@@ -103,7 +103,7 @@ export class ItemSheet35e extends ItemSheet {
     }
 
     else if ( item.type === "equipment" ) {
-      props.push(CONFIG.DND35E.equipmentTypes[item.data.armor.type]);
+      props.equipementTypes = CONFIG.DND35E.equipmentTypes[item.data.armor.type];
       props.push(labels.armor);
     }
 
