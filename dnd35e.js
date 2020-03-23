@@ -41,7 +41,6 @@ Hooks.once("init", function() {
   };
 
   // Record Configuration Values
-  CONFIG.hooks.debug = true;
   CONFIG.DND35E = DND35E;
   CONFIG.Actor.entityClass = Actor35e;
   CONFIG.Combat.entityClass = Combat35e
