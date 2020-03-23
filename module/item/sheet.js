@@ -94,12 +94,9 @@ export class ItemSheet35e extends ItemSheet {
     }
 
     else if ( item.type === "spell" ) {
-      props.push(
-        labels.components,
-        labels.materials,
-        item.data.components.concentration ? "Concentration" : null,
-        item.data.components.ritual ? "Ritual" : null
-      )
+      props.components = labels.components;
+      props.materials = labels.materials;
+      props.concentration = item.data.components.concentration ? "Concentration" : null;
     }
 
     else if ( item.type === "equipment" ) {
