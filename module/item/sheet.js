@@ -51,7 +51,7 @@ export class ItemSheet35e extends ItemSheet {
     data.config = CONFIG.DND35E;
 
     // Item Type, Status, and Details
-    data.itemType = data.item.types.titleCase();
+    data.itemType = data.item.type.titleCase();
     data.itemStatus = this._getItemStatus(data.item);
     data.itemProperties = this._getItemProperties(data.item);
     data.isPhysical = data.item.data.hasOwnProperty("quantity");
