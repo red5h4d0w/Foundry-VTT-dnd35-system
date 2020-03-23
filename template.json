@@ -513,7 +513,12 @@
     },
     "feat": {
       "templates": ["itemDescription"],
-      "types": ["general", "itemcreation", "metamagic"],
+      "types": {
+        "value":"",
+        "general": false,
+        "itemcreation": false,
+        "metamagic": false
+      },
       "type": "general",
       "requirements": {
         "feat": {

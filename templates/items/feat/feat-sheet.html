@@ -16,6 +16,7 @@
             <ul class="summary">
                 <li>
                     <select>
+                        {{log labels.featTypes}}
                         {{#each labels.featTypes as |type|}}
                         <option value="{{data.type}}">{{type}}</option>
                         {{/each}}
