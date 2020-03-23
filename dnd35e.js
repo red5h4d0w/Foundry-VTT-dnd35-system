@@ -42,6 +42,7 @@ Hooks.once("init", function() {
 
   // Record Configuration Values
   CONFIG.DND35E = DND35E;
+  console.log(CONFIG.DND35E);
   CONFIG.Actor.entityClass = Actor35e;
   CONFIG.Combat.entityClass = Combat35e
   CONFIG.Item.entityClass = Item35e;
