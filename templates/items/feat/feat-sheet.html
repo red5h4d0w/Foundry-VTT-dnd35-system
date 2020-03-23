@@ -16,14 +16,12 @@
             <ul class="summary">
                 <li>
                     <select>
+                        {{console log labels.featType}}
                         {{#each labels.featType as |type|}}
                         <option value="{{data.type}}">{{type}}</option>
                         {{/each}}
                     </select>
 
-                </li>
-                <li>
-                    <input type="text" name="data.requirements" value="{{data.requirements}}" placeholder="Requirements"/>
                 </li>
                 <li>
                     <input type="text" name="data.source" value="{{data.source}}" placeholder="Source"/>
@@ -52,20 +50,7 @@
             {{!-- Item Activation Template --}}
             {{> "systems/dnd35e/templates/items/parts/item-activation.html"}}
 
-            {{!-- Recharge Requirement --}}
-            {{#if data.activation.type}}
-            <div class="form-group recharge">
-                <label>Action Recharge</label>
-                <div class="form-fields">
-                    <span>Recharge On</span>
-                    <input type="text" name="data.recharge.value" value="{{data.recharge.value}}"
-                           data-dtype="Number" placeholder="1d6 Result"/>
-                    <label class="checkbox">
-                        Charged
-                        <input type="checkbox" name="data.recharge.charged" {{checked data.recharge.charged}}/>
-                    </label>
-                </div>
-            </div>
+            
             {{/if}}
 
             <h3 class="form-header">Feature Attack</h3>
