@@ -15,7 +15,12 @@
 
             <ul class="summary">
                 <li>
-                    {{labels.featType}}
+                    <select>
+                        {{#each labels.featType as |type|}}
+                        <option value="{{type}}">{{type}}</option>
+                        {{/each}}
+                    </select>
+
                 </li>
                 <li>
                     <input type="text" name="data.requirements" value="{{data.requirements}}" placeholder="Requirements"/>
