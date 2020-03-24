@@ -16,7 +16,7 @@
             <ul class="summary">
                 <li>
                     <select>
-                        {{#each data.types as |type, set|}}
+                        {{#each data.types as |set type|}}
                         {{#if type = data.type.value}}
                         <option value="{{data.type.value}}">{{type}}</option>
                         {{/if}}
