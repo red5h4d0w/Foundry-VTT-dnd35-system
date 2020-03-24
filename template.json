@@ -513,6 +513,7 @@
     },
     "feat": {
       "templates": ["itemDescription"],
+      "type": "",
       "types": {
         "value": "",
         "general": false,

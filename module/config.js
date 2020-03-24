@@ -349,6 +349,12 @@ DND35E.senses = {
 
 /* -------------------------------------------- */
 
+DND35E.featTypes = {
+  "gen": "DND35E.FeatGen",
+  "ite": "DND35E.FeatIte",
+  "met": "DND35E.FeatMet"
+}
+
 /**
  * The set of skill which can be trained in D&D35E
  * @type {Object}

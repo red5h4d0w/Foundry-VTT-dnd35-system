@@ -138,6 +138,10 @@
   "DND35E.EquipmentClothing": "Clothing",
   "DND35E.EquipmentTrinket": "Trinket",
 
+  "DND35E.FeatGen": "General",
+  "DND35E.FeatIte": "Item Creation",
+  "DND35E.FeatMet": "Metamagic",
+
   "DND35E.FilterTitle": "Filter",
   "DND35E.FilterAction": "Action",
   "DND35E.FilterBonus": "Bonus",
