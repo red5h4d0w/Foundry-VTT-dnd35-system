@@ -17,7 +17,7 @@
                 <li>
                     <select>
                         {{#each data.types as |set type|}}
-                        {{#if type==data.type.value}}
+                        {{#if (type == data.type.value)}}
                         <option value="{{data.type.value}}">{{type}}</option>
                         {{/if}}
                         {{/each}}
