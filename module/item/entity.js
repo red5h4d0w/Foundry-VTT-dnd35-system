@@ -146,8 +146,8 @@ export class Item35e extends Item {
     // Feat Items
     else if ( itemData.type === "feat" ) {
       labels.featTypes = Object.entries(data.types).map(c => {
-        c[1] === true ? c[0].titleCase().slice(0,1) : null
-      }).filterJoin(",");
+        c[1] === true ? c[0] : null
+      });
     }
 
     // Equipment Items

@@ -16,9 +16,10 @@
             <ul class="summary">
                 <li>
                     <select>
-                        {{log labels.featTypes}}
-                        {{#each labels.featTypes as |type|}}
-                        <option value="{{data.type}}">{{type}}</option>
+                        {{#each data.types as |type, set|}}
+                        {{#if type = data.type.value}}
+                        <option value="{{data.type.value}}">{{type}}</option>
+                        {{/if}}
                         {{/each}}
                     </select>
 
