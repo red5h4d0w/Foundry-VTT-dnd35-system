@@ -144,7 +144,8 @@
 
   "DND35E.FeatGen": "General",
   "DND35E.FeatIte": "Item Creation",
-  "DND35E.FeatMet": "Metamagic",
+  "DND35E.FeatMeM": "Metamagic",
+  "DND35E.FeatMeP": "Metapsionic",
 
   "DND35E.FilterTitle": "Filter",
   "DND35E.FilterAction": "Action",

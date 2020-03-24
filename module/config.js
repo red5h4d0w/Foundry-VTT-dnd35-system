@@ -96,7 +96,7 @@ DND35E.baseAttackBonus = {
   "bab": "DND35E.BAB"
 }
 
-DND35E.babProgressionNames = {
+DND35E.babProgression = {
   "good": "DND35E.BABGood",
   "average": "DND35E.BABAverage",
   "poor": "DND35E.BABPoor"
@@ -359,14 +359,19 @@ DND35E.senses = {
 
 /* -------------------------------------------- */
 
+/**
+ * Available types for feats
+ * @type {Object}
+ */
 DND35E.featTypes = {
   "gen": "DND35E.FeatGen",
   "ite": "DND35E.FeatIte",
-  "met": "DND35E.FeatMet"
+  "mem": "DND35E.FeatMeM",
+  "mep": "DND35E.FeatMeP"
 }
 
 /**
- * The set of skill which can be trained in D&D35E
+ * The set of skill which can be trained in D&D3.5e
  * @type {Object}
  */
 DND35E.skills = {
@@ -600,6 +605,12 @@ DND35E.CHARACTER_EXP_LEVELS =  [
   0, 1000, 3000, 6000, 10000, 15000, 21000, 28000, 36000, 45000, 55000, 66000,
   78000, 91000, 105000, 120000, 136000, 153000, 171000, 190000]
 ;
+
+DND35E.BAB_TABLES = {
+  "average": [0, 1, 2, 3, 3, 4, 5, 6, 6, 7, 8, 9, 9, 10, 11, 12, 12, 13, 14, 15],
+  "good": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+  "poor": [0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10]
+}
 
 // Challenge Rating XP Levels
 DND35E.CR_EXP_LEVELS = [
