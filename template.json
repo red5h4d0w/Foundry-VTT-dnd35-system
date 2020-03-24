@@ -514,12 +514,11 @@
     "feat": {
       "templates": ["itemDescription"],
       "types": {
-        "value":"",
+        "value": "",
         "general": false,
         "itemcreation": false,
         "metamagic": false
       },
-      "type": "general",
       "requirements": {
         "feat": {
           "value": "",
