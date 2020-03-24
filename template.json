@@ -394,7 +394,7 @@
     }
   },
   "Item": {
-    "types": ["class", "feat", "physicalitem", "prestigeclass", "spell"],
+    "types": ["class", "consumable", "feat", "loot", "prestigeclass", "spell"],
     "templates": {
       "itemDescription": {
         "description": {
@@ -466,7 +466,10 @@
       "templates": ["itemDescription"],
       "levels": 1,
       "hitDice": "d6",
-      "hitDiceUsed": 0
+      "bab": {
+        "progression": "good",
+        "table": "undefined"
+      }
     },
     "consumable": {
       "templates": ["itemDescription", "physicalItem", "activatedEffect", "action"],
@@ -518,7 +521,8 @@
         "value": "",
         "general": false,
         "itemcreation": false,
-        "metamagic": false
+        "metamagic": false,
+        "metapsionic": false
       },
       "requirements": {
         "feat": {

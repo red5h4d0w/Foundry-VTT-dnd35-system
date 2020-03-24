@@ -49,7 +49,11 @@
   "DND35E.AlignmentNE": "Neutral Evil",
   "DND35E.AlignmentCE": "Chaotic Evil",
 
-  "DND35E.BaseAttackBonus": "Base Attack Bonus",
+  "DND35E.BAB": "Base Attack Bonus",
+  
+  "DND35E.BABAverage": "Average",
+  "DND35E.BABGood": "Good",
+  "DND35E.BABPoor": "Poor",
 
   "DND35E.Bonuses": "Global Bonuses",
   "DND35E.BonusesHint": "Define global bonuses as formulas which are added to certain rolls. For example: 1d4 + 2",

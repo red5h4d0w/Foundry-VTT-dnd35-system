@@ -24,8 +24,8 @@
 
     {{!-- Item Sheet Navigation --}}
     <nav class="sheet-navigation tabs" data-group="primary">
-        <a class="item active" data-tab="description">{{ localize "DND5E.Description" }}</a>
-        <a class="item" data-tab="details">{{ localize "DND5E.Details" }}</a>
+        <a class="item active" data-tab="description">{{ localize "DND35E.Description" }}</a>
+        <a class="item" data-tab="details">{{ localize "DND35E.Details" }}</a>
     </nav>
 
     {{!-- Item Sheet Body --}}
@@ -47,36 +47,19 @@
                 </div>
             </div>
 
-            {{!-- Subclass Name --}}
+            {{!-- Base Attack Bonus Progression --}}
             <div class="form-group">
-                <label>Subclass Name</label>
-                <div class="form-fields">
-                    <input type="text" name="data.subclass" value="{{data.subclass}}"/>
-                </div>
-            </div>
+                <label>Base Attack Bonus</label>
+                <select name="data.bab">
+                    {{#select data.bab}}
+                    {{#each config.babprogression as |name type|}}
+                    <option value="{{type}}">{{localize name}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
 
-            {{!-- Class Hit Dice --}}
-            <div class="form-group">
-                <label>{{localize "DND5E.HitDice"}}</label>
-                <div class="form-fields">
-                    <select name="data.hitDice">
-                        {{#select data.hitDice}}
-                        {{#each config.hitDieTypes}}
-                        <option value="{{this}}">{{this}}</option>
-                        {{/each}}
-                        {{/select}}
-                    </select>
-                </div>
-            </div>
 
-            <div class="form-group">
-                <label>{{localize "DND5E.HitDiceUsed"}}</label>
-                <div class="form-fields">
-                    <input type="text" placeholder="0" name="data.hitDiceUsed" value="{{data.hitDiceUsed}}" data-dtype="Number"/>
-                </div>
-            </div>
-
-            {{!-- Granted Abilities (TODO) --}}
+            {{!-- Granted Abilities --}}
             <h3 class="form-header">Granted Abilities</h3>
             <p class="notification warning">This is still to-do</p>
         </div>

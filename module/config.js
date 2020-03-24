@@ -92,6 +92,16 @@ DND35E.saves = {
   "wil": "DND35E.SaveWil"
 };
 
+DND35E.baseAttackBonus = {
+  "bab": "DND35E.BAB"
+}
+
+DND35E.babProgressionNames = {
+  "good": "DND35E.BABGood",
+  "average": "DND35E.BABAverage",
+  "poor": "DND35E.BABPoor"
+}
+
 DND35E.abilityActivationTypes = {
   "none": "None",
   "standard": "Standard Action",
