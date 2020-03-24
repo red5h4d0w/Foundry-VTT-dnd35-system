@@ -20,7 +20,7 @@
                         <select name="data.type">
                             {{#select data.type}}
                             {{#each config.featTypes as |name type|}}
-                            <option value="{{type}}">{{name}}</option>
+                            <option value="{{type}}">{{localize name}}</option>
                             {{/each}}
                             {{/select}}
                         </select>

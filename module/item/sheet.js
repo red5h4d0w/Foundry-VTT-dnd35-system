@@ -107,10 +107,6 @@ export class ItemSheet35e extends ItemSheet {
       props.push(labels.armor);
     }
 
-    else if ( item.type === "feat" ) {
-      props.push(labels.featTypes);
-    }
-
     // Action type
     if ( item.data.actionType ) {
       props.push(CONFIG.DND35E.itemActionTypes[item.data.actionType]);
