@@ -285,8 +285,8 @@
   line-height: 34px;
   color: #4b4a44;
 }
-.dnd35e.sheet .sheet-header .feat-summary li {
-  width: 50%;
+.dnd35e.sheet .sheet-header .fsummary li {
+  width: 40%;
   float: left;
   height: 34px;
   margin: 2px 0;
