@@ -50,11 +50,12 @@
             {{!-- Base Attack Bonus Progression --}}
             <div class="form-group">
                 {{log config.baseAttackBonus}}
-                {{log config.babProgression}}
                 <label>{{localize config.baseAttackBonus}}</label>
                 <select name="data.bab.progression">
                     {{#select data.bab.progression}}
+                    {{log config.babProgression}}
                     {{#each config.babProgression as |name progression|}}
+                    {{log config.babProgression}}
                     <option value="{{progression}}">{{localize name}}</option>
                     {{/each}}
                     {{/select}}
