@@ -26,6 +26,7 @@
     <nav class="sheet-navigation tabs" data-group="primary">
         <a class="item active" data-tab="description">{{ localize "DND35E.Description" }}</a>
         <a class="item" data-tab="details">{{ localize "DND35E.Details" }}</a>
+        <a class="item" data-tab="skills">{{ localize "DND35E.Skills" }}</a>
     </nav>
 
     {{!-- Item Sheet Body --}}
@@ -49,7 +50,7 @@
 
             {{!-- Base Attack Bonus Progression --}}
             <div class="form-group">
-                <label>{{ localize "DND35E.BAB"}}</label>
+                <label>{{ localize "DND35E.BAB"}}:</label>
                 <select name="data.bab.progression">
                     {{#select data.bab.progression}}
                     {{#each config.babProgression as |name progression|}}
@@ -60,8 +61,18 @@
 
 
             {{!-- Granted Abilities --}}
-            <h3 class="form-header">Granted Abilities</h3>
+            <h3 class="form-header">Class Features</h3>
             <p class="notification warning">This is still to-do</p>
+        </div>
+
+        {{!-- Skills Tab --}}
+        <div class="tab details" data-group="primary" data-tab="skills">
+            <label>{{ localize "DND35E.Skills" }}</label>
+            {{#each skillProficiency as | value id |}}
+            <label class="checkbox">
+                <input type="checkbox" name="value" {{checked value}}/> {{localize config.skills.id}}
+            </label>
+            {{/each}}
         </div>
     </section>
 </form>
