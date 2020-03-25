@@ -66,11 +66,11 @@
         </div>
 
         {{!-- Skills Tab --}}
-        <div class="tab details" data-group="primary" data-tab="skills">
+        <div class="form-group" data-group="primary" data-tab="skills">
             <label>{{ localize "DND35E.Skills" }}</label>
             {{#each skillProficiency as | value id |}}
             <label class="checkbox">
-                <input type="checkbox" name="value" {{checked value}}/> {{localize config.skills.id}}
+                <input type="checkbox" name="data.skillProficiency.{{id}}" {{checked value}}/> {{localize config.skills.id}}
             </label>
             {{/each}}
         </div>
