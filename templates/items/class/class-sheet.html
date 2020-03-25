@@ -58,17 +58,14 @@
                     {{/each}}
                     {{/select}}
                 </select>
-
-
-            {{!-- Granted Abilities --}}
-            <h3 class="form-header">Class Features</h3>
-            <p class="notification warning">This is still to-do</p>
         </div>
 
         {{!-- Skills Tab --}}
-        <div class="form-group" data-group="primary" data-tab="skills">
+        <div class="tab details" data-group="primary" data-tab="skills">
+            {{ log "DND35E.Skills" }}
             <label>{{ localize "DND35E.Skills" }}</label>
             {{#each skillProficiency as | value id |}}
+            {{ log value}}
             <label class="checkbox">
                 <input type="checkbox" name="data.skillProficiency.{{id}}" {{checked value}}/> {{localize config.skills.id}}
             </label>
