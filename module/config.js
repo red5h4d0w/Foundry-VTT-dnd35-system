@@ -402,7 +402,7 @@ DND35E.skills = {
   "kna": "DND35E.SkillKNa", // Knowledge (nature)
   "kno": "DND35E.SkillKNo", // Knowledge (nobility and royalty)
   "kre": "DND35E.SkillKRe", // Knowledge (religion)
-  "kpl": "DND35E.SkillKpl", // Knowledge (the planes)
+  "kpl": "DND35E.SkillKPl", // Knowledge (the planes)
   "lis": "DND35E.SkillLis", // Listen
   "mov": "DND35E.SkillMov", // Move Silently
   "ope": "DND35E.SkillOpe", // Open Lock
