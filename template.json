@@ -472,6 +472,7 @@
       },
       "skillProficiency": {
         "app": false,
+        "aut": false,
         "bal": false,
         "blu": false,
         "cli": false,
@@ -497,6 +498,7 @@
         "klo": false,
         "kna": false,
         "kno": false,
+        "kps": false,
         "kre": false,
         "kpl": false,
         "lis": false,
@@ -515,6 +517,7 @@
         "swi": false,
         "tum": false,
         "uma": false,
+        "ups": false,
         "uro": false
       }
     },

@@ -199,6 +199,7 @@
   "DND35E.Skills": "Skills",
 
   "DND35E.SkillApp": "Appraise",
+  "DND35E.SkillAut": "Autohypnosis",
   "DND35E.SkillBal": "Balance",
   "DND35E.SkillBlu": "Bluff",
   "DND35E.SkillCli": "Climb",
@@ -224,6 +225,7 @@
   "DND35E.SkillKLo": "Knowledge (local)",
   "DND35E.SkillKNa": "Knowledge (nature)",
   "DND35E.SkillKNo": "Knowledge (nobility and royalty)",
+  "DND35E.SkillKPs": "Knowledge (psionics)",
   "DND35E.SkillKRe": "Knowledge (religion)",
   "DND35E.SkillKPl": "Knowledge (the planes)",
   "DND35E.SkillLis": "Listen",
@@ -242,6 +244,7 @@
   "DND35E.SkillSwi": "Swim",
   "DND35E.SkillTum": "Tumble",
   "DND35E.SkillUMa": "Use Magic Device",
+  "DND35E.SkillUPs": "Use Psionic Device",
   "DND35E.SkillURo": "Use Rope",
 
   "DND35E.SpellAdd": "Add Spell",

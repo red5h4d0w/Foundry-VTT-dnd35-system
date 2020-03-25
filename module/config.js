@@ -376,6 +376,7 @@ DND35E.featTypes = {
  */
 DND35E.skills = {
   "app": "DND35E.SkillApp", // Appraise
+  "aut": "DND35E.SkillAut", // Autohypnosis
   "bal": "DND35E.SkillBal", // Balance
   "blu": "DND35E.SkillBlu", // Bluff
   "cli": "DND35E.SkillCli", // Climb
@@ -401,6 +402,7 @@ DND35E.skills = {
   "klo": "DND35E.SkillKLo", // Knowledge (local)
   "kna": "DND35E.SkillKNa", // Knowledge (nature)
   "kno": "DND35E.SkillKNo", // Knowledge (nobility and royalty)
+  "kps": "DND35E.SkillKps", // Knowledge (psionics)
   "kre": "DND35E.SkillKRe", // Knowledge (religion)
   "kpl": "DND35E.SkillKPl", // Knowledge (the planes)
   "lis": "DND35E.SkillLis", // Listen
@@ -419,6 +421,7 @@ DND35E.skills = {
   "swi": "DND35E.SkillSwi", // Swim
   "tum": "DND35E.SkillTum", // Tumble
   "uma": "DND35E.SkillUMa", // Use Magic Device
+  "ups": "DND35E.SkillUPs", // Use Psionic Device
   "uro": "DND35E.SkillURo" // Use Rope
 };
 
