@@ -410,6 +410,7 @@ DND35E.skills = {
   "ope": "DND35E.SkillOpe", // Open Lock
   "per": "DND35E.SkillPer", // Perform
   "pro": "DND35E.SkillPro", // Profession
+  "psi": "DND35E.SkillPsi", // Psicraft
   "rid": "DND35E.SkillRid", // Ride
   "sea": "DND35E.SkillSea", // Search
   "sen": "DND35E.SkillSen", // Sense Motive
