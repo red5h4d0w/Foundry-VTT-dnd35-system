@@ -66,8 +66,8 @@
             <label>{{ localize "DND35E.Skills" }}</label><br>
             {{#each config.skills as | name id |}}
             <label class="checkbox">
-                {{log .../skillProficiency [id]}}
-                <input type="checkbox" name="data.skillProficiency.{{id}}" {{checked .../data.skillProficiency [id]}}/> {{localize name}}
+                {{log (.../data.skillProficiency [id])}}
+                <input type="checkbox" name="data.skillProficiency.{{id}}" {{checked (.../data.skillProficiency [id]) }}/> {{localize name}}
             </label>
             <br>
             {{/each}}
