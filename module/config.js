@@ -402,7 +402,7 @@ DND35E.skills = {
   "klo": "DND35E.SkillKLo", // Knowledge (local)
   "kna": "DND35E.SkillKNa", // Knowledge (nature)
   "kno": "DND35E.SkillKNo", // Knowledge (nobility and royalty)
-  "kps": "DND35E.SkillKps", // Knowledge (psionics)
+  "kps": "DND35E.SkillKPs", // Knowledge (psionics)
   "kre": "DND35E.SkillKRe", // Knowledge (religion)
   "kpl": "DND35E.SkillKPl", // Knowledge (the planes)
   "lis": "DND35E.SkillLis", // Listen
