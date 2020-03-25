@@ -64,11 +64,10 @@
         {{!-- Skills Tab --}}
         <div class="tab details" data-group="primary" data-tab="skills">
             <label>{{ localize "DND35E.Skills" }}</label><br>
-            {{log skillProficiency}}
             {{#each config.skills as | name id |}}
-            {{ log value}}
             <label class="checkbox">
-                <input type="checkbox" name="data.skillProficiency.{{id}}" {{checked data.skillProficiency [id]}}/> {{localize name}}
+                {{log (data.skillProficiency [id])}}
+                <input type="checkbox" name="data.skillProficiency.{{id}}" {{checked (data.skillProficiency [id])}}/> {{localize name}}
             </label>
             <br>
             {{/each}}
