@@ -104,16 +104,16 @@ DND35E.babProgression = {
 
 DND35E.abilityActivationTypes = {
   "none": "None",
-  "standard": "Standard Action",
-  "move": "Move Action",
-  "full-round": "Full-Round Action",
-  "free": "Free Action",
-  "minute": "Minute",
-  "hour": "Hour",
-  "day": "Day",
-  "special": "Special", // not sure if useful
-  "legendary": "Legendary", // not sure if useful
-  "lair": "Lair" // not sure if useful
+  "standard": "DND35E.ActionStandard",
+  "move": "DND35E.ActionMove",
+  "full-round": "DND35E.ActionFullRound",
+  "free": "DND35E.ActionFree",
+  "rounds": "DND35E.TimeRound",
+  "minute": "DND35E.TimeMinute",
+  "hour": "DND35E.TimeHour",
+  "day": "DND35E.TimeDay",
+  "permanent": "DND35E.TimePerm",
+  "special": "DND35E.Special"
 };
 
 /* -------------------------------------------- */
@@ -252,8 +252,6 @@ DND35E.damageTypes = {
 
 DND35E.distanceUnits = {
   "none": "DND35E.None",
-  "self": "DND35E.DistSelf",
-  "touch": "DND35E.DistTouch",
   "ft": "DND35E.DistFt",
   "mi": "DND35E.DistMi",
   "spec": "DND35E.Special",
@@ -313,7 +311,6 @@ DND35E.areaTargetTypes = {
  */
 DND35E.timePeriods = {
   "inst": "DND35E.TimeInst",
-  "turn": "DND35E.TimeTurn",
   "round": "DND35E.TimeRound",
   "minute": "DND35E.TimeMinute",
   "hour": "DND35E.TimeHour",
@@ -429,6 +426,7 @@ DND35E.skills = {
 
 /* -------------------------------------------- */
 
+
 DND35E.spellPreparationModes = {
   "always": "DND35E.SpellPrepAlways",
   "prepared": "DND35E.SpellPrepPrepared",
@@ -496,6 +494,17 @@ DND35E.spellComponents = {
   "S": "DND35E.ComponentSomatic",
   "M": "DND35E.ComponentMaterial",
   "X": "DND35E.ComponentXP"
+};
+
+DND35E.spellRange = {
+  "pers": "DND35E.RangePers",
+  "touch": "DND35E.RangePers",
+  "close": "DND35E.RangePers",
+  "medium": "DND35E.RangePers",
+  "long": "DND35E.RangePers",
+  "unlim": "DND35E.RangePers",
+  "custom": "DND35E.Custom"
+
 };
 
 // Spell Schools

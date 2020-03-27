@@ -1,0 +1,59 @@
+{{!-- Casting Time --}}
+<div class="form-group input-select">
+    <label>Casting Time</label>
+    <div class="form-fields">
+        <input type="text" name="data.activation.quantity" value="{{data.activation.quantity}}" data-dtype="Number" placeholder="-"/>
+        <select name="data.activation.type">
+            {{#select data.activation.type}}
+            {{#each config.abilityActivationTypes as |name key|}}
+            <option value="{{key}}">{{name}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+</div>
+{{#if data.activation.type}}
+
+
+{{!-- Ability Range --}}
+<div class="form-group input-select">
+    <label>Range</label>
+    <div class="form-fields">
+        {{#if hasCustomRange}}
+        <input type="text" name="data.range.base" value="{{data.range.base}}" data-dtype="Number" placeholder="Base"/>
+        <span class="sep">+</span>
+        <input type="text" name="data.range.bonus" value="{{data.range.bonus}}" data-dtype="Number" placeholder="Bonus"/>/Caster Level
+        {{/if}}
+        {{#else}}
+        <input type="text" name="data.range.base" value="{{data.range.base}}" data-dtype="Number" placeholder="Base" readonly/>
+        <span class="sep">+</span>
+        <input type="text" name="data.range.bonus" value="{{data.range.bonus}}" data-dtype="Number" placeholder="Bonus" readonly/>/Caster Level
+        {{/else}}
+        <select name="data.range.type">
+            {{#select data.range.type}}
+            <option value=""></option>
+            {{#each config.spellRange as |name key|}}
+            <option value="{{key}}">{{ localize name }}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+</div>
+
+{{!-- Effect Duration --}}
+<div class="form-group input-select">
+    <label>Duration</label>
+    <div class="form-fields">
+        <input type="text" name="data.duration.quantity" value="{{data.duration.quantity}}" data-dtype="Number" placeholder="-"/>
+        <select name="data.duration.unit">
+            {{#select data.duration.unit}}
+            <option value=""></option>
+            {{#each config.timePeriods as |unit key|}}
+            <option value="{{key}}">{{ localize unit }}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+</div>
+
+{{/if}}

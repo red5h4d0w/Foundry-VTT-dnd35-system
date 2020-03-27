@@ -601,9 +601,13 @@
       "identified": true
     },
     "spell": {
-      "templates": ["itemDescription", "activatedEffect", "action"],
+      "templates": ["itemDescription", "action"],
       "level": 1,
       "school": "",
+      "activation": {
+        "type": "",
+        "quantity": 0
+      },
       "components": {
         "value": "",
         "D": false,
@@ -612,6 +616,10 @@
         "S": false,
         "M": false,
         "X": false
+      },
+      "duration":{
+        "quantity": null,
+        "unit": ""
       },
       "materials": {
         "value": "",
@@ -623,13 +631,14 @@
         "mode": null,
         "prepared": false
       },
+      "range": {
+        "type": "",
+        "base": 0,
+        "bonus": 0
+      },
       "scaling": {
         "mode": null,
         "formula": null
-      },
-      "spellType": {
-        "value": "",
-        "_deprecated": true
       },
       "time": {
         "value": "",
@@ -640,10 +649,6 @@
         "_deprecated": true
       },
       "concentration": {
-        "value": null,
-        "_deprecated": true
-      },
-      "ritual": {
         "value": null,
         "_deprecated": true
       },

@@ -141,6 +141,7 @@ export class Item35e extends Item {
       labels.components = Object.entries(data.components).map(c => {
         c[1] === true ? c[0].titleCase().slice(0,1) : null
       }).filterJoin(",");
+      this.setSpellRange;
     }
 
     // Feat Items
@@ -196,8 +197,7 @@ export class Item35e extends Item {
       let save = data.save || {};
       if ( !save.ability ) save.dc = null;
       else if ( this.isOwned ) { // Actor owned items
-        if ( save.scaling === "spell" ) save.dc = actorData.data.attributes.spelldc;
-        else if ( save.scaling !== "flat" ) save.dc = this.actor.getSpellDC(save.scaling);
+        if ( save.scaling !== "flat" ) save.dc = this.actor.getSpellDC(save.scaling);
       } else { // Un-owned items
         if ( save.scaling !== "flat" ) save.dc = null;
       }
@@ -214,6 +214,23 @@ export class Item35e extends Item {
     // Assign labels
     this.labels = labels;
   }
+
+  setSpellRange(){
+    range = this.data.data.range;
+    if (range.type === "close"){
+      range.base = 25;
+      range.bonus = 2.5;
+    }
+    else if (range.type === "medium"){
+      range.base = 100;
+      range.bonus = 10;
+    }
+    else if (range.type === "long"){
+      range.base = 400
+      range.bonus = 40;
+    }
+  };
+
 
   /* -------------------------------------------- */
 
