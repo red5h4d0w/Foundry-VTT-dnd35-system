@@ -24,13 +24,12 @@
         <span class="sep">+</span>
         <input type="text" name="data.range.bonus" value="{{data.range.bonus}}" data-dtype="Number" placeholder="Bonus"/>
         <label>/Caster Level</label>
-        {{/if}}
-        {{#else}}
+        {{else}}
         <input type="text" name="data.range.base" value="{{data.range.base}}" data-dtype="Number" placeholder="Base" readonly/>
         <span class="sep">+</span>
         <input type="text" name="data.range.bonus" value="{{data.range.bonus}}" data-dtype="Number" placeholder="Bonus" readonly/>
         <label>/Caster Level</label>
-        {{/else}}
+        {{/if}}
         <select name="data.range.type">
             {{#select data.range.type}}
             <option value=""></option>
@@ -71,7 +70,7 @@
             {{/select}}
         </select>
         <select name="data.save.type">
-            {{#select data.save.name}}
+            {{#select data.save.type}}
             <option value=""></option>
             {{#each config.saveTypes as |name id|}}
             <option value="{{id}}">{{localize name}}</option>
