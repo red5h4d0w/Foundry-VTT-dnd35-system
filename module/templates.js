@@ -17,7 +17,8 @@ export const preloadHandlebarsTemplates = async function() {
     // Item Sheet Partials
     "systems/dnd35e/templates/items/parts/item-action.html",
     "systems/dnd35e/templates/items/parts/item-activation.html",
-    "systems/dnd35e/templates/items/parts/item-description.html"
+    "systems/dnd35e/templates/items/parts/item-description.html",
+    "systems/dnd35e/templates/items/spell/spell-activation.html"
   ];
 
   // Load the template parts
