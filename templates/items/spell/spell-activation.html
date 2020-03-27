@@ -71,7 +71,7 @@
         <select name="data.save.type">
             {{#select data.save.name}}
             <option value=""></option>
-            {{#each config.saveTypes as |name id}}
+            {{#each config.saveTypes as |name id|}}
             <option value="{{id}}">{{localize name}}</option>
             {{/each}}
             {{/select}}
