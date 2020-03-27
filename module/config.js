@@ -505,12 +505,12 @@ DND35E.spellComponents = {
 };
 
 DND35E.spellRange = {
-  "pers": "DND35E.RangePers",
-  "touch": "DND35E.RangePers",
-  "close": "DND35E.RangePers",
-  "medium": "DND35E.RangePers",
-  "long": "DND35E.RangePers",
-  "unlim": "DND35E.RangePers",
+  "pers": "DND35E.RangePersonal",
+  "touch": "DND35E.RangeTouch",
+  "close": "DND35E.RangeClose",
+  "medium": "DND35E.RangeMedium",
+  "long": "DND35E.RangeLong",
+  "unlim": "DND35E.RangeUnlimited",
   "custom": "DND35E.Custom"
 
 };

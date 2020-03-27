@@ -22,12 +22,14 @@
         {{#if hasCustomRange}}
         <input type="text" name="data.range.base" value="{{data.range.base}}" data-dtype="Number" placeholder="Base"/>
         <span class="sep">+</span>
-        <input type="text" name="data.range.bonus" value="{{data.range.bonus}}" data-dtype="Number" placeholder="Bonus"/>/Caster Level
+        <input type="text" name="data.range.bonus" value="{{data.range.bonus}}" data-dtype="Number" placeholder="Bonus"/>
+        <label>/Caster Level</label>
         {{/if}}
         {{#else}}
         <input type="text" name="data.range.base" value="{{data.range.base}}" data-dtype="Number" placeholder="Base" readonly/>
         <span class="sep">+</span>
-        <input type="text" name="data.range.bonus" value="{{data.range.bonus}}" data-dtype="Number" placeholder="Bonus" readonly/>/Caster Level
+        <input type="text" name="data.range.bonus" value="{{data.range.bonus}}" data-dtype="Number" placeholder="Bonus" readonly/>
+        <label>/Caster Level</label>
         {{/else}}
         <select name="data.range.type">
             {{#select data.range.type}}
