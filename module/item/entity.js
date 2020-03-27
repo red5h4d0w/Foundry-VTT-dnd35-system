@@ -142,7 +142,7 @@ export class Item35e extends Item {
         c[1] === true ? c[0].titleCase().slice(0,1) : null
       }).filterJoin(",");
       console.log(data)
-      this.setSpellRange(data);
+      this.setSpellRange(data.range);
     }
 
     // Feat Items
@@ -216,8 +216,7 @@ export class Item35e extends Item {
     this.labels = labels;
   }
 
-  setSpellRange(data){
-    range = data.range;
+  setSpellRange(range){
     if (range.type === "close"){
       range.base = 25;
       range.bonus = 2.5;
@@ -229,7 +228,7 @@ export class Item35e extends Item {
     else if (range.type === "long"){
       range.base = 400
       range.bonus = 40;
-    }
+    };
   };
 
 
