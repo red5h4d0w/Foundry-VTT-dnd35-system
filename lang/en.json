@@ -194,6 +194,11 @@
   "DND35E.SaveRef": "Reflex",
   "DND35E.SaveWil": "Will",
 
+  "DND35E.SaveDisbelief": "Disbelief",
+  "DND35E.SaveHalf": "Half",
+  "DND35E.SaveNegate": "Negate",
+  "DND35E.SavePartial": "Partial",
+
   "DND35E.SchoolAbj": "Abjuration",
   "DND35E.SchoolCon": "Conjuration",
   "DND35E.SchoolDiv": "Divination",

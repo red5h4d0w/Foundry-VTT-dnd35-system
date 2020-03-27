@@ -56,4 +56,27 @@
     </div>
 </div>
 
+{{!-- Saving Throw --}}
+<div class="form-group select-select">
+    <label>Saving Throw</label>
+    <div class="form-fields">
+        <select name="data.save.name">
+            {{#select data.save.name}}
+            <option value=""></option>
+            {{#each config.saves as |name id|}}
+            <option value="{{id}}">{{localize name}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+        <select name="data.save.type">
+            {{#select data.save.name}}
+            <option value=""></option>
+            {{#each config.saveTypes as |name id}}
+            <option value="{{id}}">{{localize name}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+</div>
+
 {{/if}}

@@ -92,6 +92,14 @@ DND35E.saves = {
   "wil": "DND35E.SaveWil"
 };
 
+DND35E.saveTypes = {
+  "none": "DND35E.None",
+  "partial": "DND35E.SavePartial",
+  "half": "DND35E.SaveHalf",
+  "negate": "DND35E.SaveNegate",
+  "disbelief": "DND35E.SaveDisbelief"
+};
+
 DND35E.baseAttackBonus = {
   "bab": "DND35E.BAB"
 }
