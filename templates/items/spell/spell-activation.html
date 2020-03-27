@@ -6,7 +6,7 @@
         <select name="data.activation.type">
             {{#select data.activation.type}}
             {{#each config.abilityActivationTypes as |name key|}}
-            <option value="{{key}}">{{name}}</option>
+            <option value="{{key}}">{{localize name}}</option>
             {{/each}}
             {{/select}}
         </select>
