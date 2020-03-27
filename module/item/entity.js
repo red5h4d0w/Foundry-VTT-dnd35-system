@@ -141,7 +141,6 @@ export class Item35e extends Item {
       labels.components = Object.entries(data.components).map(c => {
         c[1] === true ? c[0].titleCase().slice(0,1) : null
       }).filterJoin(",");
-      console.log(data)
       this.setSpellRange(data.range);
     }
 
