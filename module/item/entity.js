@@ -216,7 +216,7 @@ export class Item35e extends Item {
   }
 
   setSpellRange(){
-    range = this.data.data.range;
+    range = this.data.range;
     if (range.type === "close"){
       range.base = 25;
       range.bonus = 2.5;
