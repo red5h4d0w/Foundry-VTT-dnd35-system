@@ -606,11 +606,12 @@
       "school": "",
       "components": {
         "value": "",
-        "vocal": false,
-        "somatic": false,
-        "material": false,
-        "ritual": false,
-        "concentration": false
+        "D": false,
+        "F": false,
+        "V": false,
+        "S": false,
+        "M": false,
+        "X": false
       },
       "materials": {
         "value": "",

@@ -30,8 +30,8 @@
 
     {{!-- Item Sheet Navigation --}}
     <nav class="sheet-navigation tabs" data-group="primary">
-        <a class="item active" data-tab="description">{{ localize "DND5E.Description" }}</a>
-        <a class="item" data-tab="details">{{ localize "DND5E.Details" }}</a>
+        <a class="item active" data-tab="description">{{ localize "DND35E.Description" }}</a>
+        <a class="item" data-tab="details">{{ localize "DND35E.Details" }}</a>
     </nav>
 
     {{!-- Item Sheet Body --}}
@@ -46,11 +46,11 @@
 
             {{!-- Spell Level --}}
             <div class="form-group">
-                <label>Spell Level</label>
+                <label>{{localize "DND35E.SpellLevel"}}</label>
                 <select name="data.level" data-dtype="Number">
                     {{#select data.level}}
                     {{#each config.spellLevels as |name lvl|}}
-                    <option value="{{lvl}}">{{name}}</option>
+                    <option value="{{lvl}}">{{localize name}}</option>
                     {{/each}}
                     {{/select}}
                 </select>
@@ -58,11 +58,11 @@
 
             {{!-- Spell School --}}
             <div class="form-group">
-                <label>Spell School</label>
+                <label>{{localize "DND35E.SpellSchool"}}</label>
                 <select name="data.school">
                     {{#select data.school}}
                     {{#each config.spellSchools as |name sch|}}
-                    <option value="{{sch}}">{{name}}</option>
+                    <option value="{{sch}}">{{localize name}}</option>
                     {{/each}}
                     {{/select}}
                 </select>
@@ -70,27 +70,17 @@
 
             {{!-- Spell Components --}}
             <div class="spell-components form-group stacked">
-                <label>Spell Components</label>
+                <label>  {{ localize "DND35E.SpellComponents"}}</label>
+                {{#each config.spellComponents as | name id |}}
                 <label class="checkbox">
-                    <input type="checkbox" name="data.components.vocal" {{checked data.components.vocal}}/> Vocal
+                    <input type="checkbox" name="data.components.{{id}}" {{checked (lookup ../data.components [id]}}/> {{localize name}}
                 </label>
-                <label class="checkbox">
-                    <input type="checkbox" name="data.components.somatic" {{checked data.components.somatic}}/> Somatic
-                </label>
-                <label class="checkbox">
-                    <input type="checkbox" name="data.components.material" {{checked data.components.material}}/> Material
-                </label>
-                <label class="checkbox">
-                    <input type="checkbox" name="data.components.concentration" {{checked data.components.concentration}}/> Concentration
-                </label>
-                <label class="checkbox">
-                    <input type="checkbox" name="data.components.ritual" {{checked data.components.ritual}}/> Ritual
-                </label>
+           
             </div>
 
             {{!-- Material Components --}}
             <div class="form-group stacked">
-                <label>Spellcasting Materials</label>
+                <label>{{ localize "DND35E.SpellMaterials"}}</label>
                 <input class="materials" type="text" name="data.materials.value" value="{{data.materials.value}}"/>
                 {{#if data.materials.value}}
                 <div class="spell-materials flexrow">
@@ -104,48 +94,16 @@
                 {{/if}}
             </div>
 
-            {{!-- Preparation Mode --}}
-            <div class="form-group input-select">
-                <label>Spell Preparation Mode</label>
-                <div class="form-fields">
-                    <label class="checkbox prepared">
-                        Prepared <input type="checkbox" name="data.preparation.prepared" {{checked data.preparation.prepared}}/>
-                    </label>
-                    <select name="data.preparation.mode">
-                        {{#select data.preparation.mode}}
-                        <option value=""></option>
-                        {{#each config.spellPreparationModes as |name key|}}
-                        <option value="{{key}}">{{name}}</option>
-                        {{/each}}
-                        {{/select}}
-                    </select>
-                </div>
-            </div>
-
             <h3 class="form-header">Spell Casting</h3>
 
             {{!-- Item Activation Template --}}
-            {{> "systems/dnd5e/templates/items/parts/item-activation.html"}}
+            {{> "systems/dnd35e/templates/items/parts/item-activation.html"}}
 
             <h3 class="form-header">Spell Effects</h3>
 
             {{!-- Item Action Template --}}
-            {{> "systems/dnd5e/templates/items/parts/item-action.html"}}
+            {{> "systems/dnd35e/templates/items/parts/item-action.html"}}
 
-            {{!-- Spell Level Scaling --}}
-            <div class="form-group">
-                <label>Level Scaling</label>
-                <div class="form-fields">
-                    <select name="data.scaling.mode">
-                        {{#select data.scaling.mode}}
-                        {{#each config.spellScalingModes as |name key|}}
-                        <option value="{{key}}">{{name}}</option>
-                        {{/each}}
-                        {{/select}}
-                    </select>
-                    <input type="text" name="data.scaling.formula" value="{{data.scaling.formula}}" placeholder="Scaling Formula"/>
-                </div>
-            </div>
         </div>
     </section>
 </form>
