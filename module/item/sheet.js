@@ -60,7 +60,7 @@ export class ItemSheet35e extends ItemSheet {
     data.hasAttackRoll = this.item.hasAttack;
     data.isHealing = data.item.data.actionType === "heal";
     data.isFlatDC = getProperty(data.item.data, "save.scaling") === "flat";
-    data.hasCustomRange = this.item.data.data.range.type === "custom";
+    data.hasCustomRange = data.item.data.range.type === "custom";
     return data;
   }
 
