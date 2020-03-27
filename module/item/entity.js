@@ -102,7 +102,7 @@ export class Item35e extends Item {
    */
   get hasAreaTarget() {
     const target = this.data.data.target;
-    return target && (target.type in CONFIG.DND5E.areaTargetTypes);
+    return target && (target.type in CONFIG.DND35E.areaTargetTypes);
   }
 
   /* -------------------------------------------- */
@@ -131,7 +131,7 @@ export class Item35e extends Item {
     const itemData = this.data;
     const actorData = this.actor ? this.actor.data : {};
     const data = itemData.data;
-    const C = CONFIG.DND5E;
+    const C = CONFIG.DND35E;
     const labels = {};
 
     // Spell Level,  School, and Components
@@ -248,7 +248,7 @@ export class Item35e extends Item {
 
     // Render the chat card template
     const templateType = ["tool", "consumable"].includes(this.data.type) ? this.data.type : "item";
-    const template = `systems/dnd5e/templates/chat/${templateType}-card.html`;
+    const template = `systems/dnd35e/templates/chat/${templateType}-card.html`;
     const html = await renderTemplate(template, templateData);
 
     // Basic chat message data
@@ -463,7 +463,7 @@ export class Item35e extends Item {
   rollAttack(options={}) {
     const itemData = this.data.data;
     const actorData = this.actor.data.data;
-    const flags = this.actor.data.flags.dnd5e || {};
+    const flags = this.actor.data.flags.dnd35e || {};
     if ( !this.hasAttack ) {
       throw new Error("You may not place an Attack Roll with this Item.");
     }
@@ -730,7 +730,7 @@ export class Item35e extends Item {
       event: options.event,
       parts: parts,
       data: rollData,
-      template: "systems/dnd5e/templates/chat/tool-roll-dialog.html",
+      template: "systems/dnd35e/templates/chat/tool-roll-dialog.html",
       title: title,
       speaker: ChatMessage.getSpeaker({actor: this.actor}),
       flavor: `${this.name} - Tool Check`,

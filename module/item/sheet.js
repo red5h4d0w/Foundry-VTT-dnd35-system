@@ -71,8 +71,7 @@ export class ItemSheet35e extends ItemSheet {
    * @private
    */
   _getItemStatus(item) {
-    if ( item.type === "spell" ) return item.data.preparation.prepared ? "Prepared" : "Unprepared";
-    else if ( ["weapon", "equipment"].includes(item.type) ) return item.data.equipped ? "Equipped" : "Unequipped";
+    if ( ["weapon", "equipment"].includes(item.type) ) return item.data.equipped ? "Equipped" : "Unequipped";
     else if ( item.type === "tool" ) return item.data.proficient ? "Proficient" : "Not Proficient";
   }
 
@@ -96,9 +95,7 @@ export class ItemSheet35e extends ItemSheet {
     else if ( item.type === "spell" ) {
       props.push(
         labels.components,
-        labels.materials,
-        item.data.components.concentration ? "Concentration" : null,
-        item.data.components.ritual ? "Ritual" : null
+        labels.materials
       )
     }
 
