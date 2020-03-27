@@ -73,7 +73,7 @@
                 <label>  {{ localize "DND35E.SpellComponents"}}</label>
                 {{#each config.spellComponents as | name id |}}
                 <label class="checkbox">
-                    <input type="checkbox" name="data.components.{{id}}" {{checked (lookup ../data.components [id]}}/> {{localize name}}
+                    <input type="checkbox" name="data.components.{{id}}" {{checked (lookup ../data.components [id])}}/> {{localize name}}
                 </label>
            
             </div>
