@@ -536,7 +536,8 @@ DND35E.spellSchools = {
   "evo": "DND35E.SchoolEvo", // Evocation
   "ill": "DND35E.SchoolIll", // Illusion
   "nec": "DND35E.SchoolNec", // Necromancy
-  "trs": "DND35E.SchoolTrs" // Transmutation
+  "trs": "DND35E.SchoolTrs", // Transmutation
+  "uni": "DND35E.SchoolUni" // Universal
 };
 
 // Spell Levels
