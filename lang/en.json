@@ -296,6 +296,7 @@
 
   "DND35E.SRHarmless": "Yes (Harmless)",
   "DND35E.SRObject": "Yes (Object)",
+  "DND35E.SRHarmlessObject": "Yes (Harmless, Object)",
 
   "DND35E.TargetAlly": "Ally",
   "DND35E.TargetCreature": "Creature",
