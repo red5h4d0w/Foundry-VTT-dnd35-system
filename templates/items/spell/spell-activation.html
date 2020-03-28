@@ -23,12 +23,12 @@
         <input type="text" name="data.range.base" value="{{data.range.base}}" data-dtype="Number" placeholder="Base"/>
         <span class="sep">+</span>
         <input type="text" name="data.range.bonus" value="{{data.range.bonus}}" data-dtype="Number" placeholder="Bonus"/>
-        <label>/Caster Level</label>
+        <span class="sep">/Caster Level</span>
         {{else}}
         <input type="text" name="data.range.base" value="{{data.range.base}}" data-dtype="Number" placeholder="Base" readonly/>
         <span class="sep">+</span>
         <input type="text" name="data.range.bonus" value="{{data.range.bonus}}" data-dtype="Number" placeholder="Bonus" readonly/>
-        <label>/Caster Level</label>
+        <span class="sep">/Caster Level</span>
         {{/if}}
         <select name="data.range.type">
             {{#select data.range.type}}
@@ -46,6 +46,9 @@
     <label>Duration</label>
     <div class="form-fields">
         <input type="text" name="data.duration.quantity" value="{{data.duration.quantity}}" data-dtype="Number" placeholder="-"/>
+        <span class="sep">+</span>
+        <input type="text" name="data.duration.bonus" value="{{data.duration.bonus}}" data-dtype="Number" placeholder="Bonus"/>
+        <span class="sep">/Caster Level</span>
         <select name="data.duration.unit">
             {{#select data.duration.unit}}
             <option value=""></option>

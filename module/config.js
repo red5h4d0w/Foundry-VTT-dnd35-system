@@ -496,11 +496,11 @@ DND35E.weaponProperties = {
 
 // Spell Components
 DND35E.spellComponents = {
-  "D": "DND35E.ComponentDivineFocus",
-  "F": "DND35E.ComponentFocus",
   "V": "DND35E.ComponentVerbal", 
   "S": "DND35E.ComponentSomatic",
   "M": "DND35E.ComponentMaterial",
+  "F": "DND35E.ComponentFocus",
+  "F": "DND35E.ComponentFocus",
   "X": "DND35E.ComponentXP"
 };
 

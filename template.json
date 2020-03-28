@@ -619,6 +619,7 @@
       },
       "duration":{
         "quantity": null,
+        "bonus": null,
         "unit": ""
       },
       "materials": {
