@@ -500,7 +500,7 @@ DND35E.spellComponents = {
   "S": "DND35E.ComponentSomatic",
   "M": "DND35E.ComponentMaterial",
   "F": "DND35E.ComponentFocus",
-  "F": "DND35E.ComponentFocus",
+  "D": "DND35E.ComponentDivineFocus",
   "X": "DND35E.ComponentXP"
 };
 
