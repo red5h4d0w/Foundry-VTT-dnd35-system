@@ -93,7 +93,9 @@
         <select name="data.spellresistance">
             {{#select data.spellresistance}}
             <option value=""></option>
-            {{#each config.spellResistance}}
+            {{#each config.spellResistance as | name key |}}
+            <option value="{{key}}">{{ localize name }}</option>
+            {{/each}}
             {{/select}}
         </select>
     </div>
