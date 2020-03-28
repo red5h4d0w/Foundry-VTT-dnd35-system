@@ -294,6 +294,9 @@
   "DND35E.SpellPrepared": "Prepared",
   "DND35E.SpellUnpreprared": "Unprepared",
 
+  "DND35E.SRHarmless": "Yes (Harmless)",
+  "DND35E.SRObject": "Yes (Object)",
+
   "DND35E.TargetAlly": "Ally",
   "DND35E.TargetCreature": "Creature",
   "DND35E.TargetCylinder": "Cylinder",
@@ -373,6 +376,7 @@
   "DND35E.Inspiration": "Inspiration",
   "DND35E.Features": "Features",
   "DND35E.Languages": "Languages",
+  "DND35E.No": "No",
   "DND35E.None": "None",
   "DND35E.RestS": "S. Rest",
   "DND35E.RestL": "L. Rest",
@@ -393,6 +397,7 @@
   "DND35E.Versatile": "Versatile",
   "DND35E.Proficiency": "Proficiency",
   "DND35E.Weight": "Weight",
+  "DND35E.Yes": "Yes",
 
 
 

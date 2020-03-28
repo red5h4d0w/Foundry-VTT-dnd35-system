@@ -55,6 +55,9 @@
             {{#each config.timePeriods as |unit key|}}
             <option value="{{key}}">{{ localize unit }}</option>
             {{/each}}
+            {{#each config.spellDuration as | name key |}}
+            <option value="{{key}">{{ localize name }}</option>}
+            {{/each}}
             {{/select}}
         </select>
     </div>
@@ -82,5 +85,19 @@
         </select>
     </div>
 </div>
+
+{{!-- Spell Resistance --}}
+<div class="form-group select">
+    <label>Spell Resistance</label>
+    <div class="form-fields">
+        <select name="data.spellresistance">
+            {{#select data.spellresistance}}
+            <option value=""></option>
+            {{#each config.spellResistance}}
+            {{/select}}
+        </select>
+    </div>
+</div>
+
 
 {{/if}}

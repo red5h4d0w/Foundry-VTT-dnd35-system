@@ -504,6 +504,10 @@ DND35E.spellComponents = {
   "X": "DND35E.ComponentXP"
 };
 
+DND35E.spellDuration = {
+  "con": "DND35E.SkillCon"
+};
+
 DND35E.spellRange = {
   "pers": "DND35E.RangePersonal",
   "touch": "DND35E.RangeTouch",
@@ -513,6 +517,13 @@ DND35E.spellRange = {
   "unlim": "DND35E.RangeUnlimited",
   "custom": "DND35E.Custom"
 
+};
+
+DND35E.spellResistance = {
+  "yes": "DND35E.Yes",
+  "no": "DND35E.No",
+  "yesharmless": "DND35E.SRHarmless",
+  "yesobject": "DND35E.SRObject"
 };
 
 // Spell Schools
