@@ -60,7 +60,7 @@ export class ItemSheet35e extends ItemSheet {
     data.hasAttackRoll = this.item.hasAttack;
     data.isHealing = data.item.data.actionType === "heal";
     data.isFlatDC = getProperty(data.item.data, "save.scaling") === "flat";
-    data.hasCustomRange = ((typeof data.item.data.range) !== undefined)? data.item.data.range.type === "custom" : false;
+    data.hasCustomRange = this.hasCustomRange(data);
     return data;
   }
 
@@ -175,6 +175,16 @@ export class ItemSheet35e extends ItemSheet {
   }
 
   /* -------------------------------------------- */
+
+  hasCustomRange(data) {
+    try{
+      result = data.item.range.type === "custom";
+      return result;
+    }
+    catch(err){
+      return false;
+    }
+  };
 
   /**
    * Add or remove a damage part from the damage formula
