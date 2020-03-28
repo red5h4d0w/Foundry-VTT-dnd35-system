@@ -524,7 +524,7 @@ DND35E.spellResistance = {
   "no": "DND35E.No",
   "yesharmless": "DND35E.SRHarmless",
   "yesobject": "DND35E.SRObject",
-  "yesharmlessobject": "DND35E.SRHramlessObject"
+  "yesharmlessobject": "DND35E.SRHarmlessObject"
 };
 
 // Spell Schools
