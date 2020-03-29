@@ -33,7 +33,7 @@ export class ItemSheet35e extends ItemSheet {
    */
   get template() {
     const path = "systems/dnd35e/templates/items";
-    console.log(`${path}/${this.item.data.type}/${this.item.data.type}-sheet.html`)
+    console.log(`${path}/${this.item.data.type}/${this.item.data.type}-sheet.html`);
     return `${path}/${this.item.data.type}/${this.item.data.type}-sheet.html`;
   }
 
@@ -187,8 +187,8 @@ export class ItemSheet35e extends ItemSheet {
     catch(err){
       console.log(err);
       return false;
-    }
-  }
+    };
+  };
 
   /**
    * Add or remove a damage part from the damage formula
