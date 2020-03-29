@@ -177,7 +177,7 @@ export class ItemSheet35e extends ItemSheet {
 
   /* -------------------------------------------- */
 
-  hasCustomRange(data) {
+  get hasCustomRange(data) {
     try{
       console.log(data.item.data.range.type == "custom");
       range = String(data.item.data.range.type);
@@ -188,7 +188,7 @@ export class ItemSheet35e extends ItemSheet {
       console.log(err);
       return false;
     }
-  };
+  }
 
   /**
    * Add or remove a damage part from the damage formula
