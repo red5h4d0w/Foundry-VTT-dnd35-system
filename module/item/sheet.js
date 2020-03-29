@@ -178,16 +178,13 @@ export class ItemSheet35e extends ItemSheet {
   /* -------------------------------------------- */
 
   get hasCustomRange() {
-    try{
-      const data = super.getData();
-      range = String(data.item.data.range.type);
-      console.log(range == "custom");
-      result = !!(range == "custom");
-      return result;
-    }
-    catch(err){
-      console.log(err);
+    const data = super.getData();
+    if (typeof data.item.data.range === "undefined"){
       return false;
+
+    }
+    else{
+      return !!(data.item.data.range.type === "custom");
     };
   };
 
