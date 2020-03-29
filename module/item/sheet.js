@@ -181,6 +181,7 @@ export class ItemSheet35e extends ItemSheet {
     try{
       const data = super.getData();
       range = String(data.item.data.range.type);
+      console.log(range == "custom");
       result = !!(range == "custom");
       return result;
     }
