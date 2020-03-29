@@ -178,7 +178,7 @@ export class ItemSheet35e extends ItemSheet {
 
   hasCustomRange(data) {
     try{
-      result = data.item.range.type === "custom";
+      result = data.item.data.range.type === "custom";
       return result;
     }
     catch(err){
