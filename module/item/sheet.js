@@ -61,6 +61,7 @@ export class ItemSheet35e extends ItemSheet {
     data.isHealing = data.item.data.actionType === "heal";
     data.isFlatDC = getProperty(data.item.data, "save.scaling") === "flat";
     data.hasCustomRange = this.hasCustomRange(data);
+    console.log(data);
     return data;
   }
 
@@ -184,6 +185,7 @@ export class ItemSheet35e extends ItemSheet {
       return result;
     }
     catch(err){
+      console.log(err);
       return false;
     }
   };
