@@ -60,7 +60,7 @@ export class ItemSheet35e extends ItemSheet {
     data.hasAttackRoll = this.item.hasAttack;
     data.isHealing = data.item.data.actionType === "heal";
     data.isFlatDC = getProperty(data.item.data, "save.scaling") === "flat";
-    data.hasCustomRange = this.hasCustomRange(data);
+    data.hasCustomRange = this.hasCustomRange;
     console.log(data);
     return data;
   }
@@ -177,9 +177,9 @@ export class ItemSheet35e extends ItemSheet {
 
   /* -------------------------------------------- */
 
-  static get hasCustomRange(data) {
+  get hasCustomRange() {
     try{
-      console.log(data.item.data.range.type == "custom");
+      const data = super.getData();
       range = String(data.item.data.range.type);
       result = !!(range == "custom");
       return result;
