@@ -20,15 +20,15 @@
     <label>Range</label>
     <div class="form-fields">
         {{#if hasCustomRange}}
-        <input type="text" name="data.range.base" value="{{data.range.base}}" data-dtype="Number" placeholder="Base"/>
+        <input type="text" name="data.range.base" value="{{data.range.base}}" data-dtype="Number" placeholder="-"/>
         <span class="sep">+</span>
-        <input type="text" name="data.range.bonus" value="{{data.range.bonus}}" data-dtype="Number" placeholder="Bonus"/>
-        <span class="sep">/Caster Level</span>
+        <input type="text" name="data.range.bonus" value="{{data.range.bonus}}" data-dtype="Number" placeholder="-"/>
+        <span class="sep">/Level</span>
         {{else}}
-        <input type="text" name="data.range.base" value="{{data.range.base}}" data-dtype="Number" placeholder="Base" readonly/>
+        <input type="text" name="data.range.base" value="{{data.range.base}}" data-dtype="Number" placeholder="-" readonly/>
         <span class="sep">+</span>
-        <input type="text" name="data.range.bonus" value="{{data.range.bonus}}" data-dtype="Number" placeholder="Bonus" readonly/>
-        <span class="sep">/Caster Level</span>
+        <input type="text" name="data.range.bonus" value="{{data.range.bonus}}" data-dtype="Number" placeholder="-" readonly/>
+        <span class="sep">/Level</span>
         {{/if}}
         <select name="data.range.type">
             {{#select data.range.type}}
@@ -47,8 +47,8 @@
     <div class="form-fields">
         <input type="text" name="data.duration.quantity" value="{{data.duration.quantity}}" data-dtype="Number" placeholder="-"/>
         <span class="sep">+</span>
-        <input type="text" name="data.duration.bonus" value="{{data.duration.bonus}}" data-dtype="Number" placeholder="Bonus"/>
-        <span class="sep">/Caster Level</span>
+        <input type="text" name="data.duration.bonus" value="{{data.duration.bonus}}" data-dtype="Number" placeholder="-"/>
+        <span class="sep">/Level</span>
         <select name="data.duration.unit">
             {{#select data.duration.unit}}
             <option value=""></option>

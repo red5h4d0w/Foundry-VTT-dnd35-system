@@ -116,6 +116,8 @@ DND35E.abilityActivationTypes = {
   "move": "DND35E.ActionMove",
   "full-round": "DND35E.ActionFullRound",
   "free": "DND35E.ActionFree",
+  "swift": "DND35E.ActionSwift",
+  "immediate": "DND35E.ActionImmediate",
   "rounds": "DND35E.TimeRound",
   "minute": "DND35E.TimeMinute",
   "hour": "DND35E.TimeHour",

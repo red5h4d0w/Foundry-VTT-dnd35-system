@@ -446,6 +446,12 @@
           "dc": null,
           "scaling": "spell"
         }
+      },
+      "physicalItem":{
+        "quantity": 1,
+        "weight": 0,
+        "price": 0,
+        "identified": true
       }
     },
     "backpack": {
@@ -591,15 +597,6 @@
     "loot": {
       "templates": ["itemDescription", "physicalItem"]
     },
-    "physicalitem":{
-      "quantity": 1,
-      "weight": 0,
-      "price": 0,
-      "attuned": false,
-      "equipped": false,
-      "rarity": "",
-      "identified": true
-    },
     "spell": {
       "templates": ["itemDescription", "action"],
       "level": 1,
@@ -634,8 +631,8 @@
       },
       "range": {
         "type": "",
-        "base": 0,
-        "bonus": 0
+        "base": null,
+        "bonus": null
       },
       "scaling": {
         "mode": null,

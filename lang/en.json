@@ -31,8 +31,10 @@
 
   "DND35E.ActionFree": "Free Action",
   "DND35E.ActionFullRound": "Full-Round Action",
+  "DND35E.ActionImmediate": "Immediate Action",
   "DND35E.ActionMove": "Move Action",
   "DND35E.ActionStandard": "Standard Action",
+  "DND35E.ActionSwift": "Swift Action",
 
   "DND35E.ActionMNAK": "Melee Attack",
   "DND35E.ActionRNAK": "Ranged Attack",
