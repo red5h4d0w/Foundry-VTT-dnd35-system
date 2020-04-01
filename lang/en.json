@@ -109,6 +109,9 @@
   "DND35E.ConExhaustion": "Exhaustion",
   "DND35E.ConDiseased": "Diseased",
 
+  "DND35E.ConsumableDetails": "Consumable Details",
+  "DND35E.ConsumableType": "Consumable Type",
+
   "DND35E.ConsumablePotion": "Potion",
   "DND35E.ConsumablePoison": "Poison",
   "DND35E.ConsumableFood": "Food",
@@ -119,7 +122,6 @@
 
   "DND35E.CurrencyPP": "Platinum",
   "DND35E.CurrencyGP": "Gold",
-  "DND35E.CurrencyEP": "Electrum",
   "DND35E.CurrencySP": "Silver",
   "DND35E.CurrencyCP": "Copper",
 

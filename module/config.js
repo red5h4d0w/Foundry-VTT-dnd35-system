@@ -221,8 +221,8 @@ DND35E.consumableTypes = {
   "food": "DND35E.ConsumableFood",
   "scroll": "DND35E.ConsumableScroll",
   "wand": "DND35E.ConsumableWand",
-  "rod": "DND35E.ConsumableRod",
-  "trinket": "DND35E.ConsumableTrinket"
+  "trinket": "DND35E.ConsumableTrinket",
+  "special": "DND35E.Special"
 };
 
 /* -------------------------------------------- */
