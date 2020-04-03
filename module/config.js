@@ -573,7 +573,7 @@ DND35E.proficiencyLevels = {
 /* -------------------------------------------- */
 
 
-DND25E.view = {
+DND35E.view = {
   "icongrid": "DND35E.IconGrid",
   "list": "DND35E.List"
 }
