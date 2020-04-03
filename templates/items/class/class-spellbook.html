@@ -1,0 +1,21 @@
+<div class="inventory-filters spellbook-filters">
+    <div class="form-group spellcasting-ability">
+        <label><h3>Spellcasting Ability</h3></label>
+        <select name="data.attributes.spellcasting" data-type="String">
+            {{#select data.attributes.spellcasting}}
+            <option value="">None</option>
+            {{#each data.abilities as |abl a|}}
+            <option value="{{a}}">{{abl.label}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+
+    <ul class="filter-list flexrow" data-filter="spellbook">
+        <li class="filter-title">{{localize "DND35E.FilterTitle"}}</li>
+        <li class="filter-item" data-filter="action">{{localize "DND35E.FilterAction"}}</li>
+        <li class="filter-item" data-filter="bonus">{{localize "DND35E.FilterBonus"}}</li>
+        <li class="filter-item" data-filter="concentration">{{localize "DND35E.FilterConcentration"}}</li>
+        <li class="filter-item" data-filter="prepared">{{localize "DND35E.FilterPrepared"}}{{#if preparedSpells}} ({{preparedSpells}}){{/if}}</li>
+    </ul>
+</div>

@@ -27,6 +27,7 @@
         <a class="item active" data-tab="description">{{ localize "DND35E.Description" }}</a>
         <a class="item" data-tab="details">{{ localize "DND35E.Details" }}</a>
         <a class="item" data-tab="skills">{{ localize "DND35E.Skills" }}</a>
+        <a class="item" data-tab="spellbook">{{ localize "DND35E.Spellbook" }}</a>
     </nav>
 
     {{!-- Item Sheet Body --}}
@@ -71,5 +72,9 @@
             <br>
             {{/each}}
         </div>
+        {{#if isSpellcaster}}
+        {{!-- Spellbook Tab --}}
+        {{> "systems/dnd35e/templates/items/parts/class-spellbook.html"}}
+        {{/if}}
     </section>
 </form>

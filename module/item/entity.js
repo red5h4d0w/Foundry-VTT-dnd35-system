@@ -76,6 +76,14 @@ export class Item35e extends Item {
   /* -------------------------------------------- */
 
   /**
+   * Is the class a spellcasting class
+   * @return {boolean}
+   */
+  get isSpellCaster() {
+    return !!(this.data.data.spellcasting.value === true)
+  }
+
+  /**
    * Does the Item implement a saving throw as part of its usage
    * @type {boolean}
    */

@@ -48,6 +48,7 @@ export class ItemSheet35e extends ItemSheet {
     data.itemStatus = this._getItemStatus(data.item);
     data.itemProperties = this._getItemProperties(data.item);
     data.isPhysical = data.item.data.hasOwnProperty("quantity");
+    data.isSpellcaster = this.item.isSpellcaster;
 
 
 
@@ -160,6 +161,7 @@ export class ItemSheet35e extends ItemSheet {
     // Modify damage formula
     html.find(".damage-control").click(this._onDamageControl.bind(this));
     // Adds the dialog box to add new item
+    console.log("allo");
     html.find(".add-item").click(this._addItemFromList.bind(this));
   }
 
