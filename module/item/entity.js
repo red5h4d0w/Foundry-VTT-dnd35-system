@@ -156,6 +156,11 @@ export class Item35e extends Item {
       labels.armor = data.armor.value ? `${data.armor.value} AC` : "";
     }
 
+    // Backpack Items
+    else if ( itemData.type === "backpack" ) {
+      data.addItemToBackpack = this.addItemToBackpack
+    }
+
     // Activated Items
     if ( data.hasOwnProperty("activation") ) {
 
@@ -214,6 +219,12 @@ export class Item35e extends Item {
     // Assign labels
     this.labels = labels;
   }
+
+  addItemToBackpack(item){
+    if(this.data.type === "backpack"){
+      this.data.data.content[item.id] = item;
+    };
+  };
 
   setSpellRange(range){
     if (range.type === "close"){
@@ -384,7 +395,7 @@ export class Item35e extends Item {
    */
   _equipmentChatData(data, labels, props) {
     props.push(
-      CONFIG.DND5E.armorTypes[data.armor.type],
+      CONFIG.DND35E.armorTypes[data.armor.type],
       labels.armor || null,
       data.stealth.value ? "Stealth Disadvantage" : null,
     );

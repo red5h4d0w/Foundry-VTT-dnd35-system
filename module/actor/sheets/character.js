@@ -287,8 +287,7 @@ export class ActorSheet35eCharacter extends ActorSheet35e {
     console.log(curr);
     const convert = {
       cp: {into: "sp", each: 10},
-      sp: {into: "ep", each: 5 },
-      ep: {into: "gp", each: 2 },
+      sp: {into: "gp", each: 10 },
       gp: {into: "pp", each: 10}
     };
     for ( let [c, t] of Object.entries(convert) ) {

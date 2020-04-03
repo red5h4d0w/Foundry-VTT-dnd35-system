@@ -115,6 +115,7 @@
   "DND35E.ConsumablePotion": "Potion",
   "DND35E.ConsumablePoison": "Poison",
   "DND35E.ConsumableFood": "Food",
+  "DND35E.ConsumableLightSource": "Light Source",
   "DND35E.ConsumableScroll": "Scroll",
   "DND35E.ConsumableWand": "Wand",
   "DND35E.ConsumableRod": "Rod",
@@ -365,6 +366,7 @@
   "DND35E.Charges": "Charges",
   "DND35E.Charged": "Charged",
   "DND35E.ConImm": "Condition Immunities",
+  "DND35E.Content": "Content",
   "DND35E.Custom": "Custom",
   "DND35E.Damage": "Damage",
   "DND35E.DamImm": "Damage Immunities",
@@ -378,10 +380,12 @@
   "DND35E.Health": "Health",
   "DND35E.Healing": "Healing",
   "DND35E.HealthFormula": "Health Formula",
+  "DND35E.IconGrid": "Icon Grid",
   "DND35E.Inventory": "Inventory",
   "DND35E.Inspiration": "Inspiration",
   "DND35E.Features": "Features",
   "DND35E.Languages": "Languages",
+  "DND35E.List": "List",
   "DND35E.No": "No",
   "DND35E.None": "None",
   "DND35E.RestS": "S. Rest",
@@ -408,7 +412,6 @@
 
 
   "DND35E.HitDice": "Hit Dice",
-  "DND35E.HitDiceUsed": "Hit Dice Used",
   "DND35E.DIALOG.SHORTREST.Prompt": "Take a short rest? On a short rest you may spend remaining Hit Dice and recover primary or secondary resources.",
   "DND35E.DIALOG.SHORTREST.Select": "Select Dice to Roll",
   "DND35E.DIALOG.SHORTREST.NoHd": "No Hit Dice remaining"

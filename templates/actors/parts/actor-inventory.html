@@ -14,11 +14,11 @@
     {{/if}}
 
     <ul class="filter-list flexrow" data-filter="inventory">
-        <li class="filter-title">{{localize "DND5E.FilterTitle"}}</li>
-        <li class="filter-item" data-filter="action">{{localize "DND5E.FilterAction"}}</li>
-        <li class="filter-item" data-filter="bonus">{{localize "DND5E.FilterBonus"}}</li>
-        <li class="filter-item" data-filter="reaction">{{localize "DND5E.FilterReaction"}}</li>
-        <li class="filter-item" data-filter="equipped">{{localize "DND5E.FilterEquipped"}}</li>
+        <li class="filter-title">{{localize "DND35E.FilterTitle"}}</li>
+        <li class="filter-item" data-filter="action">{{localize "DND35E.FilterAction"}}</li>
+        <li class="filter-item" data-filter="bonus">{{localize "DND35E.FilterBonus"}}</li>
+        <li class="filter-item" data-filter="reaction">{{localize "DND35E.FilterReaction"}}</li>
+        <li class="filter-item" data-filter="equipped">{{localize "DND35E.FilterEquipped"}}</li>
     </ul>
 </div>
 
@@ -28,16 +28,16 @@
         <h3 class="item-name flexrow">{{section.label}}</h3>
 
         {{#if ../isCharacter}}
-        <div class="item-detail item-weight">{{localize "DND5E.Weight"}}</div>
+        <div class="item-detail item-weight">{{localize "DND35E.Weight"}}</div>
         {{/if}}
 
-        <div class="item-detail item-uses">{{localize "DND5E.Charges"}}</div>
-        <div class="item-detail item-action">{{localize "DND5E.Usage"}}</div>
+        <div class="item-detail item-uses">{{localize "DND35E.Charges"}}</div>
+        <div class="item-detail item-action">{{localize "DND35E.Usage"}}</div>
 
         {{#if ../owner}}
         <div class="item-controls">
-            <a class="item-control item-create" title='{{localize "DND5E.ItemCreate"}}' {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
-                <i class="fas fa-plus"></i> {{localize "DND5E.Add"}}
+            <a class="item-control item-create" title='{{localize "DND35E.ItemCreate"}}' {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
+                <i class="fas fa-plus"></i> {{localize "DND35E.Add"}}
             </a>
         </div>
         {{/if}}
@@ -51,7 +51,7 @@
                 <h4>
                     {{~#if item.isStack}}({{item.data.quantity}}) {{/if}}
                     {{item.name~}}
-                    {{~#if item.data.attuned}} <i class="fas fa-sun attuned" title={{localize "DND5E.Attuned"}}></i>{{/if}}
+                    {{~#if item.data.attuned}} <i class="fas fa-sun attuned" title={{localize "DND35E.Attuned"}}></i>{{/if}}
                 </h4>
             </div>
 

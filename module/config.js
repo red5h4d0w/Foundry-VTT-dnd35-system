@@ -218,6 +218,7 @@ DND35E.armorTypes = DND35E.equipmentTypes;
 DND35E.consumableTypes = {
   "potion": "DND35E.ConsumablePotion",
   "poison": "DND35E.ConsumablePoison",
+  "lightsource": "DND35E.ConsumableLightSource",
   "food": "DND35E.ConsumableFood",
   "scroll": "DND35E.ConsumableScroll",
   "wand": "DND35E.ConsumableWand",
@@ -570,6 +571,12 @@ DND35E.proficiencyLevels = {
 };
 
 /* -------------------------------------------- */
+
+
+DND25E.view = {
+  "icongrid": "DND35E.IconGrid",
+  "list": "DND35E.List"
+}
 
 
 // Condition Types

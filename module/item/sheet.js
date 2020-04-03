@@ -61,7 +61,8 @@ export class ItemSheet35e extends ItemSheet {
     data.isHealing = data.item.data.actionType === "heal";
     data.isFlatDC = getProperty(data.item.data, "save.scaling") === "flat";
     data.hasCustomRange = this.hasCustomRange;
-    console.log(data);
+    data.hasGridView = this.hasGridView;
+    data.hasListView = this.hasListView;
     return data;
   }
 
@@ -74,7 +75,6 @@ export class ItemSheet35e extends ItemSheet {
    */
   _getItemStatus(item) {
     if ( ["weapon", "equipment"].includes(item.type) ) return item.data.equipped ? "Equipped" : "Unequipped";
-    else if ( item.type === "tool" ) return item.data.proficient ? "Proficient" : "Not Proficient";
   }
 
   /* -------------------------------------------- */
@@ -188,6 +188,27 @@ export class ItemSheet35e extends ItemSheet {
     };
   };
 
+  get hasListView() {
+    const data = super.getData();
+    if (typeof data.item.data.view === "undefined"){
+      return false;
+
+    }
+    else{
+      return !!(data.item.data.view === "list");
+    };
+  };
+  get hasGridView() {
+    const data = super.getData();
+    if (typeof data.item.data.view === "undefined"){
+      return false;
+
+    }
+    else{
+      return !!(data.item.data.view === "icongrid");
+    };
+  };
+
   /**
    * Add or remove a damage part from the damage formula
    * @param {Event} event     The original click event
@@ -213,5 +234,24 @@ export class ItemSheet35e extends ItemSheet {
       damage.parts.splice(Number(li.dataset.damagePart), 1);
       return this.item.update({"data.damage.parts": damage.parts});
     }
-  }
+  }; 
+  async _onDrop(event) {
+    event.preventDefault();
+    const itemdata = super.getData();
+    // Get dropped data
+    let data;
+    try {
+      data = JSON.parse(event.dataTransfer.getData('text/plain'));
+    } catch (err) {
+      return false;
+    }
+
+    console.log("this gets executed")
+    console.log(data)
+    if (itemdata.item.data.type === "backpack") {
+      itemdata.item.data.data.addItemToBackpack(data);
+    };
+    // Call parent on drop logic
+    return super._onDrop(event);
+  };
 }
