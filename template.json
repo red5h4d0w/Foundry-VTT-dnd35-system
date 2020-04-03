@@ -462,7 +462,7 @@
         "weightless": false
       },
       "content": {
-        "view": "",
+        "view": "icongrid",
         "elements": {}
       },
       "currency": {

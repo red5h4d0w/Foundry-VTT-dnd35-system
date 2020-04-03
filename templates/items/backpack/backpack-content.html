@@ -4,7 +4,7 @@
         {{log .}}
         <label>{{localize "DND35E.View"}}</label>
         <select name="data.content.view">
-            {{#select data.capacity.type}}
+            {{#select data.content.view}}
                 {{#each config.view as |name key|}}
                     <option value="{{key}}">{{localize name}}</option>
                 {{/each}}
