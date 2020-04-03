@@ -188,6 +188,7 @@ export class ItemSheet35e extends ItemSheet {
   };
   get hasGridView() {
     const data = super.getData();
+    console.log(data);
     if (typeof data.item.data.view === "undefined"){
       return false;
 
