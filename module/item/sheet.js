@@ -166,15 +166,6 @@ export class ItemSheet35e extends ItemSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
-    // Activate tabs
-    new TabsV2(html.find(".tabs"), {
-      initial: this["_sheetTab"],
-      callback: clicked => {
-        this["_sheetTab"] = clicked.data("tab");
-        this.setPosition();
-      }
-    });
-
     // Modify damage formula
     html.find(".damage-control").click(this._onDamageControl.bind(this));
     // Adds the dialog box to add new item
