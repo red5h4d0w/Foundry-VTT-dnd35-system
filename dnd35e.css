@@ -1035,13 +1035,14 @@
 .dnd35e.sheet.item .loot-header {
   margin-bottom: 10px;
 }
-.dnd35e.sheet.item .content .gridview{
+.dnd35e.sheet.item .content .gridview {
   display: flex;
   flex-wrap: wrap;
-  min-width: 400px;
-  min-height: 400px;
+  min-width: 534px;
+  min-height: 70%;
 }
 .dnd35e.sheet.item .content .gridview .griditem {
+  align-items: center;
   height: 128px;
   width: 128px;
 }
