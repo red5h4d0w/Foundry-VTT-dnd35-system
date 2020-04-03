@@ -178,23 +178,23 @@ export class ItemSheet35e extends ItemSheet {
 
   get hasListView() {
     const data = super.getData();
-    if (typeof data.item.data.view === "undefined"){
+    if (typeof data.item.data.content === "undefined"){
       return false;
 
     }
     else{
-      return !!(data.item.data.view === "list");
+      return !!(data.item.data.content.view === "list");
     };
   };
   get hasGridView() {
     const data = super.getData();
     console.log(data);
-    if (typeof data.item.data.view === "undefined"){
+    if (typeof data.item.data.content === "undefined"){
       return false;
 
     }
     else{
-      return !!(data.item.data.view === "icongrid");
+      return !!(data.item.data.content.view === "icongrid");
     };
   };
 
