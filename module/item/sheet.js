@@ -1,3 +1,5 @@
+import { AbilityUseDialog } from "../apps/ability-use-dialog";
+
 /**
  * Override and extend the core ItemSheet implementation to handle D&D3.5e specific item types
  * @type {ItemSheet}
@@ -165,7 +167,7 @@ export class ItemSheet35e extends ItemSheet {
     super.activateListeners(html);
 
     // Activate tabs
-    new Tabs(html.find(".tabs"), {
+    new TabsV2(html.find(".tabs"), {
       initial: this["_sheetTab"],
       callback: clicked => {
         this["_sheetTab"] = clicked.data("tab");
@@ -175,6 +177,8 @@ export class ItemSheet35e extends ItemSheet {
 
     // Modify damage formula
     html.find(".damage-control").click(this._onDamageControl.bind(this));
+    // Adds the dialog box to add new item
+    html.find(".add-item").click(this._addItemFromList.bind(this));
   }
 
   /* -------------------------------------------- */
@@ -237,6 +241,15 @@ export class ItemSheet35e extends ItemSheet {
       return this.item.update({"data.damage.parts": damage.parts});
     }
   }; 
+
+  async _addItemFromList(event) {
+    event.preventDefault();
+    return new Dialog({
+      "title": "Not implemented yet",
+      "content": "<p>not implemented yet</p>"
+    })
+  }
+
   async _onDrop(event) {
     event.preventDefault();
     const itemdata = super.getData();

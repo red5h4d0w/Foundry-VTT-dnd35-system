@@ -229,10 +229,9 @@ export class ActorSheet35e extends ActorSheet {
    */
   _getProficiencyIcon(level) {
     const icons = {
-      0: '<i class="far fa-circle"></i>',
-      0.5: '<i class="fas fa-adjust"></i>',
-      1: '<i class="fas fa-check"></i>',
-      2: '<i class="fas fa-check-double"></i>'
+      0: '<i class="far fa-square"></i>',
+      0.5: '<i class="fas fa-square"></i>',
+      1: '<i class="far fa-check-square"></i>'
     };
     return icons[level];
   }
