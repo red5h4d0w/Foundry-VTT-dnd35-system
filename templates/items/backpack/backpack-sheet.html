@@ -53,7 +53,7 @@
 				<label>{{localize 'DND35E.ItemContainerCapacityType'}}</label>
 				<select name="data.capacity.type">
 					{{#select data.capacity.type}}
-						{{#each config.itemCapacityTypes as |name key]}}
+						{{#each config.itemCapacityTypes as |name key|}}
 							<option value="{{key}}">{{localize name}}</option>
 						{{/each}}
 					{{/select}}
