@@ -1,4 +1,4 @@
-import { AbilityUseDialog } from "../apps/ability-use-dialog";
+import { AbilityUseDialog } from "../apps/ability-use-dialog.js";
 
 /**
  * Override and extend the core ItemSheet implementation to handle D&D3.5e specific item types
