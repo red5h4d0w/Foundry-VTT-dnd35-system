@@ -5,17 +5,7 @@ import { AbilityUseDialog } from "../apps/ability-use-dialog.js";
  * @type {ItemSheet}
  */
 export class ItemSheet35e extends ItemSheet {
-  constructor(...args) {
-    super(...args);
 
-    /**
-     * The tab being browsed
-     * @type {string}
-     */
-    this._sheetTab = null;
-  }
-
-  /* -------------------------------------------- */
 
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
@@ -23,7 +13,8 @@ export class ItemSheet35e extends ItemSheet {
       height: 420,
       classes: ["dnd35e", "sheet", "item"],
       resizable: false,
-      scrollY: [".tab.details"]
+      scrollY: [".tab.details"],
+      tabs: [{navSelector: ".tabs", contentSelector: ".sheet-body", initial: "description"}]
     });
   }
 
@@ -131,7 +122,7 @@ export class ItemSheet35e extends ItemSheet {
 
   /** @override */
   setPosition(position={}) {
-    position.height = this._sheetTab === "details" ? "auto" : this.options.height;
+    position.height = this._tabs[0].active === "details" ? "auto" : this.options.height;
     return super.setPosition(position);
   }
 
