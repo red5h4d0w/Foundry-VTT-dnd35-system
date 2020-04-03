@@ -1038,10 +1038,12 @@
 .dnd35e.sheet.item .content .gridview{
   display: flex;
   flex-wrap: wrap;
+  min-width: 400px;
+  min-height: 400px;
 }
 .dnd35e.sheet.item .content .gridview .griditem {
-  height: 64px;
-  width: 64px;
+  height: 128px;
+  width: 128px;
 }
 /* ----------------------------------------- */
 /*  Chat Cards

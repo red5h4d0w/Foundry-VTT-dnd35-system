@@ -10,17 +10,18 @@
                 {{/each}}
             {{/select}}
         </select>
-        {{#if hasGridView}}
-        <div class="gridview">
-            {{#each data.content.elements as |elememt id|}}
-            <div  class="griditem">
-
-            </div>
-            {{/each}}
-            <div class="griditem create">
-                <i class="fas fa-plus-square"></i>
-            </div>
-        </div>
-        {{/if}}
     </div>
+    {{#if hasGridView}}
+    <div class="gridview">
+        {{#each data.content.elements as |elememt id|}}
+        <div  class="griditem">
+
+        </div>
+        {{/each}}
+        <div class="griditem create">
+            <i class="fas fa-plus-square"></i>
+        </div>
+    </div>
+    {{/if}}
+
 </div>
