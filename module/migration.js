@@ -224,7 +224,7 @@ const _migrateSpellbook = function(item,updateData) {
 };
 const _migrateStoredItems = function(item,updateData) {
   const storedItems = item.storedItems;
-  if ( spellbook ) return updateData;
+  if ( storedItems ) return updateData;
   updateData["storedItems"] = null;
   return updateData;
 };
