@@ -107,7 +107,7 @@ Hooks.once("ready", function() {
     }
     migrations.migrateWorld();
   }
-
+});
 
 /* -------------------------------------------- */
 /*  Canvas Initialization                       */
