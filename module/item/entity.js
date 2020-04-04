@@ -282,7 +282,9 @@ export class Item35e extends Item {
 
   addItemToBackpack(item){
     if(this.data.type === "backpack"){
-      let itemToAdd = game.data.items.find(a => a._id === item.id);
+      //Creates a copy the item that is to be added
+      let itemToAdd = Object.assign({},game.data.items.find(a => a._id === item.id));
+      debugger;
       this.createEmbeddedEntity(itemToAdd.type, itemToAdd);
     };
   };
