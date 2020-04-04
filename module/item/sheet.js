@@ -162,7 +162,7 @@ export class ItemSheet35e extends ItemSheet {
     html.find(".damage-control").click(this._onDamageControl.bind(this));
     // Adds the dialog box to add new item
     console.log("allo");
-    html.find(".add-item").click(alert("bonjour"));
+    html.find(".add-item").click(function(){alert("bonjour");});
   }
 
   /* -------------------------------------------- */
