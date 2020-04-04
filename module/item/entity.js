@@ -25,9 +25,9 @@ export class Item35e extends Item {
   prepareEmbeddedEntities() {
     // Index existing item instances - do this to avoid re-creating Item instances if possible
     debugger;
-    this.storedItems = this.storedItems || [];
-    this.spellbook = this.spellbook || [];
-    const existing = (this.storedItems || []).reduce((obj, i) => {
+    this.data.storedItems = this.data.storedItems || [];
+    this.data.spellbook = this.data.spellbook || [];
+    const existing = (this.data.storedItems || []).reduce((obj, i) => {
       obj[i.id] = i;
       return obj;
     }, {});
@@ -50,8 +50,8 @@ export class Item35e extends Item {
       }
       else return Item.createOwned(i, this);
     });
-    this.spellbook = spellbook;
-    this.storedItems = storedItems;
+    this.data.spellbook = spellbook;
+    this.data.storedItems = storedItems;
   };
 
 
