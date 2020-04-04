@@ -240,7 +240,7 @@ export class ItemSheet35e extends ItemSheet {
 
   async _onDrop(event) {
     event.preventDefault();
-    a = super.getData();
+    let a = super.getData();
     // Get dropped data
     console.log(event);
     let data;
