@@ -242,6 +242,7 @@ export class ItemSheet35e extends ItemSheet {
     event.preventDefault();
     const itemdata = super.getData();
     // Get dropped data
+    console.log(event);
     let data;
     data = JSON.parse(event.dataTransfer.getData('text/plain'));
     console.log("this gets executed");
