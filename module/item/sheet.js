@@ -240,13 +240,13 @@ export class ItemSheet35e extends ItemSheet {
 
   async _onDrop(event) {
     event.preventDefault();
-    let a = this.getData();
+    let a = this.item;
     // Get dropped data
     const item = JSON.parse(event.originalEvent.dataTransfer.getData('text/plain'));
     console.log("this gets executed");
     console.log(a);
-    if (a.item.type === "backpack") {
-      a.item.addItemToBackpack(item);
+    if (a.type === "backpack") {
+      a.addItemToBackpack(item);
     };
     return;
   };
