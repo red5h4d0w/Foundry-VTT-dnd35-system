@@ -463,7 +463,7 @@
       },
       "content": {
         "view": "icongrid",
-        "elements": {}
+        "elements": []
       },
       "currency": {
         "cp": 0,
