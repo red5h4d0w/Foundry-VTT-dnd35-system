@@ -1046,6 +1046,9 @@
   height: 32px;
   width: 32px;
 }
+.dnd35e.sheet.item .content .gridview .griditem img {
+  width: 100%;
+}
 /* ----------------------------------------- */
 /*  Chat Cards
 /* ----------------------------------------- */
