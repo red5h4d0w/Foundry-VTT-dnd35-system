@@ -242,10 +242,9 @@ export class ItemSheet35e extends ItemSheet {
     event.preventDefault();
     let a = super.getData();
     // Get dropped data
-    console.log(event);
     const item = JSON.parse(event.originalEvent.dataTransfer.getData('text/plain'));
     console.log("this gets executed");
-    console.log(item);
+    console.log(a);
     if (a.item.data.type === "backpack") {
       a.item.data.data.addItemToBackpack(item);
     };
