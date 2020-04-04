@@ -7,6 +7,21 @@ import { AbilityTemplate } from "../pixi/ability-template.js";
  */
 export class Item35e extends Item {
 
+/**
+ * Configure the attributes of the Item35e Entity
+ *
+ * @returns {Entity} baseEntity       The parent class which directly inherits from the Entity interface.
+ * @returns {Collection} collection   The Collection class to which Entities of this type belong.
+ * @returns {Array} embeddedEntities  The names of any Embedded Entities within the Entity data structure.
+ */
+  static get config(){
+    return {
+      baseEntity: Item,
+      collection: game.items,
+      embeddedEntities: {"consumable":"storedItems","loot":"storedItems"}
+    };
+  }
+
   /* -------------------------------------------- */
   /*  Item Properties                             */
   /* -------------------------------------------- */
