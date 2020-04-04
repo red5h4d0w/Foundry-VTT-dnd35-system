@@ -249,7 +249,6 @@ export class ItemSheet35e extends ItemSheet {
     if (a.item.data.type === "backpack") {
       a.item.data.data.addItemToBackpack(item);
     };
-    // Call parent on drop logic
-    return super._onDrop(event);
+    return;
   };
 }
