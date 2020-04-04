@@ -228,10 +228,12 @@ export class ItemSheet35e extends ItemSheet {
 
   async _addItemFromList(event) {
     event.preventDefault();
-    return new Dialog({
+    p = new Dialog({
       "title": "Not implemented yet",
-      "content": "<p>not implemented yet</p>"
-    })
+      "content": "<p>not implemented yet</p>",
+      "buttons": {}
+    });
+    return p.render(true);
   }
 
   async _onDrop(event) {
