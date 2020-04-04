@@ -161,8 +161,7 @@ export class ItemSheet35e extends ItemSheet {
     // Modify damage formula
     html.find(".damage-control").click(this._onDamageControl.bind(this));
     // Adds the dialog box to add new item
-    console.log("allo");
-    html.find(".add-item").click(function(){alert("bonjour");});
+    html.find(".add-item").addEventListener(function(){alert("hello");});
   }
 
   /* -------------------------------------------- */
