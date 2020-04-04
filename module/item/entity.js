@@ -230,7 +230,8 @@ export class Item35e extends Item {
 
   addItemToBackpack(item){
     if(this.data.type === "backpack"){
-      this.data.data.content.element[item.id] = item;
+      console.log(item);
+      this.data.data.content.element[item.entity._id] = item;
     };
   };
 
