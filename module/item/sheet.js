@@ -162,6 +162,8 @@ export class ItemSheet35e extends ItemSheet {
     html.find(".damage-control").click(this._onDamageControl.bind(this));
     // Adds the dialog box to add new item
     html.find(".add-item").on("click",event=>{this._addItemFromList(event);});
+    // Adds the option to drag n drop to icongrid list
+    html.find(".dnd-area").on("drop", event=>{this._onDrop(event);});
   }
 
   /* -------------------------------------------- */

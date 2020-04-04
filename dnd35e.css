@@ -1043,8 +1043,8 @@
 }
 .dnd35e.sheet.item .content .gridview .griditem {
   align-items: center;
-  height: 128px;
-  width: 128px;
+  height: 32px;
+  width: 32px;
 }
 /* ----------------------------------------- */
 /*  Chat Cards
