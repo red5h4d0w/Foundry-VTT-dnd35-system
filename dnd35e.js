@@ -95,6 +95,7 @@ Hooks.once("ready", function() {
 
   // Determine whether a system migration is required and feasible
   const currentVersion = parseFloat(game.settings.get("dnd35e", "systemMigrationVersion"));
+  console.log(currentVersion);
   const COMPATIBLE_MIGRATION_VERSION = 0.117;
   let needMigration = true;
   const canMigrate = currentVersion >= COMPATIBLE_MIGRATION_VERSION;
