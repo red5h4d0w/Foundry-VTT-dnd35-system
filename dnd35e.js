@@ -36,7 +36,7 @@ Hooks.once("init", function() {
     Combat35e,
     Dice35e,
     Item35e,
-    /*migrations,*/
+    migrations,
     rollItemMacro,
   };
 

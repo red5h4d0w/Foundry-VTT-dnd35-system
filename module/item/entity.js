@@ -18,7 +18,7 @@ export class Item35e extends Item {
     return {
       baseEntity: Item,
       collection: game.items,
-      embeddedEntities: {"consumable":"storedItems","loot":"storedItems"}
+      embeddedEntities: {"consumable":"storedItems","loot":"storedItems", "spell":"spellbook"}
     };
   }
 

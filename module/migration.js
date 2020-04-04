@@ -4,7 +4,7 @@
  */
 export const migrateWorld = async function() {
   ui.notifications.info(`Applying D&D35E System Migration for version ${game.system.data.version}. Please stand by.`);
-
+/** 
   // Migrate World Actors
   for ( let a of game.actors.entities ) {
     try {
@@ -17,7 +17,7 @@ export const migrateWorld = async function() {
       console.error(err);
     }
   }
-
+*/
   // Migrate World Items
   for ( let i of game.items.entities ) {
     try {
@@ -30,7 +30,7 @@ export const migrateWorld = async function() {
       console.error(err);
     }
   }
-
+/** 
   // Migrate Actor Override Tokens
   for ( let s of game.scenes.entities ) {
     try {
@@ -51,10 +51,10 @@ export const migrateWorld = async function() {
   for ( let p of packs ) {
     await migrateCompendium(p);
   }
-
+*/
   // Set the migration as complete
   game.settings.set("dnd35e", "systemMigrationVersion", game.system.data.version);
-  ui.notifications.info(`D&D35.E System Migration to version ${game.system.data.version} succeeded!`);
+  ui.notifications.info(`D&D3.5E System Migration to version ${game.system.data.version} succeeded!`);
 };
 
 /* -------------------------------------------- */
@@ -63,7 +63,7 @@ export const migrateWorld = async function() {
  * Apply migration rules to all Entities within a single Compendium pack
  * @param pack
  * @return {Promise}
- */
+ 
 export const migrateCompendium = async function(pack) {
   const entity = pack.metadata.entity;
   if ( !["Actor", "Item", "Scene"].includes(entity) ) return;
@@ -91,7 +91,7 @@ export const migrateCompendium = async function(pack) {
   }
   console.log(`Migrated all ${entity} entities from Compendium ${pack.collection}`);
 };
-
+*/
 /* -------------------------------------------- */
 /*  Entity Type Migration Helpers               */
 /* -------------------------------------------- */
@@ -153,48 +153,19 @@ export const migrateActorData = function(actor) {
 export const migrateItemData = function(item) {
   const updateData = {};
 
-  // Migrate Spell items
-  if (item.type === "spell") {
-    _migrateSpellComponents(item, updateData);
-    _migrateSpellPreparation(item, updateData);
-    _migrateSpellAction(item, updateData);
-  }
-
-  // Migrate Equipment items
-  else if ( item.type === "equipment" ) {
-    _migrateArmor(item, updateData);
-  }
-
-  // Migrate Weapon Items
-  else if ( item.type === "weapon" ) {
-    _migrateWeaponProperties(item, updateData);
-  }
-
-  // Migrate Consumable Items
-  else if ( item.type === "consumable" ) {
-    _migrateConsumableUsage(item, updateData);
-  }
-
-  // Spell and Feat cast times
-  if (["spell", "feat"].includes(item.type)) {
-    _migrateCastTime(item, updateData);
-    _migrateTarget(item, updateData);
-  }
-
   // Migrate General Properties
-  _migrateRange(item, updateData);
-  _migrateDuration(item, updateData);
-  _migrateDamage(item, updateData);
-  _migrateRarity(item, updateData);
+  _migrateSpellbook(item,updateData);
+  _migrateStoredItems(item, updateData);
 
-  // Flatten values and remove deprecated fields
+
+  /**  Flatten values and remove deprecated fields
   const toFlatten = ["ability", "attuned", "consumableType", "equipped", "identified", "quantity", "levels", "price",
     "proficient", "rarity", "requirements", "stealth", "strength", "source", "subclass", "weight", "weaponType",
     "school", "level"
   ];
   _migrateFlattenValues(item, updateData, toFlatten);
   _migrateRemoveDeprecated(item, updateData, toFlatten);
-
+  */
   // Return the migrated update data
   return updateData;
 };
@@ -245,7 +216,18 @@ function _migrateActorBonuses(actor, updateData) {
 }
 
 /* -------------------------------------------- */
-
+const _migrateSpellbook = function(item,updateData) {
+  const spellbook = item.spellbook;
+  if ( spellbook ) return updateData;
+  updateData["spellbook"] = null;
+  return updateData;
+};
+const _migrateStoredItems = function(item,updateData) {
+  const storedItems = item.storedItems;
+  if ( spellbook ) return updateData;
+  updateData["storedItems"] = null;
+  return updateData;
+};
 /**
  * Migrate string format traits with a comma separator to an array of strings
  * @private
@@ -270,43 +252,6 @@ const _migrateActorTraits = function(actor, updateData) {
 
 /* -------------------------------------------- */
 
-/**
- * Migrate consumable items to have
- * @param item
- * @param updateData
- * @private
- */
-const _migrateConsumableUsage = function(item, updateData) {
-  const data = item.data;
-  if ( data.hasOwnProperty("charges") ) {
-    updateData["data.uses.value"] = data.charges.value;
-    updateData["data.uses.max"] = data.charges.max;
-    updateData["data.uses.per"] = "charges";
-    updateData["data.uses.autoUse"] = data.autoUse ? data.autoUse.value : false;
-    updateData["data.uses.autoDestroy"] = data.autoDestroy ? data.autoDestroy.value : false;
-
-    // Set default activation mode for potions
-    updateData["data.activation"] = {type: "action", cost: 1};
-    updateData["data.target.type"] = "self";
-  }
-};
-
-/* -------------------------------------------- */
-
-/**
- * Migrate from a string based armor class like "14" and a separate string armorType to a single armor object which
- * tracks both armor value and type.
- * @private
- */
-const _migrateArmor = function(item, updateData) {
-  const armor = item.data.armor;
-  if ( armor && item.data.armorType && item.data.armorType.value ) {
-    updateData["data.armor.type"] = item.data.armorType.value;
-  }
-};
-
-/* -------------------------------------------- */
-
 
 /**
  * Flatten several attributes which currently have an unnecessarily nested {value} object
@@ -322,51 +267,8 @@ const _migrateFlattenValues = function(ent, updateData, toFlatten) {
 };
 
 /* -------------------------------------------- */
-
-/**
- * Migrate from a string spell casting time like "1 Bonus Action" to separate fields for activation type and numeric cost
- * @private
- */
-const _migrateCastTime = function(item, updateData) {
-  const value = getProperty(item.data, "time.value");
-  if ( !value ) return;
-  const ATS = invertObject(CONFIG.DND35E.abilityActivationTypes);
-  let match = value.match(/([\d]+\s)?([\w\s]+)/);
-  if ( !match ) return;
-  let type = ATS[match[2]] || "none";
-  let cost = match[1] ? Number(match[1]) : 0;
-  if ( type === "none" ) cost = 0;
-  updateData["data.activation"] = {type, cost};
-};
-
-/* -------------------------------------------- */
 /*  General Migrations                          */
 /* -------------------------------------------- */
-
-/**
- * Migrate from a string based damage formula like "2d6 + 4 + 1d4" and a single string damage type like "slash" to
- * separated damage parts with associated damage type per part.
- * @private
- */
-const _migrateDamage = function(item, updateData) {
-
-  // Regular Damage
-  let damage = item.data.damage;
-  if ( damage && damage.value ) {
-    let type = item.data.damageType ? item.data.damageType.value : "";
-    const parts = damage.value.split("+").map(s => s.trim()).map(p => [p, type || null]);
-    if ( item.type === "weapon" && parts.length ) parts[0][0] += " + @mod";
-    updateData["data.damage.parts"] = parts;
-    updateData["data.damage.-=value"] = null;
-  }
-
-  // Versatile Damage
-  const d2 = item.data.damage2;
-  if ( d2 && d2.value ) {
-    let formula = d2.value.replace(/[\-\*\/]/g, "+");
-    updateData["data.damage.versatile"] = formula.split("+").shift() + " + @mod";
-  }
-};
 
 /* -------------------------------------------- */
 
@@ -374,52 +276,6 @@ const _migrateDamage = function(item, updateData) {
  * Migrate from a string duration field like "1 Minute" to separate fields for duration units and numeric value
  * @private
  */
-const _migrateDuration = function(item, updateData) {
-  const TIME = invertObject(CONFIG.DND35E.timePeriods);
-  const dur = item.data.duration;
-  if ( dur && dur.value && !dur.units ) {
-    let match = dur.value.match(/([\d]+\s)?([\w\s]+)/);
-    if ( !match ) return;
-    let units = TIME[match[2]] || "inst";
-    let value = units === "inst" ? "" : Number(match[1]) || "";
-    updateData["data.duration"] = {units, value};
-  }
-};
-
-/* -------------------------------------------- */
-
-/**
- * Migrate from a string range field like "150 ft." to separate fields for units and numeric distance value
- * @private
- */
-const _migrateRange = function(item, updateData) {
-  if ( updateData["data.range"] ) return;
-  const range = item.data.range;
-  if ( range && range.value && !range.units ) {
-    let match = range.value.match(/([\d\/]+)?(?:[\s]+)?([\w\s]+)?/);
-    if ( !match ) return;
-    let units = "none";
-    if ( /ft/i.test(match[2]) ) units = "ft";
-    else if ( /mi/i.test(match[2]) ) units = "mi";
-    else if ( /touch/i.test(match[2]) ) units = "touch";
-    updateData["data.range.units"] = units;
-
-    // Range value
-    if ( match[1] ) {
-      let value = match[1].split("/").map(Number);
-      updateData["data.range.value"] = value[0];
-      if ( value[1] ) updateData["data.range.long"] = value[1];
-    }
-  }
-};
-
-/* -------------------------------------------- */
-
-const _migrateRarity = function(item, updateData) {
-  const rar = item.data.rarity;
-  if ( (rar instanceof Object) && !rar.value ) updateData["data.rarity"] = "Common";
-  else if ( (typeof rar === "string") && (rar === "") ) updateData["data.rarity"] = "Common";
-};
 
 /* -------------------------------------------- */
 
@@ -467,6 +323,9 @@ const _migrateRemoveDeprecated = function(ent, updateData, toFlatten) {
 };
 
 /* -------------------------------------------- */
+
+
+
 
 /**
  * Migrate from a target string like "15 ft. Radius" to a more explicit data model with a value, units, and type
@@ -574,9 +433,6 @@ const _migrateSpellPreparation = function(item, updateData) {
  */
 const _migrateWeaponProperties = function(item, updateData) {
 
-  // Set default activation mode for weapons
-  updateData["data.activation"] = {type: "action", cost: 1};
-
   // Set default action type for weapons
   updateData["data.actionType"] = {
     "simpleM": "mwak",
@@ -590,13 +446,6 @@ const _migrateWeaponProperties = function(item, updateData) {
     "ammo": "rwak"
   }[item.data.weaponType.value] || "mwak";
 
-  // Set default melee weapon range
-  if ( updateData["data.actionType"] === "mwak" ) {
-    updateData["data.range"] = {
-      value: updateData["data.properties.rch"] ? 10 : 5,
-      units: "ft"
-    }
-  }
 
   // Map weapon property strings to boolean flags
   const props = item.data.properties;
