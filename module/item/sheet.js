@@ -243,12 +243,11 @@ export class ItemSheet35e extends ItemSheet {
     let a = super.getData();
     // Get dropped data
     console.log(event);
-    let data;
-    data = JSON.parse(event.dataTransfer.getData('text/plain'));
+    const item = JSON.parse(event.originalEvent.dataTransfer.getData('text/plain'));
     console.log("this gets executed");
-    console.log(data);
+    console.log(item);
     if (a.item.data.type === "backpack") {
-      a.item.data.data.addItemToBackpack(data);
+      a.item.data.data.addItemToBackpack(item);
     };
     // Call parent on drop logic
     return super._onDrop(event);
