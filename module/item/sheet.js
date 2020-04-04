@@ -163,7 +163,7 @@ export class ItemSheet35e extends ItemSheet {
     // Adds the dialog box to add new item
     html.find(".add-item").on("click",event=>{this._addItemFromList(event);});
     // Adds the option to drag n drop to icongrid list
-    html.find(".dnd-area").on("drop", event=>{this._onDrop(event);});
+    html.find(".dnd-area").on("drop", this._onDrop.bind(this));
   }
 
   /* -------------------------------------------- */
@@ -240,7 +240,7 @@ export class ItemSheet35e extends ItemSheet {
 
   async _onDrop(event) {
     event.preventDefault();
-    const itemdata = super.getData();
+    a = event.currentTarget
     // Get dropped data
     console.log(event);
     let data;
