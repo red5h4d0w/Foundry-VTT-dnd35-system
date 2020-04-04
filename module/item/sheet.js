@@ -228,7 +228,7 @@ export class ItemSheet35e extends ItemSheet {
 
   async _addItemFromList(event) {
     event.preventDefault();
-    p = new Dialog({
+    let p = new Dialog({
       "title": "Not implemented yet",
       "content": "<p>not implemented yet</p>",
       "buttons": {}
