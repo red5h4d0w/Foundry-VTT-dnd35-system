@@ -18,14 +18,14 @@ export class Item35e extends Item {
     return {
       baseEntity: Item,
       collection: game.items,
-      embeddedEntities: {"consumable":"storedItems","loot":"storedItems", "spell":"spellbook"}
+      embeddedEntities: {"consumable":"StoredItems","loot":"StoredItems", "spell":"Spellbook"}
     };
   }
 
   prepareEmbeddedEntities() {
     // Index existing item instances - do this to avoid re-creating Item instances if possible
-    this.data.storedItems = this.data.storedItems || [];
-    this.data.spellbook = this.data.spellbook || [];
+    this.data.StoredItems = this.data.StoredItems || [];
+    this.data.Spellbook = this.data.Spellbook || [];
     const existing = (this.data.storedItems || []).reduce((obj, i) => {
       obj[i.id] = i;
       return obj;
@@ -53,6 +53,22 @@ export class Item35e extends Item {
     this.data.storedItems = storedItems;
   };
 
+  async createEmbeddedEntity(embeddedName, createData, options={}) {
+    // Validate inputs
+    const collection = this.getEmbeddedCollection(embeddedName);
+    delete createData._id;
+    // Prepare submission data
+    options["embeddedName"] = embeddedName;
+    const eventName = `create${embeddedName}`;
+    const eventData = {parentId: this._id, data: createData};
+    // Dispatch the update request and return the resolution
+    return SocketInterface.trigger(eventName, eventData, options, {
+      preHook: `preCreate${embeddedName}`,
+      context: this,
+      success: this.collection._createEmbeddedEntity.bind(this.collection),
+      postHook: eventName
+    });
+  };
 
   /* -------------------------------------------- */
   /*  Item Properties                             */
