@@ -219,17 +219,17 @@ function _migrateActorBonuses(actor, updateData) {
 
 /* -------------------------------------------- */
 const _migrateSpellbook = function(item,updateData) {
-  const spellbook = item.spellbook;
-  console.log(spellbook);
-  if ( spellbook ) return updateData;
-  updateData["spellbook"] = [];
+  const Spellbook = item.Spellbook;
+  console.log(Spellbook);
+  if ( Spellbook ) return updateData;
+  updateData["Spellbook"] = [];
   console.log(updateData);
   return updateData;
 };
 const _migrateStoredItems = function(item,updateData) {
-  const storedItems = item.storedItems;
-  if ( storedItems ) return updateData;
-  updateData["storedItems"] = [];
+  const StoredItems = item.StoredItems;
+  if ( StoredItems ) return updateData;
+  updateData["StoredItems"] = [];
   return updateData;
 };
 /**
