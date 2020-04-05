@@ -56,14 +56,15 @@ export class Item35e extends Item {
   async createEmbeddedEntity(embeddedName, createData, options={}) {
     // Validate inputs
     const collection = this.getEmbeddedCollection(embeddedName);
+    const collectionName = this.constructor.config.embeddedEntities[embeddedName];
     delete createData._id;
     // Prepare submission data
     options["embeddedName"] = embeddedName;
-    const eventName = `create${collection}`;
+    const eventName = `create${collectionName}`;
     const eventData = {parentId: this._id, data: createData};
     // Dispatch the update request and return the resolution
     return SocketInterface.trigger(eventName, eventData, options, {
-      preHook: `preCreate${collection}`,
+      preHook: `preCreate${collectionName}`,
       context: this,
       success: this.collection._createEmbeddedEntity.bind(this.collection),
       postHook: eventName
