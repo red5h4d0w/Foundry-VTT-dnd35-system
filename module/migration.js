@@ -22,6 +22,7 @@ export const migrateWorld = async function() {
   for ( let i of game.items.entities ) {
     try {
       const updateData = migrateItemData(i.data);
+      console.log(updateData);
       if ( !isObjectEmpty(updateData) ) {
         console.log(`Migrating Item entity ${i.name}`);
         let s = await i.update(updateData, {enforceTypes: false});
