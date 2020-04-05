@@ -24,8 +24,7 @@ export const migrateWorld = async function() {
       const updateData = migrateItemData(i.data);
       if ( !isObjectEmpty(updateData) ) {
         console.log(`Migrating Item entity ${i.name}`);
-        debugger;
-        s = await i.update(updateData, {enforceTypes: false});
+        let s = await i.update(updateData, {enforceTypes: false});
         console.log(s);
       }
     } catch(err) {
