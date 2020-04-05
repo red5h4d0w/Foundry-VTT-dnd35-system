@@ -162,6 +162,8 @@ export class ItemSheet35e extends ItemSheet {
     html.find(".damage-control").click(this._onDamageControl.bind(this));
     // Adds the dialog box to add new item
     html.find(".add-item").on("click",event=>{this._addItemFromList(event);});
+    // View items in backpack
+    html.find(".view-item").on("click", event=>{this._viewItem(event);})
     // Adds the option to drag n drop to icongrid list
     html.find(".dnd-area").on("drop", this._onDrop.bind(this));
   }
@@ -236,6 +238,14 @@ export class ItemSheet35e extends ItemSheet {
       "buttons": {}
     });
     return p.render(true);
+  }
+
+  async _viewItem(event) {
+    event.preventDefault();
+    //Get clicked item
+    const item = JSON.parse(event.originalEvent.dataTransfer.getData('text/plain'));
+    
+
   }
 
   async _onDrop(event) {

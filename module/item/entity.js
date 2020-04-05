@@ -14,64 +14,6 @@ export class Item35e extends Item {
  * @returns {Collection} collection   The Collection class to which Entities of this type belong.
  * @returns {Array} embeddedEntities  The names of any Embedded Entities within the Entity data structure.
  */
-  static get config(){
-    return {
-      baseEntity: Item,
-      collection: game.items,
-      embeddedEntities: {"consumable":"StoredItems","loot":"StoredItems", "spell":"Spellbook"}
-    };
-  }
-
-  prepareEmbeddedEntities() {
-    // Index existing item instances - do this to avoid re-creating Item instances if possible
-    const existingStoredItems = (this.data.StoredItems || []).reduce((obj, i) => {
-      obj[i.id] = i;
-      return obj;
-    }, {});
-    const existingSpellbook = (this.data.Spellbook || []).reduce((obj, i) => {
-      obj[i.id] = i;
-      return obj;
-    }, {});
-    // Prepare the new Item index
-    const StoredItems = this.data.StoredItems.map(i => {
-      if ( i._id in existingStoredItems ) {
-        const item = existingStoredItems[i._id];
-        item.data = i;
-        item.prepareData();
-        return item;
-      }
-      else return Item.createOwned(i, this);
-    });
-    const Spellbook = this.data.Spellbook.map(i => {
-      if ( i._id in existingSpellbook ) {
-        const item = existingSpellbook[i._id];
-        item.data = i;
-        item.prepareData();
-        return item;
-      }
-      else return Item.createOwned(i, this);
-    });
-    this.data.Spellbook = Spellbook;
-    this.data.StoredItems = StoredItems;
-  };
-
-  async createEmbeddedEntity(embeddedName, createData, options={}) {
-    // Validate inputs
-    const collection = this.getEmbeddedCollection(embeddedName);
-    const collectionName = this.constructor.config.embeddedEntities[embeddedName];
-    delete createData._id;
-    // Prepare submission data
-    options["embeddedName"] = embeddedName;
-    const eventName = `create${collectionName}`;
-    const eventData = {parentId: this._id, data: createData};
-    // Dispatch the update request and return the resolution
-    return SocketInterface.trigger(eventName, eventData, options, {
-      preHook: `preCreate${collectionName}`,
-      context: this,
-      success: this.collection._createEmbeddedEntity.bind(this.collection),
-      postHook: eventName
-    });
-  };
 
   /* -------------------------------------------- */
   /*  Item Properties                             */
@@ -302,9 +244,8 @@ export class Item35e extends Item {
   addItemToBackpack(item){
     if(this.data.type === "backpack"){
       //Creates a copy the item that is to be added
-      let itemToAdd = Object.assign({},game.data.items.find(a => a._id === item.id));
-      debugger;
-      this.createEmbeddedEntity(itemToAdd.type, itemToAdd);
+      const itemToAdd = Object.assign({},game.data.items.find(a => a._id === item.id));
+      this.data.data.content.elements.push(itemToAdd);
     };
   };
 
