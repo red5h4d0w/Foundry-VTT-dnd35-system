@@ -31,7 +31,7 @@ export class Item35e extends Item {
       return obj;
     }, {});
     // Prepare the new Item index
-    const storedItems = this.data.storedItems.map(i => {
+    const StoredItems = this.data.StoredItems.map(i => {
       if ( i._id in existing ) {
         const item = existing[i._id];
         item.data = i;
@@ -40,7 +40,7 @@ export class Item35e extends Item {
       }
       else return Item.createOwned(i, this);
     });
-    const spellbook = this.data.spellbook.map(i => {
+    const Spellbook = this.data.Spellbook.map(i => {
       if ( i._id in existing ) {
         const item = existing[i._id];
         item.data = i;
@@ -49,8 +49,8 @@ export class Item35e extends Item {
       }
       else return Item.createOwned(i, this);
     });
-    this.data.spellbook = spellbook;
-    this.data.storedItems = storedItems;
+    this.data.Spellbook = Spellbook;
+    this.data.StoredItems = StoredItems;
   };
 
   async createEmbeddedEntity(embeddedName, createData, options={}) {
