@@ -22,10 +22,10 @@ export const migrateWorld = async function() {
   for ( let i of game.items.entities ) {
     try {
       const updateData = migrateItemData(i.data);
-      console.log(updateData);
       if ( !isObjectEmpty(updateData) ) {
         console.log(`Migrating Item entity ${i.name}`);
-        await i.update(updateData);
+        let a = await i.update(updateData);
+        console.log(a);
         console.log(i);
       }
     } catch(err) {
