@@ -258,6 +258,7 @@ export class ItemSheet35e extends ItemSheet {
     if (a.type === "backpack") {
       a.addItemToBackpack(item);
     };
+    this.render();
     return;
   };
 }
