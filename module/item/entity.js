@@ -244,10 +244,9 @@ export class Item35e extends Item {
   addItemToBackpack(item){
     if(this.data.type === "backpack"){
       //Creates a copy the item that is to be added
-      const itemToAdd = Object.assign({},game.data.items.find(a => a._id === item.id));
-      const elements = this.data.data.content.elements;
-      elements.push(itemToAdd);
-      this.update({"data.content.elements":elements});
+      id = `data.elements${item.id}`;
+      updateData[id]=Object.assign({},game.data.items.find(a => a._id === item.id));
+      this.update(updateData);
     };
   };
 
