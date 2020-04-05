@@ -247,7 +247,7 @@ export class Item35e extends Item {
       const itemToAdd = Object.assign({},game.data.items.find(a => a._id === item.id));
       const elements = this.data.data.content.elements;
       elements.push(itemToAdd);
-      this.update({[this.data.data.content.elements]:elements});
+      this.update({"data.data.content.elements":elements});
     };
   };
 
