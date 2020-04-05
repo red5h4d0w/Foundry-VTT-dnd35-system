@@ -243,8 +243,8 @@ export class ItemSheet35e extends ItemSheet {
   async _viewItem(event) {
     event.preventDefault();
     //Get clicked item
-    const item = JSON.parse(event.originalEvent.dataTransfer.getData('text/plain'));
-    
+    const item = JSON.parse(event.dataTransfer.getData('text/plain'));
+    return item.render()
 
   }
 
