@@ -59,11 +59,11 @@ export class Item35e extends Item {
     delete createData._id;
     // Prepare submission data
     options["embeddedName"] = embeddedName;
-    const eventName = `create${embeddedName}`;
+    const eventName = `create${collection}`;
     const eventData = {parentId: this._id, data: createData};
     // Dispatch the update request and return the resolution
     return SocketInterface.trigger(eventName, eventData, options, {
-      preHook: `preCreate${embeddedName}`,
+      preHook: `preCreate${collection}`,
       context: this,
       success: this.collection._createEmbeddedEntity.bind(this.collection),
       postHook: eventName
