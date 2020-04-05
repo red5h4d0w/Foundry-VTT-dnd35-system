@@ -243,6 +243,7 @@ export class ItemSheet35e extends ItemSheet {
   async _viewItem(event) {
     event.preventDefault();
     //Get clicked item
+    console.log(event.currentTarget)
     const item = JSON.parse(event.dataTransfer.getData('text/plain'));
     return item.render()
 
