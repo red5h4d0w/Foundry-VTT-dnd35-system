@@ -14,9 +14,11 @@
     {{#if hasGridView}}
     <div class="gridview dnd-area">
         {{#each data.content.elements as |item id| }}
-        <div objectid={{id}} class="griditem view-item">
-            <img src={{item.img}}>
-        </div>
+        <span title="{{item.name}}">
+            <div objectid={{id}} class="griditem view-item">
+                <img src={{item.img}}>
+            </div>
+        </span>
         {{/each}}
         <div class="griditem add-item">
             <i class="fas fa-plus-square fa-2x"></i>
