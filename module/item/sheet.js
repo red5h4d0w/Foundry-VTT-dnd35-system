@@ -243,9 +243,10 @@ export class ItemSheet35e extends ItemSheet {
   async _viewItem(event) {
     event.preventDefault();
     //Get clicked item
-    console.log(event.currentTarget)
-    const item = JSON.parse(event.dataTransfer.getData('text/plain'));
-    return item.render()
+    console.log(event.currentTarget.getAttribute("objectid"));
+    const itemID = event.currentTarget.getAttribute("objectid");
+    const item = game.items.get(itemID).sheet.render(true);
+    return item.sheet.render(true);
 
   }
 
