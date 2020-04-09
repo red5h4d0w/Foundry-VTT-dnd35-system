@@ -1,21 +1,63 @@
 <div class="inventory-filters spellbook-filters">
     <div class="form-group spellcasting-ability">
-        <label><h3>Spellcasting Ability</h3></label>
-        <select name="data.attributes.spellcasting" data-type="String">
-            {{#select data.attributes.spellcasting}}
-            <option value="">None</option>
-            {{#each data.abilities as |abl a|}}
-            <option value="{{a}}">{{abl.label}}</option>
+        <label>{{localize DND35E.SpellcastingAbility}}</label>
+        <select name="data.spellcasting.ability" data-type="String">
+            {{#select data.spellcasting.ability}}
+            <option value="">{{ localize "DND35E.None" }}</option>
+            {{#each config.abilities as |abl a|}}
+            <option value="{{a}}">{{ localize a }}</option>
             {{/each}}
             {{/select}}
         </select>
     </div>
+    {{#if isSpellcaster}}
+    <div class="form-group">
+        <label>{{localize "DND35E.SpellcastingType"}}</label>
+        <select name="data.spellcasting.type" data-type="String">
+            {{#select data.spellcasting.type}}
+            <option value="">{{ localize "DND35E.None" }}</option>
+            {{#each config.SpellcastingTypes as |type name|}}
+            <option value="{{type}}">{{ localize name }}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+    <ol class="inventory-list">
+        {{#each config.spellLevels as |name key|}}
+            <li class="item flexrow inventory-header spellbook-header">
+                {{#if @first}}
+                <div class="item-name flexrow">
+                    <h3>{{localize .../spellcasting/cantripname}}</h3>
+                </div>
+                {{#else}}
+                <label>{{localize name}}</label>
+                {{/if}}
+                <div class="item-controls">
+                    <a class="item-control item-create" title="Create Spell" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
+                        <i class="fas fa-plus"></i> {{localize "DND5E.Add"}}
+                    </a>
+                </div>
+            </li>
+            <ol class="item-list">
+                {{#each (lookup .../spellcasting [key]) as |spell| }}
+                <li class="item flexrow" data-item-id="0aAuMVbniZn9dt6P" draggable="true">
+                    <div class="item-name flexrow rollable">
+                        <img class="item-image" src={{spell.img}}/>
+                        <h4>{{localize spell.name}}</h4>
+                    </div>
+                    <div class="spell-components">
 
-    <ul class="filter-list flexrow" data-filter="spellbook">
-        <li class="filter-title">{{localize "DND35E.FilterTitle"}}</li>
-        <li class="filter-item" data-filter="action">{{localize "DND35E.FilterAction"}}</li>
-        <li class="filter-item" data-filter="bonus">{{localize "DND35E.FilterBonus"}}</li>
-        <li class="filter-item" data-filter="concentration">{{localize "DND35E.FilterConcentration"}}</li>
-        <li class="filter-item" data-filter="prepared">{{localize "DND35E.FilterPrepared"}}{{#if preparedSpells}} ({{preparedSpells}}){{/if}}</li>
-    </ul>
+                    </div>
+                    <div class="spell-school">
+
+                    </div>
+                    <div class=spell-range>
+                        
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+        {{/each}}
+    </ol>
+    {{/if}}
 </div>

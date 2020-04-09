@@ -438,14 +438,27 @@ DND35E.skills = {
 /* -------------------------------------------- */
 
 
-DND35E.spellPreparationModes = {
-  "always": "DND35E.SpellPrepAlways",
-  "prepared": "DND35E.SpellPrepPrepared",
-  "innate": "DND35E.SpellPrepInnate",
-  "pact": "DND35E.SpellPrepPact"
+DND35E.SpellcastingTypes = {
+  "arcaneinnate": "DND35E.SpellArcaneInnate",
+  "arcaneprep": "DND35E.SpellArcanePrep",
+  "divine": "DND35E.SpellDivine"
 };
 
 /* -------------------------------------------- */
+
+DND35E.SpellLevels = {
+  "zero": "DND35E.SpellLevel0",
+  "one": "DND35E.SpellLevel1",
+  "two": "DND35E.SpellLevel2",
+  "three": "DND35E.SpellLevel3",
+  "four": "DND35E.SpellLevel4",
+  "five": "DND35E.SpellLevel5",
+  "six": "DND35E.SpellLevel6",
+  "seven": "DND35E.SpellLevel7",
+  "eight": "DND35E.SpellLevel8",
+  "nine": "DND35E.SpellLevel9"
+};
+
 
 /**
  * The available choices for how spell damage scaling may be computed

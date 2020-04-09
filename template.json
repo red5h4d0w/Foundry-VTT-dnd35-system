@@ -475,7 +475,7 @@
     "class": {
       "templates": ["itemDescription"],
       "levels": 1,
-      "hitDice": "d6",
+      "hitDice": "d6", 
       "bab": {
         "progression": "good",
         "table": "undefined"
@@ -530,6 +530,21 @@
         "uma": false,
         "ups": false,
         "uro": false
+      },
+      "spellcasting":{
+        "ability":"",
+        "cantripname":"",
+        "zero":{},
+        "one":{},
+        "two":{},
+        "three":{},
+        "four":{},
+        "five":{},
+        "six":{},
+        "seven":{},
+        "eight":{},
+        "nine":{},
+        "type":""
       }
     },
     "consumable": {

@@ -89,7 +89,7 @@ export class Item35e extends Item {
    */
   get isSpellCaster() {
     if (this.data.data.spellcasting){
-      return !!(this.data.data.spellcasting.value === true);
+      return !(this.data.data.spellcasting.ability === "");
     }
     else{
       return false;
@@ -154,6 +154,12 @@ export class Item35e extends Item {
     const data = itemData.data;
     const C = CONFIG.DND35E;
     const labels = {};
+
+    // Class Items
+    if (itemData.type === "class") {
+      this.setCantripName(data.spellcasting);
+    }
+
 
     // Spell Level,  School, and Components
     if ( itemData.type === "spell" ) {
@@ -250,6 +256,21 @@ export class Item35e extends Item {
       this.update(updateData);
     };
   };
+
+  setCantripName(spellcasting){
+    if (spellcasting.type === ""){
+      return;
+    }
+    else if (spellcasting.type === ("arcaneinnate" | "arcaneprep")){
+      spellcasting.cantripname = "DND35E.SpellCantrip";
+    }
+    else if (spellcasting.type === "divine"){
+      spellcasting.cantripname = "DND35E.SpellOrison"
+    }
+  };
+
+
+
 
   setSpellRange(range){
     if (range.type === "close"){

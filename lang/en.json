@@ -274,6 +274,8 @@
   "DND35E.SpellAdd": "Add Spell",
   "DND35E.SpellNone": "None",
   "DND35E.SpellCantrip": "Cantrip",
+  "DND35E.SpellcastingAbility": "Spellcasting Ability",
+  "DND35E.SpellcastingType": "Spellcasting Type",
   "DND35E.SpellComponents": "Spell Components",
   "DND35E.SpellLevel": "Spell Level",
   "DND35E.SpellMaterials": "Spellcasting Materials",
@@ -293,10 +295,9 @@
   "DND35E.SpellLevel8": "Level 8",
   "DND35E.SpellLevel9": "Level 9",
 
-  "DND35E.SpellPrepAlways": "Always Available",
-  "DND35E.SpellPrepPrepared": "Prepared",
-  "DND35E.SpellPrepInnate": "Innate Spellcasting",
-  "DND35E.SpellPrepPact": "Pact Magic",
+  "DND35E.SpellArcaneInnate": "Arcane (Innate)",
+  "DND35E.SpellArcanePrep": "Arcane (Preparation)",
+  "DND35E.SpellDivine": "Divine",
   "DND35E.SpellPrepared": "Prepared",
   "DND35E.SpellUnpreprared": "Unprepared",
 
