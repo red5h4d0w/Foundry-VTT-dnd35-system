@@ -42,7 +42,7 @@
                 </li>
                 <ol class="item-list">
                     {{#each (lookup .../spellcasting [key]) as |spell id| }}
-                    <li class="item flexrow" data-item-id="{{id}" draggable="true">
+                    <li class="item flexrow" data-item-id="{{id}}" draggable="true">
                         <div class="item-name flexrow rollable">
                             <img class="item-image" src={{spell.img}}/>
                             <h4>{{localize spell.name}}</h4>
