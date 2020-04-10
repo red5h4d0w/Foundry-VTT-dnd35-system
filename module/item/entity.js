@@ -88,7 +88,10 @@ export class Item35e extends Item {
    * @return {boolean}
    */
   get isSpellcaster() {
-    return !(this.data.data.spellcasting.ability === "");
+    if (this.type === "class"){
+      return !(this.data.data.spellcasting.ability === "");
+    }
+    return false;
   }
 
   /**
