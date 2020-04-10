@@ -88,6 +88,7 @@ export class Item35e extends Item {
    * @return {boolean}
    */
   get isSpellCaster() {
+    console.log(this.data);
     if (this.data.spellcasting){
       return !(this.data.spellcasting.ability === "");
     }
