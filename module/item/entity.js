@@ -263,7 +263,7 @@ export class Item35e extends Item {
       //Creates a copy the item to add
       const id = `data.content.elements.${item.id}`;
       let updateData = {};
-      updateData[id]=Object.assign({},game.data.items.find(a => a._id === item.id));
+      updateData[id] = Object.assign({},game.data.items.find(a => a._id === item.id));
       this.update(updateData);
     };
     return;

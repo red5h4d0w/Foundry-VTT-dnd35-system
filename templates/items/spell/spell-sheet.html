@@ -16,7 +16,7 @@
 
             <ul class="summary">
                 <li>
-                    {{labels.school}}
+                    {{localize labels.school}}
                 </li>
                 <li></li>
                 <li>
@@ -41,18 +41,6 @@
         {{!-- Details Tab --}}
         <div class="tab details" data-group="primary" data-tab="details">
             <h3 class="form-header">Spell Details</h3>
-
-            {{!-- Spell Level --}}
-            <div class="form-group">
-                <label>{{localize "DND35E.SpellLevel"}}</label>
-                <select name="data.level" data-dtype="Number">
-                    {{#select data.level}}
-                    {{#each config.spellLevels as |name lvl|}}
-                    <option value="{{lvl}}">{{localize name}}</option>
-                    {{/each}}
-                    {{/select}}
-                </select>
-            </div>
 
             {{!-- Spell School --}}
             <div class="form-group">

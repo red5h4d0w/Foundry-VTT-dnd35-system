@@ -618,7 +618,6 @@
     },
     "spell": {
       "templates": ["itemDescription", "action"],
-      "level": 1,
       "school": "",
       "activation": {
         "type": "",
