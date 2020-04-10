@@ -447,16 +447,16 @@ DND35E.SpellcastingTypes = {
 /* -------------------------------------------- */
 
 DND35E.SpellLevels = {
-  "zero": "DND35E.SpellLevel0",
-  "one": "DND35E.SpellLevel1",
-  "two": "DND35E.SpellLevel2",
-  "three": "DND35E.SpellLevel3",
-  "four": "DND35E.SpellLevel4",
-  "five": "DND35E.SpellLevel5",
-  "six": "DND35E.SpellLevel6",
-  "seven": "DND35E.SpellLevel7",
-  "eight": "DND35E.SpellLevel8",
-  "nine": "DND35E.SpellLevel9"
+  "0": "DND35E.SpellLevel0",
+  "1": "DND35E.SpellLevel1",
+  "2": "DND35E.SpellLevel2",
+  "3": "DND35E.SpellLevel3",
+  "4": "DND35E.SpellLevel4",
+  "5": "DND35E.SpellLevel5",
+  "6": "DND35E.SpellLevel6",
+  "7": "DND35E.SpellLevel7",
+  "8": "DND35E.SpellLevel8",
+  "9": "DND35E.SpellLevel9"
 };
 
 
