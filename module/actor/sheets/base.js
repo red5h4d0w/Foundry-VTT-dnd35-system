@@ -1,4 +1,4 @@
-import { ActorTraitSelector } from "../../apps/selector.js";
+import { Selector } from "../../apps/selector.js";
 import { ActorSheetFlags } from "../../apps/actor-flags.js";
 
 /**
