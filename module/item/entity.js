@@ -150,6 +150,7 @@ export class Item35e extends Item {
     const C = CONFIG.DND35E;
     const labels = {};
 
+    console.log(itemData);
     // Class Items
     if (itemData.type === "class") {
       this.setCantripName(data.spellcasting);
