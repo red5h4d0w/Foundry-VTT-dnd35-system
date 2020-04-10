@@ -30,6 +30,7 @@
                     {{#if @first}}
                     <div class="item-name flexrow">
                         <h3>{{localize .../spellcasting/cantripname}}</h3>
+                        {{log 1}}
                     </div>
                     {{else}}
                     <label>{{localize name}}</label>
@@ -42,6 +43,7 @@
                 </li>
                 <ol class="item-list">
                     {{#each (lookup .../spellcasting [key]) as |spell id| }}
+                    {{log 2}}
                     <li class="item flexrow" data-item-id="{{id}}" draggable="true">
                         <div class="item-name flexrow rollable">
                             <img class="item-image" src={{spell.img}}/>
