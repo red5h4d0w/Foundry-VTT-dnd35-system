@@ -14,7 +14,7 @@ export class ItemSheet35e extends ItemSheet {
       height: 420,
       classes: ["dnd35e", "sheet", "item"],
       resizable: false,
-      scrollY: [".tab.details"],
+      scrollY: [".tab.details", ".tab.spellbook"],
       tabs: [{navSelector: ".tabs", contentSelector: ".sheet-body", initial: "description"}]
     });
   }
