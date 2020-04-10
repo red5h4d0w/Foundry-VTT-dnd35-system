@@ -73,6 +73,7 @@ Hooks.once("init", function() {
 Hooks.once("setup", function() {
 
   // Localize CONFIG objects once up-front
+  /*
   const toLocalize = [
     "abilities", "alignments", "conditionTypes", "consumableTypes", "currencies", "damageTypes", "distanceUnits", "equipmentTypes",
     "healingTypes", "itemActionTypes", "limitedUsePeriods", "senses", "skills", "spellComponents", "spellLevels", "spellPreparationModes",
@@ -84,6 +85,7 @@ Hooks.once("setup", function() {
       return obj;
     }, {});
   }
+  */
 });
 
 /* -------------------------------------------- */
