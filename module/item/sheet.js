@@ -239,7 +239,7 @@ export class ItemSheet35e extends ItemSheet {
     let attribute;
     if (type === "class"){
       console.log(a.dataset.spelllevel);
-      attribute = `data.spellcasting.${a.dataset.spelllevel}`;
+      attribute = `data.spellcasting.level${a.dataset.spelllevel}`;
       const spells = game.data.items.filter(item => item.type === "spell");
       choices = Object.fromEntries(spells.map(x => [x._id, x]));
 
