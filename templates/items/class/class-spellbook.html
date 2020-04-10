@@ -29,20 +29,19 @@
                 <li class="item flexrow inventory-header spellbook-header">
                     {{#if @first}}
                     <div class="item-name flexrow">
-                        <h3>{{localize .../spellcasting/cantripname}}</h3>
-                        {{log 1}}
+                        <h3>{{localize ../spellcasting/cantripname}}</h3>
                     </div>
                     {{else}}
                     <label>{{localize name}}</label>
                     {{/if}}
                     <div class="item-controls">
-                        <a class="item-control add-item" title="{{localize "DND35E.SpellAdd"}}" data-spelllevel="{{key}}">
+                        <a class="item-control add-item" title="{{localize 'DND35E.SpellAdd' }}" data-spelllevel="{{key}}">
                             <i class="fas fa-plus"></i> {{localize "DND35E.Add"}}
                         </a>
                     </div>
                 </li>
                 <ol class="item-list">
-                    {{#each (lookup .../spellcasting [key]) as |spell id| }}
+                    {{#each (lookup ../spellcasting [key]) as |spell id| }}
                     {{log 2}}
                     <li class="item flexrow" data-item-id="{{id}}" draggable="true">
                         <div class="item-name flexrow rollable">

@@ -267,12 +267,15 @@ export class Item35e extends Item {
 
   setCantripName(spellcasting){
     if (spellcasting.type === ""){
+      console.log("mybad")
       return;
     }
     else if (spellcasting.type === ("arcaneinnate" | "arcaneprep")){
+      console.log("set to cantrip")
       spellcasting.cantripname = "DND35E.SpellCantrip";
     }
     else if (spellcasting.type === "divine"){
+      console.log('set to orison')
       spellcasting.cantripname = "DND35E.SpellOrison"
     }
   };
