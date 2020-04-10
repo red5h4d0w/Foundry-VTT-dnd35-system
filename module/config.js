@@ -438,7 +438,7 @@ DND35E.skills = {
 /* -------------------------------------------- */
 
 
-DND35E.SpellcastingTypes = {
+DND35E.spellcastingTypes = {
   "arcaneinnate": "DND35E.SpellArcaneInnate",
   "arcaneprep": "DND35E.SpellArcanePrep",
   "divine": "DND35E.SpellDivine"
@@ -446,7 +446,7 @@ DND35E.SpellcastingTypes = {
 
 /* -------------------------------------------- */
 
-DND35E.SpellLevels = {
+DND35E.spellLevels = {
   "level0": "DND35E.SpellLevel0",
   "level1": "DND35E.SpellLevel1",
   "level2": "DND35E.SpellLevel2",
@@ -554,20 +554,6 @@ DND35E.spellSchools = {
   "nec": "DND35E.SchoolNec", // Necromancy
   "trs": "DND35E.SchoolTrs", // Transmutation
   "uni": "DND35E.SchoolUni" // Universal
-};
-
-// Spell Levels
-DND35E.spellLevels = {
-  0: "DND35E.SpellLevel0",
-  1: "DND35E.SpellLevel1",
-  2: "DND35E.SpellLevel2",
-  3: "DND35E.SpellLevel3",
-  4: "DND35E.SpellLevel4",
-  5: "DND35E.SpellLevel5",
-  6: "DND35E.SpellLevel6",
-  7: "DND35E.SpellLevel7",
-  8: "DND35E.SpellLevel8",
-  9: "DND35E.SpellLevel9"
 };
 
 /* -------------------------------------------- */

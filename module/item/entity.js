@@ -274,7 +274,7 @@ export class Item35e extends Item {
       console.log("mybad")
       return;
     }
-    else if (spellcasting.type === ("arcaneinnate" | "arcaneprep")){
+    else if ((spellcasting.type === "arcaneinnate" || spellcasting.type === "arcaneprep")){
       console.log("set to cantrip")
       spellcasting.cantripname = "DND35E.SpellCantrip";
     }

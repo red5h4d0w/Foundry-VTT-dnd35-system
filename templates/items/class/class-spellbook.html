@@ -17,7 +17,7 @@
             <select name="data.spellcasting.type" data-type="String">
                 {{#select data.spellcasting.type}}
                 <option value="">{{ localize "DND35E.None" }}</option>
-                {{#each config.SpellcastingTypes as |type name|}}
+                {{#each config.spellcastingTypes as |type name|}}
                 <option value="{{type}}">{{ localize name }}</option>
                 {{/each}}
                 {{/select}}
