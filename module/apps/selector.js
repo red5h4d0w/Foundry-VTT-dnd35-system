@@ -60,7 +60,8 @@ export class Selector extends FormApplication {
    * @private
    */
   _updateObject(event, formData) {
-    const choices = [];
+    console.log(formData);
+    const choices = {};
     for ( let [k, v] of Object.entries(formData) ) {
       if ( v ) choices[k] = v;
     }

@@ -25,10 +25,10 @@
         </div>
         <ol class="inventory-list">
             {{#each config.spellLevels as |name short|}}
-            {{log short}}
                 <li class="item flexrow inventory-header spellbook-header">
                     {{#if @first}}
                     <div class="item-name flexrow">
+                        {{ log .. }}
                         <h3>{{localize ../spellcasting/cantripname}}</h3>
                     </div>
                     {{else}}
@@ -42,7 +42,6 @@
                 </li>
                 <ol class="item-list">
                     {{#each (lookup ../spellcasting [short]) as |spell id| }}
-                    {{log 2}}
                     <li class="item flexrow" data-item-id="{{id}}" draggable="true">
                         <div class="item-name flexrow rollable">
                             <img class="item-image" src={{spell.img}}/>
