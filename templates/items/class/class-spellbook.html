@@ -29,7 +29,7 @@
                 <li class="item flexrow inventory-header spellbook-header">
                     {{#if @first}}
                     <div class="item-name flexrow">
-                        <h3>{{localize ../spellcasting/cantripname}}</h3>
+                        <h3>{{localize .../spellcasting/cantripname}}</h3>
                     </div>
                     {{else}}
                     <label>{{localize name}}</label>
@@ -41,8 +41,8 @@
                     </div>
                 </li>
                 <ol class="item-list">
-                    {{#each (lookup ../spellcasting [key]) as |spell| }}
-                    <li class="item flexrow" data-item-id="{{spell.id}}" draggable="true">
+                    {{#each (lookup .../spellcasting [key]) as |spell id| }}
+                    <li class="item flexrow" data-item-id="{{id}" draggable="true">
                         <div class="item-name flexrow rollable">
                             <img class="item-image" src={{spell.img}}/>
                             <h4>{{localize spell.name}}</h4>

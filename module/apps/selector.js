@@ -7,8 +7,8 @@ export class Selector extends FormApplication {
 	  const options = super.defaultOptions;
 	  options.id = "trait-selector";
 	  options.classes = ["dnd35e"];
-	  options.title = "Actor Trait Selection";
-	  options.template = "systems/dnd35e/templates/apps/trait-selector.html";
+	  options.title = "Item/Spell Selection";
+	  options.template = "systems/dnd35e/templates/apps/selector.html";
 	  options.width = 320;
 	  options.height = "auto";
 	  return options;
@@ -65,7 +65,7 @@ export class Selector extends FormApplication {
       if ( v ) choices[k] = v;
     }
     this.object.update({
-      [this.attribute]: choices,
+      [this.attribute]: choices
     });
   }
 }
