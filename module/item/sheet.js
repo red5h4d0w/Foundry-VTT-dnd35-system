@@ -1,4 +1,5 @@
 import { AbilityUseDialog } from "../apps/ability-use-dialog.js";
+import { Selector } from "../apps/selector.js"
 
 /**
  * Override and extend the core ItemSheet implementation to handle D&D3.5e specific item types
@@ -232,12 +233,28 @@ export class ItemSheet35e extends ItemSheet {
 
   async _addItemFromList(event) {
     event.preventDefault();
-    let p = new Dialog({
-      "title": "Not implemented yet",
-      "content": "<p>not implemented yet</p>",
-      "buttons": {}
-    });
-    return p.render(true);
+    const a = event.currentTarget;
+    const type = this.item.type;
+    let choices;
+    let attribute;
+    if (type === "class"){
+      attribute = "data.spellcasting" + a.dataset.spelllevel;
+      const spells = game.data.items.filter(item => item.type === "spell");
+      choices = Object.fromEntries(spells.map(x => [x._id, x]));
+
+    }
+    else if (type === "backpack"){
+      attribute = "data.content.elements";
+      const items = game.data.items.filter(item => item.type === ("consumable" || "loot"));
+      choices = Object.fromEntries(items.map(x => [x._id, x]));
+    };
+    const options = {
+      "name": attribute,
+      "title": "Spells/Items Selector",
+      "choices": choices
+    }
+    new Selector(this.item, options).render(true);
+
   }
 
   async _viewItem(event) {

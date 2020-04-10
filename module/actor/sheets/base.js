@@ -1,4 +1,4 @@
-import { ActorTraitSelector } from "../../apps/trait-selector.js";
+import { ActorTraitSelector } from "../../apps/selector.js";
 import { ActorSheetFlags } from "../../apps/actor-flags.js";
 
 /**
@@ -585,6 +585,6 @@ export class ActorSheet35e extends ActorSheet {
       title: label.innerText,
       choices: CONFIG.DND35E[a.dataset.options]
     };
-    new ActorTraitSelector(this.actor, options).render(true)
+    new Selector(this.actor, options).render(true)
   }
 }

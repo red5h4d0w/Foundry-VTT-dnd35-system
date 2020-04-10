@@ -2,7 +2,7 @@
  * A specialized form used to select damage or condition types which apply to an Actor
  * @type {FormApplication}
  */
-export class ActorTraitSelector extends FormApplication {
+export class Selector extends FormApplication {
 	static get defaultOptions() {
 	  const options = super.defaultOptions;
 	  options.id = "trait-selector";
@@ -40,31 +40,29 @@ export class ActorTraitSelector extends FormApplication {
     for ( let [k, v] of Object.entries(choices) ) {
       choices[k] = {
         label: v,
-        chosen: attr.value.includes(k)
+        chosen: attr.keys.includes(k)
       }
     }
 
     // Return data
 	  return {
-	    choices: choices,
-      custom: attr.custom
+	    choices: choices
     }
   }
 
   /* -------------------------------------------- */
 
   /**
-   * Update the Actor object with new trait data processed from the form
+   * Update the Actor/Item object with new data processed from the form
    * @private
    */
   _updateObject(event, formData) {
     const choices = [];
     for ( let [k, v] of Object.entries(formData) ) {
-      if ( (k !== "custom") && v ) choices.push(k);
+      if ( v ) choices[k] = v;
     }
     this.object.update({
-      [`${this.attribute}.value`]: choices,
-      [`${this.attribute}.custom`]: formData.custom
+      [this.attribute]: choices,
     });
   }
 }

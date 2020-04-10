@@ -247,14 +247,27 @@ export class Item35e extends Item {
     this.labels = labels;
   }
 
+  addSpellToSpellbook(spell){
+    if (this.data.type === "class"){
+      //Creates a copy of the spell to add
+      const id = `data.content.elements.${spell.id}`
+      let updateDate = {};
+      updateData[id] = Objects.assign({},game.data.item.find(a => a._id === item.id));
+      this.update(updateData);
+    };
+    return;
+  }
+
+
   addItemToBackpack(item){
     if(this.data.type === "backpack"){
-      //Creates a copy the item that is to be added
+      //Creates a copy the item to add
       const id = `data.content.elements.${item.id}`;
       let updateData = {};
       updateData[id]=Object.assign({},game.data.items.find(a => a._id === item.id));
       this.update(updateData);
     };
+    return;
   };
 
   setCantripName(spellcasting){
@@ -574,16 +587,6 @@ export class Item35e extends Item {
     if (( this.data.type === "weapon" ) && flags.weaponCriticalThreshold) {
       rollConfig.critical = parseInt(flags.weaponCriticalThreshold);
     }
-
-    // Elven Accuracy
-    if ( ["weapon", "spell"].includes(this.data.type) ) {
-      if (flags.elvenAccuracy && ["dex", "int", "wis", "cha"].includes(this.abilityMod)) {
-        rollConfig.elvenAccuracy = true;
-      }
-    }
-
-    // Apply Halfling Lucky
-    if ( flags.halflingLucky ) rollConfig.halflingLucky = true;
 
     // Invoke the d20 roll helper
     return Dice35e.d20Roll(rollConfig);

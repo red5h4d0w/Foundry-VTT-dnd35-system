@@ -27,20 +27,20 @@
             <li class="item flexrow inventory-header spellbook-header">
                 {{#if @first}}
                 <div class="item-name flexrow">
-                    <h3>{{localize .../spellcasting/cantripname}}</h3>
+                    <h3>{{localize ../spellcasting/cantripname}}</h3>
                 </div>
                 {{#else}}
                 <label>{{localize name}}</label>
                 {{/if}}
                 <div class="item-controls">
-                    <a class="item-control item-create" title="Create Spell" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
-                        <i class="fas fa-plus"></i> {{localize "DND5E.Add"}}
+                    <a class="item-control item-create" title="{{localize "DND35E.SpellAdd"}}" data-spelllevel="{{name}}">
+                        <i class="fas fa-plus"></i> {{localize "DND35E.Add"}}
                     </a>
                 </div>
             </li>
             <ol class="item-list">
-                {{#each (lookup .../spellcasting [key]) as |spell| }}
-                <li class="item flexrow" data-item-id="0aAuMVbniZn9dt6P" draggable="true">
+                {{#each (lookup ../spellcasting [key]) as |spell| }}
+                <li class="item flexrow" data-item-id="{{spell.id}}" draggable="true">
                     <div class="item-name flexrow rollable">
                         <img class="item-image" src={{spell.img}}/>
                         <h4>{{localize spell.name}}</h4>
@@ -52,7 +52,7 @@
 
                     </div>
                     <div class=spell-range>
-                        
+
                     </div>
                 </li>
                 {{/each}}
