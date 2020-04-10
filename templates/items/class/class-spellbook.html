@@ -6,7 +6,7 @@
                 {{#select data.spellcasting.ability}}
                 <option value="">{{ localize "DND35E.None" }}</option>
                 {{#each config.abilities as |abl a|}}
-                <option value="{{a}}">{{ localize a }}</option>
+                <option value="{{a}}">{{ localize abl }}</option>
                 {{/each}}
                 {{/select}}
             </select>
@@ -24,8 +24,8 @@
             </select>
         </div>
         <ol class="inventory-list">
-            {{#each config.spellLevels as |name key|}}
-            {{log key}}
+            {{#each config.spellLevels as |name short|}}
+            {{log short}}
                 <li class="item flexrow inventory-header spellbook-header">
                     {{#if @first}}
                     <div class="item-name flexrow">
@@ -35,13 +35,13 @@
                     <label>{{localize name}}</label>
                     {{/if}}
                     <div class="item-controls">
-                        <a class="item-control add-item" title="{{localize 'DND35E.SpellAdd' }}" data-spelllevel="{{key}}">
+                        <a class="item-control add-item" title="{{localize 'DND35E.SpellAdd' }}" data-spelllevel="{{short}}">
                             <i class="fas fa-plus"></i> {{localize "DND35E.Add"}}
                         </a>
                     </div>
                 </li>
                 <ol class="item-list">
-                    {{#each (lookup ../spellcasting [key]) as |spell id| }}
+                    {{#each (lookup ../spellcasting [short]) as |spell id| }}
                     {{log 2}}
                     <li class="item flexrow" data-item-id="{{id}}" draggable="true">
                         <div class="item-name flexrow rollable">
