@@ -46,7 +46,7 @@ export class Selector extends FormApplication {
     for ( let [k, v] of Object.entries(choices) ) {
       choices[k] = {
         label: v.name,
-        chosen: (typeof attr.k) === "object"
+        chosen: (typeof attr.k) /= "undefined"
       };
     };
 
@@ -68,7 +68,7 @@ export class Selector extends FormApplication {
     const updateData = {};
     for ( let [k, v] of Object.entries(formData) ) {
       if ( v ) choices[k] = Object.assign({},game.data.items.find(a => a._id === k));
-      if ( !v ) updateData[this.delattribute + "." + k] = null;
+      if ( !v ) updateData[this.delattribute + "." + k] = undefined;
     }
     updateData[this.attribute] = choices;
     console.log(updateData);
