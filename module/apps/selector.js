@@ -44,10 +44,10 @@ export class Selector extends FormApplication {
 	  // Populate choices
     const choices = duplicate(this.options.choices);
     for ( let [k, v] of Object.entries(choices) ) {
-      console.log(attr.k === null);
+      console.log(!!attr.k);
       choices[k] = {
         label: v.name,
-        chosen: (attr.k === null)
+        chosen: !!attr.k
       };
     };
 
