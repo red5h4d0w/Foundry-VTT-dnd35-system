@@ -1049,6 +1049,20 @@
 .dnd35e.sheet.item .content .gridview .griditem img {
   width: 100%;
 }
+.dnd35e.sheet.item .inventory-list .item .item-name .item-image {
+  flex: 0 0 30px;
+  background-size: 30px;
+  margin-right: 5px;
+}
+.dnd35e.sheet.item .inventory-list .item .item-name h4 {
+  margin: 0;
+}
+.dnd35e.sheet.item .inventory-list .item .item-name:hover .item-image {
+  background-image: url("/icons/svg/d20-grey.svg") !important;
+}
+.dnd35e.sheet.item .inventory-list .item .item-name .item-image:hover {
+  background-image: url("/icons/svg/d20-black.svg") !important;
+}
 /* ----------------------------------------- */
 /*  Chat Cards
 /* ----------------------------------------- */
