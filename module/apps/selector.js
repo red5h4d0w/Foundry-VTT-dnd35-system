@@ -46,7 +46,7 @@ export class Selector extends FormApplication {
     for ( let [k, v] of Object.entries(choices) ) {
       choices[k] = {
         label: v.name,
-        chosen: Object.keys(attr).includes(k)
+        chosen: (typeof attr.k) === "object"
       };
     };
 
