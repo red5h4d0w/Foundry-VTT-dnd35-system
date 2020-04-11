@@ -66,6 +66,7 @@ export class Selector extends FormApplication {
       if ( !v ) updateData[this.attribute + "-=" + k] = null;
     }
     updateData[this.attribute] = choices;
+    console.log(updateData);
     this.object.update(updateData);
   }
 }
