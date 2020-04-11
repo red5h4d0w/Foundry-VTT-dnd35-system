@@ -33,8 +33,6 @@ export class Selector extends FormApplication {
   getData() {
 
     // Get current values
-    console.log(this.object.data);
-    console.log(this.attribute);
     let attr = getProperty(this.object.data, this.attribute);
     console.log(attr);
 
@@ -63,8 +61,9 @@ export class Selector extends FormApplication {
     console.log(formData);
     const choices = {};
     for ( let [k, v] of Object.entries(formData) ) {
+      debugger;
       if ( v ) choices[k] = Object.assign({},game.data.items.find(a => a._id === k));
-      if ( !v ) delete (getProperty(this.object.data, this.attribute)["k"]);
+      if ( !v ) delete (getProperty(this.object.data, `${this.attribute}.${k}`));
     }
     this.object.update({
       [this.attribute]: choices
