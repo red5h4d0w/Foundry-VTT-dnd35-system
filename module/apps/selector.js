@@ -46,7 +46,7 @@ export class Selector extends FormApplication {
     for ( let [k, v] of Object.entries(choices) ) {
       choices[k] = {
         label: v.name,
-        chosen: ((typeof attr.k) /= "undefined")
+        chosen: (typeof attr.k) /= "undefined"
       };
     };
 
