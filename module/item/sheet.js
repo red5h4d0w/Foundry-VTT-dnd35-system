@@ -259,8 +259,6 @@ export class ItemSheet35e extends ItemSheet {
   async _viewItem(event) {
     event.preventDefault();
     //Get clicked item
-    debugger;
-    console.log(event.currentTarget.dataset("itemId"));
     const itemID = event.currentTarget.dataset("itemId");
     const item = game.items.get(itemID);
     return item.sheet.render(true);
