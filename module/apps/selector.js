@@ -60,12 +60,12 @@ export class Selector extends FormApplication {
   _updateObject(event, formData) {
     console.log(formData);
     const choices = {};
+    const updateData = {};
     for ( let [k, v] of Object.entries(formData) ) {
       if ( v ) choices[k] = Object.assign({},game.data.items.find(a => a._id === k));
-      if ( !v ) choices[k] = undefined;
+      if ( !v ) updateData[this.attribute + "-=" + k] = null;
     }
-    this.object.update({
-      [this.attribute]: choices
-    });
+    updateData[this.attribute] = choices;
+    this.object.update(updateData);
   }
 }
