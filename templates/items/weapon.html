@@ -16,11 +16,9 @@
 
             <ul class="summary">
                 <li>
-                    {{lookup config.weaponTypes data.weaponType }}
+                    {{localize (lookup config.weaponTypes [data.weaponType]) }}
                 </li>
-                <li>
-                    <input type="text" name="data.rarity" value="{{data.rarity}}" placeholder="Rarity"/>
-                </li>
+
                 <li>
                     <input type="text" name="data.source" value="{{data.source}}" placeholder="Source"/>
                 </li>
@@ -30,19 +28,19 @@
 
     {{!-- Item Sheet Navigation --}}
     <nav class="sheet-navigation tabs" data-group="primary">
-        <a class="item active" data-tab="description">{{ localize "DND5E.Description" }}</a>
-        <a class="item" data-tab="details">{{ localize "DND5E.Details" }}</a>
+        <a class="item active" data-tab="description">{{ localize "DND35E.Description" }}</a>
+        <a class="item" data-tab="details">{{ localize "DND35E.Details" }}</a>
     </nav>
 
     {{!-- Item Sheet Body --}}
     <section class="sheet-body">
 
         {{!-- Description Tab --}}
-        {{> "systems/dnd5e/templates/items/parts/item-description.html"}}
+        {{> "systems/dnd35e/templates/items/parts/item-description.html"}}
 
         {{!-- Details Tab --}}
         <div class="tab details" data-group="primary" data-tab="details">
-            <h3 class="form-header">Weapon Details</h3>
+            <h3 class="form-header">{{localize "DND35E.WeaponDetails"}}</h3>
 
             {{!-- Weapon Type --}}
             <div class="form-group">
@@ -50,7 +48,7 @@
                 <select name="data.weaponType">
                     {{#select data.weaponType}}
                     {{#each config.weaponTypes as |name type|}}
-                    <option value="{{type}}">{{name}}</option>
+                    <option value="{{type}}">{{localize name}}</option>
                     {{/each}}
                     {{/select}}
                 </select>
@@ -64,12 +62,6 @@
                 </label>
                 <label class="checkbox">
                     <input type="checkbox" name="data.equipped" {{checked data.equipped}}/> Equipped
-                </label>
-                <label class="checkbox">
-                    <input type="checkbox" name="data.identified" {{checked data.identified}}/> Identified
-                </label>
-                <label class="checkbox">
-                    <input type="checkbox" name="data.attuned" {{checked data.attuned}}/> Attuned
                 </label>
             </div>
 
@@ -86,12 +78,12 @@
             <h3 class="form-header">Weapon Usage</h3>
 
             {{!-- Item Activation Template --}}
-            {{> "systems/dnd5e/templates/items/parts/item-activation.html"}}
+            {{> "systems/dnd35e/templates/items/parts/item-activation.html"}}
 
             <h3 class="form-header">Weapon Attack</h3>
 
             {{!-- Item Action Template --}}
-            {{> "systems/dnd5e/templates/items/parts/item-action.html"}}
+            {{> "systems/dnd35e/templates/items/parts/item-action.html"}}
         </div>
     </section>
 </form>

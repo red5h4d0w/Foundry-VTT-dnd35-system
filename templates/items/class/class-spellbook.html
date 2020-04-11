@@ -42,21 +42,23 @@
                 </li>
                 <ol class="item-list">
                     {{#each (lookup ../data/spellcasting [short]) as |spell id| }}
-                    <li class="item flexrow view-item" data-item-id="{{id}}" draggable="true">
-                        <div class="item-name flexrow rollable">
-                            <img class="item-image item-icon" src={{spell.img}}>
-                            <h4>{{localize spell.name}}</h4>
-                        </div>
-                        <div class="spell-components">
-                            <h4>TBA</h4>
-                        </div>
-                        <div class="spell-school">
-                            <h4>{{spell/data/school}}</h4>
-                        </div>
-                        <div class=spell-range>
-                            <h4>{{spell/data/range/base}}+{{spell/data/range/bonus}}ft/CL</h4>
-                        </div>
-                    </li>
+                        {{#if spell}}
+                            <li class="item flexrow view-item" data-item-id="{{id}}" draggable="true">
+                                <div class="item-name flexrow rollable">
+                                    <img class="item-image item-icon" src={{spell.img}}>
+                                    <h4>{{spell.name}}</h4>
+                                </div>
+                                <div class="spell-components">
+                                    <h4>TBA</h4>
+                                </div>
+                                <div class="spell-school">
+                                    <h4>{{localize (lookup .../config/spellSchools [spell/data/school])}}</h4>
+                                </div>
+                                <div class="spell-range">
+                                    <h4>{{spell/data/range/base}}+{{spell/data/range/bonus}}ft/CL</h4>
+                                </div>
+                            </li>
+                        {{/if}}
                     {{/each}}
                 </ol>
             {{/each}}

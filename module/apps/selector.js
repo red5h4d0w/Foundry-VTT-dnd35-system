@@ -61,10 +61,8 @@ export class Selector extends FormApplication {
     console.log(formData);
     const choices = {};
     for ( let [k, v] of Object.entries(formData) ) {
-      if (k==="7EXeINoWtrgDDX9I") debugger;
       if ( v ) choices[k] = Object.assign({},game.data.items.find(a => a._id === k));
-      if ( !v ) delete getProperty(this.object.data,this.attribute)[k];
-      if (k==="7EXeINoWtrgDDX9I") console.log(this.object.data);
+      if ( !v ) choices[k] = undefined;
     }
     this.object.update({
       [this.attribute]: choices
