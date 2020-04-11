@@ -281,6 +281,7 @@
   "DND35E.SpellMaterials": "Spellcasting Materials",
   "DND35E.SpellOrison": "Orison",
   "DND35E.SpellSchool": "Spell School",
+  "DND35E.SpellSelect": "Select Spell",
   "DND35E.SpellTarget": "Spell Target",
   "DND35E.SpellUsage": "Spell Usage",
 
@@ -397,6 +398,7 @@
   "DND35E.ResourceTertiary": "Resource 3",
   "DND35E.Senses": "Senses",
   "DND35E.Save": "Save",
+  "DND35E.Select": "Select",
   "DND35E.Size": "Size",
   "DND35E.Special": "Special",
   "DND35E.Speed": "Speed",
