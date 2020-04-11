@@ -15,7 +15,7 @@
     <div class="gridview dnd-area">
         {{#each data.content.elements as |item id| }}
         <span title="{{item.name}}">
-            <div objectid={{id}} class="griditem view-item">
+            <div data-item-id={{id}} class="griditem view-item">
                 <img src={{item.img}}>
             </div>
         </span>

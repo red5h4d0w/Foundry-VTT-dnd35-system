@@ -153,7 +153,6 @@ export class Item35e extends Item {
     const C = CONFIG.DND35E;
     const labels = {};
 
-    console.log(itemData);
     // Class Items
     if (itemData.type === "class") {
       this.setCantripName(data.spellcasting);
@@ -271,15 +270,12 @@ export class Item35e extends Item {
 
   setCantripName(spellcasting){
     if (spellcasting.type === ""){
-      console.log("mybad")
       return;
     }
     else if ((spellcasting.type === "arcaneinnate" || spellcasting.type === "arcaneprep")){
-      console.log("set to cantrip")
       spellcasting.cantripname = "DND35E.SpellCantrip";
     }
     else if (spellcasting.type === "divine"){
-      console.log('set to orison')
       spellcasting.cantripname = "DND35E.SpellOrison"
     }
   };

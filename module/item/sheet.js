@@ -194,7 +194,6 @@ export class ItemSheet35e extends ItemSheet {
   };
   get hasGridView() {
     const data = super.getData();
-    console.log(data);
     if (typeof data.item.data.content === "undefined"){
       return false;
 
@@ -238,7 +237,6 @@ export class ItemSheet35e extends ItemSheet {
     let choices;
     let attribute;
     if (type === "class"){
-      console.log(a.dataset.spelllevel);
       attribute = `data.spellcasting.${a.dataset.spelllevel}`;
       const spells = game.data.items.filter(item => item.type === "spell");
       choices = Object.fromEntries(spells.map(x => [x._id, x]));
@@ -261,11 +259,10 @@ export class ItemSheet35e extends ItemSheet {
   async _viewItem(event) {
     event.preventDefault();
     //Get clicked item
-    console.log(event.currentTarget.getAttribute("objectid"));
-    const itemID = event.currentTarget.getAttribute("objectid");
-    const item = game.items.get(itemID).sheet.render(true);
+    console.log(event.currentTarget.dataset("itemId"));
+    const itemID = event.currentTarget.dataset("itemId");
+    const item = game.items.get(itemID);
     return item.sheet.render(true);
-
   }
 
   async _onDrop(event) {
