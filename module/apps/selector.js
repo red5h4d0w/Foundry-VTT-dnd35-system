@@ -24,6 +24,11 @@ export class Selector extends FormApplication {
 	  return this.options.name;
   }
 
+  get delattribute() {
+    const index = this.attribute.lastIndexOf(".")
+    return (this.attribute.substring(0,index+1)+"-="+ this.attribute.substring(index+1))
+  }
+
   /* -------------------------------------------- */
 
   /**
@@ -63,7 +68,7 @@ export class Selector extends FormApplication {
     const updateData = {};
     for ( let [k, v] of Object.entries(formData) ) {
       if ( v ) choices[k] = Object.assign({},game.data.items.find(a => a._id === k));
-      if ( !v ) updateData[this.attribute + ".-=" + k] = null;
+      if ( !v ) updateData[this.delattribute + "." + k] = null;
     }
     updateData[this.attribute] = choices;
     console.log(updateData);
