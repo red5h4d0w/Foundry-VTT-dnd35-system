@@ -346,6 +346,7 @@
   "DND35E.TraitToolProf": "Tool Proficiencies",
   "DND35E.TraitWeaponProf": "Weapon Proficiencies",
 
+  "DND35E.WeaponAttack": "Weapon Attack",
   "DND35E.WeaponCategory": "Weapon Category",
   "DND35E.WeaponDetails": "Weapon Details",
   "DND35E.WeaponExoticM": "Exotic Melee Weapon",
@@ -359,6 +360,7 @@
   "DND35E.WeaponAmmo": "Ammunition",
   "DND35E.WeaponType": "Weapon Type",
 
+  "DND35E.WeaponProperties": "Weapon Properties",
   "DND35E.WeaponPropertiesAmm": "Ammunition",
   "DND35E.WeaponPropertiesHvy": "Heavy",
   "DND35E.WeaponPropertiesFin": "Finesse",

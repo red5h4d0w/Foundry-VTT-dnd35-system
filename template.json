@@ -655,7 +655,7 @@
     },
     "weapon": {
       "templates": ["itemDescription", "physicalItem"],
-      "weaponType": "",
+      "weaponCategory": "",
       "ability": "",
       "ammunitions": {
         "id": null
