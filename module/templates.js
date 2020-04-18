@@ -21,7 +21,7 @@ export const preloadHandlebarsTemplates = async function() {
     "systems/dnd35e/templates/items/backpack/backpack-content.html",
     "systems/dnd35e/templates/items/class/class-spellbook.html",
     "systems/dnd35e/templates/items/spell/spell-activation.html",
-    "systems/dnd35e/templates/items/weapon/weapon-activation.html"
+    "systems/dnd35e/templates/items/weapon/weapon-action.html"
   ];
 
   // Load the template parts
