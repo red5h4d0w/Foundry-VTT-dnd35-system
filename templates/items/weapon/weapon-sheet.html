@@ -16,7 +16,7 @@
 
             <ul class="summary">
                 <li>
-                    {{localize (lookup config.weaponTypes [data.weaponType]) }}
+                    {{localize (lookup config.weaponCategories [data.weaponCategory]) }}
                 </li>
 
                 <li>
@@ -56,7 +56,7 @@
                     {{/each}}
                     {{/select}}
                 </select>
-                <select name="data.weaponType">
+                <select name="data.weaponCategory">
                     {{#select data.weaponCategory}}
                     {{#each config.weaponCategories as |name type|}}
                     <option value="{{type}}">{{localize name}}</option>

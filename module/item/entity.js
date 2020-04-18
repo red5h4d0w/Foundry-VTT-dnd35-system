@@ -186,6 +186,11 @@ export class Item35e extends Item {
       data.addItemToBackpack = this.addItemToBackpack
     }
 
+    // Weapon Items
+    else if (itemData.type === "weapon"){
+      this.setWeaponAbility(data);
+    }
+
     // Activated Items
     if ( data.hasOwnProperty("activation") ) {
 
@@ -301,11 +306,11 @@ export class Item35e extends Item {
   /* Weapon Setters */
 
   setWeaponAbility(weapon){
-    if (["simpleM","martialM","exoticM"].includes(weapon.data.weaponType)){
-      weapon.data.ability = "str";
+    if (["simpleM","martialM","exoticM"].includes(weapon.weaponCategory)){
+      weapon.ability = "str";
     }
-    else if (["simpleR","martialR","exoticR"].includes(weapon.data.weaponType)){
-      weapon.data.ability = "dex";
+    else if (["simpleR","martialR","exoticR"].includes(weapon.weaponCategory)){
+      weapon.ability = "dex";
     };
   };
 

@@ -655,7 +655,6 @@
     },
     "weapon": {
       "templates": ["itemDescription", "physicalItem"],
-      "weaponCategory": "",
       "ability": "",
       "ammunitions": {
         "id": null
@@ -710,7 +709,8 @@
       },
       "proficient": true,
       "range": null,
-      "size": "med"
+      "size": "med",
+      "weaponCategory": ""
     }
   }
 }
