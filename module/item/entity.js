@@ -298,6 +298,16 @@ export class Item35e extends Item {
     };
   };
 
+  /* Weapon Setters */
+
+  setWeaponAbility(weapon){
+    if (["simpleM","martialM","exoticM"].includes(weapon.data.weaponType)){
+      weapon.data.ability = "str";
+    }
+    else if (["simpleR","martialR","exoticR"].includes(weapon.data.weaponType)){
+      weapon.data.ability = "dex";
+    };
+  };
 
   /* -------------------------------------------- */
 

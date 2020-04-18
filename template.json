@@ -394,7 +394,7 @@
     }
   },
   "Item": {
-    "types": ["class", "backpack", "consumable", "feat", "loot", "prestigeclass", "spell"],
+    "types": ["class", "backpack", "consumable", "feat", "loot", "prestigeclass", "spell", "weapon"],
     "templates": {
       "itemDescription": {
         "description": {
@@ -450,7 +450,7 @@
       "physicalItem":{
         "quantity": 1,
         "weight": 0,
-        "price": 0,
+        "cost": 0,
         "identified": true
       }
     },
@@ -651,49 +651,61 @@
         "type": "",
         "base": null,
         "bonus": null
-      },
-      "scaling": {
-        "mode": null,
-        "formula": null
-      },
-      "time": {
-        "value": "",
-        "_deprecated": true
-      },
-      "damageType": {
-        "value": "",
-        "_deprecated": true
-      },
-      "concentration": {
-        "value": null,
-        "_deprecated": true
-      },
-      "prepared": {
-        "value": null,
-        "_deprecated": true
       }
     },
     "weapon": {
-      "templates": ["itemDescription", "physicalItem" ,"activatedEffect", "action"],
-      "weaponType": "simpleM",
-      "properties": {},
+      "templates": ["itemDescription", "physicalItem"],
+      "weaponType": "",
+      "ability": "",
+      "ammunitions": {
+        "id": null
+      },
+      "critical": {
+        "threat": 20,
+        "multiplier1": 2,
+        "multiplier2": null
+
+      },
+      "enhancement": 0,
+      "meleeType": "",
+      "magicProperties": {},
+      "properties": {
+        "ammunition": {
+          "value": false
+        },
+        "double": {
+          "value": false,
+          "formula2": null,
+          "multiplier2": null
+        },
+        "improvised": {
+          "value": false
+        },
+        "projectile": {
+          "value": false,
+          "freeReload": false,
+          "id": null
+        },
+        "reach": {
+          "value": false,
+          "adjacent": false
+        },
+        "thrown": {
+          "value": false
+        }
+      },
       "proficient": true,
       "bonus": {
-        "value": 0,
-        "_deprecated": true
+        "base": 0,
+        "custom": 0
       },
       "damageType": {
-        "value": "",
-        "_deprecated": true
+        "type1": "",
+        "logical":"",
+        "type2": ""
       },
-      "damage2": {
-        "value": "",
-        "_deprecated": true
-      },
-      "damage2Type": {
-        "value": "",
-        "_deprecated": true
-      }
+      "damageformula": "",
+      "range": null
     }
   }
 }

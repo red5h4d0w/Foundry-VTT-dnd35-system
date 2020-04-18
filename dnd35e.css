@@ -1036,18 +1036,19 @@
   margin-bottom: 10px;
 }
 .dnd35e.sheet.item .content .gridview {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   min-width: 534px;
   min-height: 70%;
 }
 .dnd35e.sheet.item .content .gridview .griditem {
-  align-items: center;
   height: 32px;
   width: 32px;
 }
-.dnd35e.sheet.item .content .gridview .griditem img {
-  width: 100%;
+.dnd35e.sheet.item .content .gridview .griditem .item-icon {
+  height: 32px;
+  width: 32px;
 }
 .dnd35e.sheet.item .inventory-list .item .item-name .item-image {
   flex: 0 0 30px;
@@ -1055,8 +1056,8 @@
   margin-right: 5px;
 }
 .dnd35e.sheet.item .inventory-list .item-icon {
-  height: 30px;
-  width: 30px;
+  height: 32px;
+  width: 32px;
 }
 .dnd35e.sheet.item .inventory-list .item .item-name h4 {
   margin: 0;

@@ -244,8 +244,8 @@ DND35E.currencies = {
 
 // Damage Types
 DND35E.damageTypes = {
-  "acid": "DND35E.DamageAcid",
-  "bludgeoning": "DND35E.DamageBludgeoning",
+  "acid": "DND35E.DamageAcid",               // Acid Damage
+  "bludgeoning": "DND35E.DamageBludgeoning", // Bludgeoning Damage
   "cold": "DND35E.DamageCold",
   "fire": "DND35E.DamageFire",
   "force": "DND35E.DamageForce",
@@ -474,50 +474,39 @@ DND35E.spellScalingModes = {
 
 // Weapon Types
 DND35E.weaponTypes = {
-  "simpleM": "DND35E.WeaponSimpleM",
-  "simpleR": "DND35E.WeaponSimpleR",
-  "martialM": "DND35E.WeaponMartialM",
-  "martialR": "DND35E.WeaponMartialR",
-  "exoticM": "DND35E.WeaponExoticM",
-  "exoticR": "DND35E.WeaponExoticR",
-  "natural": "DND35E.WeaponNatural",
-  "improv": "DND35E.WeaponImprov",
-  "ammo": "DND35E.WeaponAmmo"
+  "simpleM": "DND35E.WeaponSimpleM",   // Simple Melee
+  "simpleR": "DND35E.WeaponSimpleR",   // Simple Ranged
+  "martialM": "DND35E.WeaponMartialM", // Martial Melee
+  "martialR": "DND35E.WeaponMartialR", // Martial Ranged
+  "exoticM": "DND35E.WeaponExoticM",   // Exotic Melee
+  "exoticR": "DND35E.WeaponExoticR"    // Exotic Ranged
 };
 
 
 /* -------------------------------------------- */
 
 /**
- * Define the set of weapon property flags which can exist on a weapon
+ * Define the set of weapon properties which can exist on a weapon
  * @type {Object}
  */
 DND35E.weaponProperties = {
   "amm": "DND35E.WeaponPropertiesAmm", // Ammunition
-  "hvy": "DND35E.WeaponPropertiesHvy", // Heavy
-  "fin": "DND35E.WeaponPropertiesFin", // Finesse
-  "fir": "DND35E.WeaponPropertiesFir",
-  "foc": "DND35E.WeaponPropertiesFoc",
-  "lgt": "DND35E.WeaponPropertiesLgt", // Light
-  "lod": "DND35E.WeaponPropertiesLod",
-  "rch": "DND35E.WeaponPropertiesRch",
-  "rel": "DND35E.WeaponPropertiesRel",
-  "ret": "DND35E.WeaponPropertiesRet",
-  "spc": "DND35E.WeaponPropertiesSpc",
-  "thr": "DND35E.WeaponPropertiesThr",
-  "two": "DND35E.WeaponPropertiesTwo", // Two-handed
-  "ver": "DND35E.WeaponPropertiesVer"
+  "dou": "DND35E.WeaponPropertiesDou", // Double
+  "imp": "DND35E.WeaponPropertiesImp", // Improvised
+  "pro": "DND35E.WeaponPropertiesPro", // Projectile
+  "rea": "DND35E.WeaponPropertiesRea", // Reach
+  "thr": "DND35E.WeaponPropertiesThr"  // Thrown
 };
 
 
 // Spell Components
 DND35E.spellComponents = {
-  "V": "DND35E.ComponentVerbal", 
-  "S": "DND35E.ComponentSomatic",
-  "M": "DND35E.ComponentMaterial",
-  "F": "DND35E.ComponentFocus",
-  "D": "DND35E.ComponentDivineFocus",
-  "X": "DND35E.ComponentXP"
+  "V": "DND35E.ComponentVerbal",      // Verbal
+  "S": "DND35E.ComponentSomatic",     // Somatic
+  "M": "DND35E.ComponentMaterial",    // Material
+  "F": "DND35E.ComponentFocus",       // Focus
+  "D": "DND35E.ComponentDivineFocus", // Divine Focus
+  "X": "DND35E.ComponentXP"           // Experience Points
 };
 
 DND35E.spellDuration = {
@@ -553,7 +542,7 @@ DND35E.spellSchools = {
   "ill": "DND35E.SchoolIll", // Illusion
   "nec": "DND35E.SchoolNec", // Necromancy
   "trs": "DND35E.SchoolTrs", // Transmutation
-  "uni": "DND35E.SchoolUni" // Universal
+  "uni": "DND35E.SchoolUni"  // Universal
 };
 
 /* -------------------------------------------- */
