@@ -660,13 +660,27 @@
       "ammunitions": {
         "id": null
       },
+      "bonus": {
+        "base": 0,
+        "custom": 0
+      },
+      "chatFlavor": "",
       "critical": {
         "threat": 20,
         "multiplier1": 2,
         "multiplier2": null
 
       },
+      "damageFormula": "",
+      "damageType": {
+        "type1": "",
+        "logical":"",
+        "type2": ""
+      },
       "enhancement": 0,
+      "extraDamage":{
+        "parts": []
+      },
       "meleeType": "",
       "magicProperties": {},
       "properties": {
@@ -695,17 +709,8 @@
         }
       },
       "proficient": true,
-      "bonus": {
-        "base": 0,
-        "custom": 0
-      },
-      "damageType": {
-        "type1": "",
-        "logical":"",
-        "type2": ""
-      },
-      "damageformula": "",
-      "range": null
+      "range": null,
+      "size": "med"
     }
   }
 }

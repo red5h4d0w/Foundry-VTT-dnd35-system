@@ -218,16 +218,16 @@ export class ItemSheet35e extends ItemSheet {
     if ( a.classList.contains("add-damage") ) {
       await this._onSubmit(event);  // Submit any unsaved changes
       const damage = this.item.data.data.damage;
-      return this.item.update({"data.damage.parts": damage.parts.concat([["", ""]])});
+      return this.item.update({"data.extradamage.parts": damage.parts.concat([["", ""]])});
     }
 
     // Remove a damage component
     if ( a.classList.contains("delete-damage") ) {
       await this._onSubmit(event);  // Submit any unsaved changes
       const li = a.closest(".damage-part");
-      const damage = duplicate(this.item.data.data.damage);
+      const damage = duplicate(this.item.data.data.extraDamage);
       damage.parts.splice(Number(li.dataset.damagePart), 1);
-      return this.item.update({"data.damage.parts": damage.parts});
+      return this.item.update({"data.extraDamage.parts": damage.parts});
     }
   }; 
 

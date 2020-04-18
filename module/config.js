@@ -128,8 +128,8 @@ DND35E.abilityActivationTypes = {
 
 /* -------------------------------------------- */
 
-// Creature Sizes MAYBE add stuff for long bois
-DND35E.actorSizes = {
+// Creature Sizes MAYBE add stuff for long bois (as a modifier maybe?)
+DND35E.sizes = {
   "fine": "Fine",
   "dim": "Diminutive",
   "tiny": "Tiny",
@@ -246,17 +246,17 @@ DND35E.currencies = {
 DND35E.damageTypes = {
   "acid": "DND35E.DamageAcid",               // Acid Damage
   "bludgeoning": "DND35E.DamageBludgeoning", // Bludgeoning Damage
-  "cold": "DND35E.DamageCold",
-  "fire": "DND35E.DamageFire",
-  "force": "DND35E.DamageForce",
-  "lightning": "DND35E.DamageLightning",
-  "necrotic": "DND35E.DamageNecrotic",
-  "piercing": "DND35E.DamagePiercing",
-  "poison": "DND35E.DamagePoison",
-  "psychic": "DND35E.DamagePsychic",
-  "radiant": "DND35E.DamageRadiant",
-  "slashing": "DND35E.DamageSlashing",
-  "thunder": "DND35E.DamageThunder"
+  "cold": "DND35E.DamageCold",               // Cold Damage
+  "fire": "DND35E.DamageFire",               // Fire Damage
+  "force": "DND35E.DamageForce",             // Force Damage
+  "lightning": "DND35E.DamageLightning",     // Lightning Damage
+  "necrotic": "DND35E.DamageNecrotic",       // Necrotic Damage
+  "piercing": "DND35E.DamagePiercing",       // Piercing Damage
+  "poison": "DND35E.DamagePoison",           // Poison Damage
+  "psychic": "DND35E.DamagePsychic",         // Psychic Damage
+  "radiant": "DND35E.DamageRadiant",         // Radiant Damage
+  "slashing": "DND35E.DamageSlashing",       // Slashing Damage
+  "thunder": "DND35E.DamageThunder"          // Thunder Damage
 };
 
 /* -------------------------------------------- */
@@ -472,8 +472,11 @@ DND35E.spellScalingModes = {
 
 /* -------------------------------------------- */
 
-// Weapon Types
-DND35E.weaponTypes = {
+/**
+ * Define the set of weapon categories of weapons
+ * @type {Object}
+ */
+DND35E.weaponCategories = {
   "simpleM": "DND35E.WeaponSimpleM",   // Simple Melee
   "simpleR": "DND35E.WeaponSimpleR",   // Simple Ranged
   "martialM": "DND35E.WeaponMartialM", // Martial Melee
@@ -481,7 +484,6 @@ DND35E.weaponTypes = {
   "exoticM": "DND35E.WeaponExoticM",   // Exotic Melee
   "exoticR": "DND35E.WeaponExoticR"    // Exotic Ranged
 };
-
 
 /* -------------------------------------------- */
 
@@ -496,6 +498,16 @@ DND35E.weaponProperties = {
   "pro": "DND35E.WeaponPropertiesPro", // Projectile
   "rea": "DND35E.WeaponPropertiesRea", // Reach
   "thr": "DND35E.WeaponPropertiesThr"  // Thrown
+};
+
+/**
+ * Define the set of weapon types of weapons
+ * @type {Object}
+ */
+DND35E.weaponTypes = {
+  "bludgeoning": "DND35E.DamageBludgeoning",
+  "piercing": "DND35E.DamagePiercing",
+  "slashing": "DND35E.DamageSlashing"
 };
 
 
