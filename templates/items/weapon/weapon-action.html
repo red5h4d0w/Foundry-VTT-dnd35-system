@@ -1,7 +1,9 @@
 {{!-- Ability Modifier --}}
 <div class="form-group">
     <label>{{localize 'DND35E.AbilityModifier'}}</label>
-    <div>{{localize (lookup config.abilities [data.ability])}}</div>
+    <select disabled>
+        <option selected value="{{data.ability}}">{{localize (lookup config.abilities data.ability)}}</option>
+    </select>
 </div>
 
 {{!-- Attack Roll Bonus --}}
@@ -21,9 +23,6 @@
     <li class="damage-part flexrow">
         <input type="text" name="data.damageFormula" value="{{data.damageFormula}}">
         <select disabled>
-            {{log config.weaponTypes}}
-            {{log data.damageType.type1}}
-            {{log (lookup config.weaponTypes data.damageType.type1)}}
             <option selected value="{{data.damageType.type1}}">{{localize (lookup config.weaponTypes data.damageType.type1)}}</option>
         </select>
     </li>
