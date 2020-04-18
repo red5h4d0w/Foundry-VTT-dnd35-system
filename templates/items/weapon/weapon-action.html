@@ -20,8 +20,11 @@
 <ol class="damage-parts form-group">
     <li class="damage-part flexrow">
         <input type="text" name="data.damageFormula" value="{{data.damageFormula}}">
-        <select>
-            <option selected value="{{data.damageType.type1}}">{{localize (lookup config.weaponTypes [data.damageType.type1])}}</option>
+        <select disabled>
+            {{log config.weaponTypes}}
+            {{log data.damageType.type1}}
+            {{log (lookup config.weaponTypes data.damageType.type1)}}
+            <option selected value="{{data.damageType.type1}}">{{localize (lookup config.weaponTypes data.damageType.type1)}}</option>
         </select>
     </li>
     {{#each data.extraDamage.parts as |part i| }}
