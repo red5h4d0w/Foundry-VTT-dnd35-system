@@ -20,10 +20,11 @@
 <ol class="damage-parts form-group">
     <li class="damage-part flexrow">
         <input type="text" name="data.damageFormula" value="{{data.damageFormula}}">
-        <input readonly value="{{localize (lookup config.weaponTypes [data.damageType.type1])}}">
-        <a class="damage-control add-type"><i class="fas fa-plus"></i></a>
+        <select>
+            <option selected value="{{data.damageType.type1}}">{{localize (lookup config.weaponTypes [data.damageType.type1])}}</option>
+        </select>
     </li>
-    {{#each data.damage.parts as |part i| }}
+    {{#each data.extraDamage.parts as |part i| }}
     <li class="damage-part flexrow" data-damage-part="{{i}}">
         <input type="text" name="data.extraDamage.parts.{{i}}.0" value="{{lookup this "0"}}"/>
         <select name="data.extraDamage.parts.{{i}}.1">
@@ -41,6 +42,6 @@
 
 {{!-- Chat Message Flavor --}}
 <div class="form-group stacked">
-    <label>{{localize 'DND.ChatMessageFlavor'}}</label>
+    <label>{{localize 'DND35E.ChatMessageFlavor'}}</label>
     <input type="text" name="data.chatFlavor" value="{{data.chatFlavor}}"/>
 </div>
