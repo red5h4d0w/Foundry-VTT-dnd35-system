@@ -173,7 +173,8 @@ export class ItemSheet35e extends ItemSheet {
 
   get hasCustomRange() {
     const data = super.getData();
-    if (data.type === "spell"){
+    // Checks whether item can have the custom range property
+    if (data.type !== "spell"){
       return false;
 
     }
