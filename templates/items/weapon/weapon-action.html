@@ -20,7 +20,8 @@
 <ol class="damage-parts form-group">
     <li class="damage-part flexrow">
         <input type="text" name="data.damageFormula" value="{{data.damageFormula}}">
-        <input readonly>{{localize (lookup config.weaponTypes [data.damageType.type1])}}</input>
+        <input readonly value="{{localize (lookup config.weaponTypes [data.damageType.type1])}}">
+        <a class="damage-control add-type"><i class="fas fa-plus"></i></a>
     </li>
     {{#each data.damage.parts as |part i| }}
     <li class="damage-part flexrow" data-damage-part="{{i}}">

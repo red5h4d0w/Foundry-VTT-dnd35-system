@@ -49,17 +49,17 @@
             {{!-- Weapon Category --}}
             <div class="form-group">
                 <label>{{localize 'DND35E.WeaponCategory'}}</label>
-                <select name="data.weaponType">
-                    {{#select data.weaponCategory}}
-                    {{#each config.weaponCategories as |name type|}}
-                    <option value="{{type}}">{{localize name}}</option>
-                    {{/each}}
-                    {{/select}}
-                </select>
                 <select name="data.size">
                     {{#select data.size}}
                     {{#each config.sizes as |name size|}}
                     <option value="{{size}}">{{localize name}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                <select name="data.weaponType">
+                    {{#select data.weaponCategory}}
+                    {{#each config.weaponCategories as |name type|}}
+                    <option value="{{type}}">{{localize name}}</option>
                     {{/each}}
                     {{/select}}
                 </select>
