@@ -173,7 +173,7 @@ export class ItemSheet35e extends ItemSheet {
 
   get hasCustomRange() {
     const data = super.getData();
-    if (typeof data.item.data.range === "undefined"){
+    if (data.type === "spell"){
       return false;
 
     }
