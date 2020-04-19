@@ -276,7 +276,7 @@
   border-bottom: none;
 }
 .dnd35e.sheet .sheet-header .summary li {
-  width: 33.33%;
+  width: 35%;
   float: left;
   height: 34px;
   margin: 2px 0;
@@ -306,6 +306,7 @@
 }
 .dnd35e.sheet .sheet-header .summary li:last-child {
   border-right: none;
+  width: 30%
 }
 .dnd35e.sheet .sheet-navigation {
   flex: 0 0 30px;
