@@ -16,7 +16,7 @@
 
             <ul class="summary">
                 <li>
-                    {{localize (lookup config.equipmentTypes data.type) }}
+                    {{localize (lookup config.ArmorTypes data.type) }}
                 </li>
                 <li>
                     <input type="text" name="data.enhancement" value="{{numberFormat data.enhancement decimals=0 sign=true}}" placeholder="{{localize 'DND35E.EnhancementBonus'}}">
@@ -87,7 +87,7 @@
             {{!-- Armor Check Penality --}}
             <div class="form-group">
                 <label>{{localize 'DND35E.ArmorPenality'}}</label>
-                <input type="text" name="data.penality" value="{{numberFormat data.enhancement decimals=0 sign=true}}">
+                <input type="text" name="data.penality" value="{{numberFormat data.penality decimals=0 sign=true}}">
             </div>
         </div>
     </section>

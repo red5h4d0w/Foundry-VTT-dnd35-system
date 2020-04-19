@@ -456,11 +456,12 @@
     },
     "armor": {
       "templates": ["itemDescription", "physicalItem"],
-      "type": "light",
-      "value": "+0",
+      "enhancement": "+0",
       "maxDex": "+0",
       "penality": "+0",
-      "proficient": true
+      "proficient": true,
+      "type": "light",
+      "value": "+0"
     },
     "backpack": {
       "templates": ["itemDescription", "physicalItem"],

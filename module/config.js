@@ -210,9 +210,9 @@ DND35E.equipmentTypes = {
 /* -------------------------------------------- */
 
 DND35E.armorTypes = {
-  "heavy": "DND35E.ArmorHeavy",
   "light": "DND35E.ArmorLight",
   "medium": "DND35E.ArmorMedium",
+  "heavy": "DND35E.ArmorHeavy",
   "shield": "DND35E.ArmorShield"
 };
 
