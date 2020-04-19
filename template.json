@@ -394,7 +394,7 @@
     }
   },
   "Item": {
-    "types": ["class", "backpack", "consumable", "feat", "loot", "prestigeclass", "spell", "weapon"],
+    "types": ["armor", "backpack", "class", "consumable", "feat", "loot", "prestigeclass", "spell", "weapon"],
     "templates": {
       "itemDescription": {
         "description": {
@@ -453,6 +453,14 @@
         "cost": 0,
         "identified": true
       }
+    },
+    "armor": {
+      "templates": ["itemDescription", "physicalItem"],
+      "type": "light",
+      "value": "+0",
+      "maxDex": "+0",
+      "penality": "+0",
+      "proficient": true
     },
     "backpack": {
       "templates": ["itemDescription", "physicalItem"],
@@ -575,21 +583,6 @@
         "_deprecated": true
       }
     },
-    "equipment": {
-      "templates": ["itemDescription", "physicalItem", "activatedEffect", "action"],
-      "armor": {
-        "type": "light",
-        "value": 10,
-        "dex": null
-      },
-      "strength": 0,
-      "stealth": false,
-      "proficient": true,
-      "armorType": {
-        "value": "",
-        "_deprecated": true
-      }
-    },
     "feat": {
       "templates": ["itemDescription"],
       "type": "",
@@ -615,6 +608,82 @@
     },
     "loot": {
       "templates": ["itemDescription", "physicalItem"]
+    },
+    "prestigeclass": {
+      "templates": ["itemDescription"],
+      "levels": 1,
+      "hitDice": "d6", 
+      "bab": {
+        "progression": "good",
+        "table": "undefined"
+      },
+      "requirements": "",
+      "skillProficiency": {
+        "app": false,
+        "aut": false,
+        "bal": false,
+        "blu": false,
+        "cli": false,
+        "con": false,
+        "cra": false,
+        "dec": false,
+        "dip": false,
+        "did": false,
+        "dis": false,
+        "esc": false,
+        "for": false,
+        "gat": false,
+        "han": false,
+        "hea": false,
+        "hid": false,
+        "int": false,
+        "jum": false,
+        "kar": false,
+        "kae": false,
+        "kdu": false,
+        "kge": false,
+        "khi": false,
+        "klo": false,
+        "kna": false,
+        "kno": false,
+        "kps": false,
+        "kre": false,
+        "kpl": false,
+        "lis": false,
+        "mov": false,
+        "ope": false,
+        "per": false,
+        "pro": false,
+        "psi": false,
+        "rid": false,
+        "sea": false,
+        "sen": false,
+        "sle": false,
+        "spe": false,
+        "spl": false,
+        "spo": false,
+        "sur": false,
+        "swi": false,
+        "tum": false,
+        "uma": false,
+        "ups": false,
+        "uro": false
+      },
+      "spellcasting":{
+        "ability":"",
+        "cantripname":"",
+        "level0":{},
+        "level1":{},
+        "level2":{},
+        "level3":{},
+        "level4":{},
+        "level5":{},
+        "level6":{},
+        "level7":{},
+        "level8":{},
+        "level9":{},
+        "type":""
+      }
     },
     "spell": {
       "templates": ["itemDescription", "action"],

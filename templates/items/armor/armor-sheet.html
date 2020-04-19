@@ -16,13 +16,11 @@
 
             <ul class="summary">
                 <li>
-                    {{localize (lookup config.weaponCategories [data.weaponCategory]) }}
+                    {{localize (lookup config.equipmentTypes data.type) }}
                 </li>
-
                 <li>
                     <input type="text" name="data.enhancement" value="{{numberFormat data.enhancement decimals=0 sign=true}}" placeholder="{{localize 'DND35E.EnhancementBonus'}}">
                 </li>
-
                 <li>
                     <input type="text" name="data.source" value="{{data.source}}" placeholder="{{localize 'DND35E.Source'}}"/>
                 </li>
@@ -44,34 +42,15 @@
 
         {{!-- Details Tab --}}
         <div class="tab details" data-group="primary" data-tab="details">
-            <h3 class="form-header">{{localize 'DND35E.WeaponDetails'}}</h3>
+            <h3 class="form-header">{{localize 'DND35E.ArmorDetails'}}</h3>
 
-            {{!-- Weapon Category --}}
-            <div class="form-group select-select-icon">
-                <label>{{localize 'DND35E.WeaponCategory'}}</label>
-                <select name="data.size">
-                    {{#select data.size}}
-                    {{#each config.sizes as |name size|}}
-                    <option value="{{size}}">{{localize name}}</option>
-                    {{/each}}
-                    {{/select}}
-                </select>
-                <select name="data.weaponCategory">
-                    {{#select data.weaponCategory}}
-                    {{#each config.weaponCategories as |name type|}}
-                    <option value="{{type}}">{{localize name}}</option>
-                    {{/each}}
-                    {{/select}}
-                </select>
-                <a class="weapon-control add-type"><i class="fas fa-plus"></i></a>
-            </div>
-
-            {{!-- Weapon Type --}}
+            {{!-- Equipment Type --}}
             <div class="form-group">
-                <label>{{localize 'DND35E.WeaponType'}}</label>
-                <select name="data.damageType.type1">
-                    {{#select data.damageType.type1}}
-                    {{#each config.weaponTypes as |name type|}}
+                <label>{{localize 'DND35E.ArmorType'}}</label>
+                <select name="data.type">
+                    {{#select data.type}}
+                    <option value=""></option>
+                    {{#each config.armorTypes as |name type|}}
                     <option value="{{type}}">{{localize name}}</option>
                     {{/each}}
                     {{/select}}
@@ -89,20 +68,27 @@
                 </label>
             </div>
 
-            {{!-- Weapon Properties --}}
-            <div class="form-group stacked weapon-properties">
-                <label>{{localize 'DND35E.WeaponProperties'}}</label>
-                {{#each config.weaponProperties as |name prop|}}
-                <label class="checkbox">
-                    <input type="checkbox" name="data.properties.{{prop}}.value" {{checked (lookup (lookup ../data.properties prop) 'value')}}/> {{ localize name }}
-                </label>
-                {{/each}}
+            {{!-- Armor Class --}}
+            <div class="form-group">
+                <label>{{localize 'DND35E.ArmorClass'}}</label>
+                <div class="form-fields">
+                   <input type="text" name="data.value" value="{{numberFormat data.value decimals=0 sign=true}}" data-dtype="Number"/>
+                </div>
             </div>
 
-            <h3 class="form-header">{{localize 'DND35E.WeaponAttack'}}</h3>
+            {{!-- Dexterity Modifier --}}
+            <div class="form-group">
+                <label>{{localize 'DND35E.ArmorMaxDexModifier'}}</label>
+                <div class="form-fields">
+                   <input type="text" name="data.maxDex" value="{{numberFormat data.maxDex decimals=0 sign=true}}" data-dtype="Number">
+                </div>
+            </div>
 
-            {{!-- Weapon Action Template --}}
-            {{> "systems/dnd35e/templates/items/weapon/weapon-action.html"}}
+            {{!-- Armor Check Penality --}}
+            <div class="form-group">
+                <label>{{localize 'DND35E.ArmorPenality'}}</label>
+                <input type="text" name="data.penality" value="{{numberFormat data.enhancement decimals=0 sign=true}}">
+            </div>
         </div>
     </section>
 </form>

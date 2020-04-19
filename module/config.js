@@ -206,8 +206,15 @@ DND35E.equipmentTypes = {
   "clothing": "DND35E.EquipmentClothing",
   "trinket": "DND35E.EquipmentTrinket"
 };
-DND35E.armorTypes = DND35E.equipmentTypes;
 
+/* -------------------------------------------- */
+
+DND35E.armorTypes = {
+  "heavy": "DND35E.ArmorHeavy",
+  "light": "DND35E.ArmorLight",
+  "medium": "DND35E.ArmorMedium",
+  "shield": "DND35E.ArmorShield"
+};
 
 /* -------------------------------------------- */
 
@@ -229,7 +236,7 @@ DND35E.consumableTypes = {
 /* -------------------------------------------- */
 
 /**
- * The valid currency denominations supported by the 5e system
+ * The valid currency denominations supported by the 3.5e system
  * @type {Object}
  */
 DND35E.currencies = {
