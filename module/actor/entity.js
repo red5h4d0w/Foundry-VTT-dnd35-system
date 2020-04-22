@@ -149,16 +149,19 @@ export class Actor35e extends Actor {
   /* -------------------------------------------- */
 
   getArmorBonus(){
-    let armorBonus;
-    // Find Armors
-    let armors = this.items.filter(item => item.type = "armor");
-    // Removes Shields
-    armors = armors.filter(armor => armor.data.data.type !== "shield");
-    // Find Equipped Armors
-    const equippedArmors = armors.filter(armor => armor.data.data.equipped);
-    // Find and Add their respective Armor Bonus
-    for (armor of equippedArmors) {
-      armorBonus += parseInt(armor.data.data.value);
+    let armorBonus = 0;
+    // Checks if Embedded Entities have been loaded
+    if (this.items) {
+      // Find Armors
+      let armors = this.items.filter(item => item.type = "armor");
+      // Removes Shields
+      armors = armors.filter(armor => armor.data.data.type !== "shield");
+      // Find Equipped Armors
+      const equippedArmors = armors.filter(armor => armor.data.data.equipped);
+      // Find and Add their respective Armor Bonus
+      for (armor of equippedArmors) {
+        armorBonus += parseInt(armor.data.data.value);
+      };
     };
     return armorBonus;
   };
@@ -166,20 +169,23 @@ export class Actor35e extends Actor {
 
   getArmorDexterityModifier(dexMod){
     let maxDexModifier;
-    // Find Equipped Armors and Find their Max Dex modifier
-    const armors = this.items.filter(item => item.type = "armor");
-    const equippedArmors = armors.filter(armor => armor.data.data.equipped);
-    for (armor of equippedArmors) {
-      // Checks if Armor Imposes a Maximal Dexterity Modifier
-      if (armor.data.data.maxDex) {
-        // Checks Whether the Maximal Dexterity Modifier is Inferior to the Current Maximal Dexterity Modifier if it Exists
-        if ( (parseInt(armor.data.data.maxDex) < maxDexModifier) || !maxDexModifier){
-          maxDexModifier = armor.data.data.maxDex;
+    // Checks if Embedded Entities have been Loaded
+    if (this.items) {
+      // Find Equipped Armors and Find their Max Dex modifier
+      const armors = this.items.filter(item => item.type = "armor");
+      const equippedArmors = armors.filter(armor => armor.data.data.equipped);
+      for (armor of equippedArmors) {
+        // Checks if Armor Imposes a Maximal Dexterity Modifier
+        if (armor.data.data.maxDex) {
+          // Checks Whether the Maximal Dexterity Modifier is Inferior to the Current Maximal Dexterity Modifier if it Exists
+          if ( (parseInt(armor.data.data.maxDex) < maxDexModifier) || !maxDexModifier){
+            maxDexModifier = armor.data.data.maxDex;
+          };
         };
       };
     };
     // Gets the Dexterity Modifier or it's maximal value
-    const armorDexMod = Math.min(maxDexModifier, dexMod);
+    const armorDexMod = maxDexModifier? Math.min(maxDexModifier, dexMod): dexMod;
     return armorDexMod;
   };
 
@@ -200,18 +206,22 @@ export class Actor35e extends Actor {
     if (data.attributes.bab.custom) {
       return data.attributes.bab.custom;
     };
-    // Checks all classes owned by the actor to find their Base Attack Bonuses and add them
-    const config = CONFIG.DND35E;
-    const classes = this.items.filter(item => item.type = "class");
-    // Could probably be rewritten with a reduce() method instead
-    for (const c of classes) {
-      const classLevel = c.data.data.levels;
-      if (c.data.data.bab.progression) {
-        const table = config.BAB_TABLES[c.data.data.bab.progression]
-        baseAttackBonus += table[classLevel];
+    // Checks if embedded entities have been loaded
+    if (this.items) {
+      // Checks all classes owned by the actor to find their Base Attack Bonuses and add them
+      const config = CONFIG.DND35E;
+      const classes = this.items.filter(item => item.type = "class");
+      // Could probably be rewritten with a reduce() method instead
+      for (const c of classes) {
+        const classLevel = c.data.data.levels;
+        if (c.data.data.bab.progression) {
+          const table = config.BAB_TABLES[c.data.data.bab.progression]
+          baseAttackBonus += table[classLevel];
+        };
       };
     };
-    return baseAttackBonus
+
+    return baseAttackBonus;
   };
 
 
@@ -225,12 +235,17 @@ export class Actor35e extends Actor {
   getBaseSaveBonus(save){
     let baseSaveBonus = 0
     const config = CONFIG.DND35E;
-    const classes = this.items.filter(item => item.type = "class");
-    for (const c of classes) {
-      const classLevel = c.data.data.levels;
-      if (c.data.data.savesProgression){
-        const table = config.SAVE_TABLE[c.data.data.savesProgression[save]];
-        baseSaveBonus += table[classLevel];
+    if (this.data.data.attributes.saves[save].custom) {
+      return this.data.data.attributes.saves[save].custom;
+    };
+    if (this.items) {
+      const classes = this.items.filter(item => item.type = "class");
+      for (const c of classes) {
+        const classLevel = c.data.data.levels;
+        if (c.data.data.savesProgression){
+          const table = config.SAVE_TABLE[c.data.data.savesProgression[save]];
+          baseSaveBonus += table[classLevel];
+        };
       };
     };
     return baseSaveBonus;
@@ -271,15 +286,17 @@ export class Actor35e extends Actor {
 
 
   getShieldBonus() {
-    let shieldBonus;
-    let armors = this.items.filter(item => item.type = "armor");
-    // Removes Items that are not shields
-    armors = armors.filter(armor => armor.data.data.type === "shield");
-    // Find Equipped Shields
-    const equippedShields = armors.filter(armor => armor.data.data.equipped);
-    // Find and Add their Respective Shield Bonus
-    for (shield of equippedShields) {
-      shieldBonus += parseInt(shield.data.data.value);
+    let shieldBonus = 0;
+    if (this.items) {
+      let armors = this.items.filter(item => item.type = "armor");
+      // Removes Items that are not shields
+      armors = armors.filter(armor => armor.data.data.type === "shield");
+      // Find Equipped Shields
+      const equippedShields = armors.filter(armor => armor.data.data.equipped);
+      // Find and Add their Respective Shield Bonus
+      for (shield of equippedShields) {
+        shieldBonus += parseInt(shield.data.data.value);
+      };
     };
     return shieldBonus;
   }
@@ -296,11 +313,14 @@ export class Actor35e extends Actor {
     let proficiency = 0;
     // Checks if skill can be used untrained and if so gives half-proficiency
     CONFIG.DND35E.UNTRAINED_SKILLS.includes(skill)? proficiency = 0.5 : 0;
-    // Checks whether classes owned by the actor have said proficiency
-    const classes = this.items.filter(item => item.type === "class");
-    for (c of classes){
-      if (c.data.data.skillProficiency[skill]){
-        proficiency = 1
+    // Checks if Embedded Entities have been loaded
+    if (this.items) {
+      // Checks whether classes owned by the actor have said proficiency
+      const classes = this.items.filter(item => item.type === "class");
+      for (c of classes){
+        if (c.data.data.skillProficiency[skill]){
+          proficiency = 1
+        };
       };
     };
     return proficiency;
