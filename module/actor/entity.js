@@ -65,13 +65,14 @@ export class Actor35e extends Actor {
 
     // Skill modifiers
     for (const skl in data.skills) {
-      // Sets the proficiencies for the skill
       let skill = data.skills[skl];
+      // Sets the proficiencies for the skill
       skill.proficiency = this.getSkillProficiency(skill);
       skill.rank = parseFloat(skill.rank || 0);
       skill.bonus = parseInt(skill.bonus || 0);
-      console.log(data.abilities[skill.ability]);
-      skill.mod = Math.floor(skill.rank + data.abilities[skill.ability].mod + skill.bonus);
+      // Checks whether Skill has an ability, if so sets the ability modifier
+      skill.ablMod = skill.ability ? data.abilities[skill.ability].mod : 0;
+      skill.mod = Math.floor(skill.rank + skill.ablMod + skill.bonus);
     }
 
     // Spell Resistance
