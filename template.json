@@ -5,22 +5,28 @@
       "common": {
         "abilities": {
           "str": {
-            "value": 10
+            "value": 10,
+            "mod": 0 
           },
           "dex": {
-            "value": 10
+            "value": 10,
+            "mod": 0
           },
           "con": {
-            "value": 10
+            "value": 10,
+            "mod": 0
           },
           "int": {
-            "value": 10
+            "value": 10,
+            "mod": 0
           },
           "wis": {
-            "value": 10
+            "value": 10,
+            "mod": 0
           },
           "cha": {
-            "value": 10
+            "value": 10,
+            "mod": 0
           }
         },
         "attributes": {
@@ -30,7 +36,8 @@
           },
           "bab": {
             "value": 0,
-            "min": 0  
+            "min": 0,
+            "custom": null
           },
           "hp": {
             "value": 10,
@@ -45,18 +52,28 @@
           },
           "saves": {
             "for":{
-              "value": 0,
-              "ability": "con"
+              "ability": "con",
+              "magic": 0,
+              "misc": 0,
+              "mod": 0,
+              "temp": 0
             },
             "ref":{
-              "value": 0,
-              "ability": "dex"
+              "ability": "dex",
+              "magic": 0,
+              "misc": 0,
+              "mod": 0,
+              "temp": 0
             },
             "wil":{
-              "value": 0,
-              "ability": "wis"
+              "ability": "wis",
+              "magic": 0,
+              "misc": 0,
+              "mod": 0,
+              "temp": 0
             }
           },
+          "size": "med",
           "speed": {
             "value": "30 ft",
             "special": ""
@@ -70,184 +87,298 @@
         },
         "skills": {
           "app": {
-            "value": 0,
-            "ability": "int"
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
+          },
+          "aut": {
+            "ability": "wis",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "bal": {
-            "value": 0,
-            "ability": "dex"
+            "ability": "dex",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "blu": {
-            "value": 0,
-            "ability": "cha"
+            "ability": "cha",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "cli": {
-            "value": 0,
-            "ability": "str"
+            "ability": "str",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "con": {
-            "value": 0,
-            "ability": "con"
+            "ability": "con",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "cra": {
-            "value": 0,
-            "ability": "int"
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "dec": {
-            "value": 0,
-            "ability": "int"
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "dip": {
-            "value": 0,
-            "ability": "cha"
+            "ability": "cha",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "dis": {
-            "value": 0,
-            "ability": "int"
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "esc": {
-            "value": 0,
-            "ability": "dex"
+            "ability": "dex",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "for": {
-            "value": 0,
-            "ability": "int"
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "gat": {
-            "value": 0,
-            "ability": "cha"
+            "ability": "cha",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "han": {
-            "value": 0,
-            "ability": "cha"
+            "ability": "cha",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "hea": {
-            "value": 0,
-            "ability": "wis"
+            "ability": "wis",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "hid": {
-            "value": 0,
-            "ability": "dex"
+            "ability": "dex",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "int": {
-            "value": 0,
-            "ability": "cha"
+            "ability": "cha",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "jum": {
-            "value": 0,
-            "ability": "str"
+            "ability": "str",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "kar": {
-            "value": 0,
-            "ability": "int"
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "kae": {
-            "value": 0,
-            "ability": "int"
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "kdu": {
-            "value": 0,
-            "ability": "int"
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "kge": {
-            "value": 0,
-            "ability": "int"
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "khi": {
-            "value": 0,
-            "ability": "int"
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "klo": {
-            "value": 0,
-            "ability": "int"
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "kna": {
-            "value": 0,
-            "ability": "int"
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "kno": {
-            "value": 0,
-            "ability": "int"
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
+          },
+          "kps": {
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "kre": {
-            "value": 0,
-            "ability": "int"
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "kpl": {
-            "value": 0,
-            "ability": "int"
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "lis": {
-            "value": 0,
-            "ability": "wis"
+            "ability": "wis",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "mov": {
-            "value": 0,
-            "ability": "dex"
+            "ability": "dex",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "ope": {
-            "value": 0,
-            "ability": "dex"
+            "ability": "dex",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "per": {
-            "value": 0,
-            "ability": "cha"
+            "ability": "cha",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "pro": {
-            "value": 0,
-            "ability": "wis"
+            "ability": "wis",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
+          },
+          "psi": {
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "rid": {
-            "value": 0,
-            "ability": "dex"
+            "ability": "dex",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "sea": {
-            "value": 0,
-            "ability": "int"
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "sen": {
-            "value": 0,
-            "ability": "wis"
+            "ability": "wis",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "sle": {
-            "value": 0,
-            "ability": "dex"
+            "ability": "dex",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "spe": {
-            "value": 0,
-            "ability": ""
+            "ability": "",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "spl": {
-            "value": 0,
-            "ability": "int"
+            "ability": "int",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "spo": {
-            "value": 0,
-            "ability": "wis"
+            "ability": "wis",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "slt": {
-            "value": 0,
-            "ability": "dex"
+            "ability": "dex",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "sur": {
-            "value": 0,
-            "ability": "wis"
+            "ability": "wis",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "swi": {
-            "value": 0,
-            "ability": "str"
+            "ability": "str",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "tum": {
-            "value": 0,
-            "ability": "dex"
+            "ability": "dex",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "uma": {
-            "value": 0,
-            "ability": "cha"
+            "ability": "cha",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
+          },
+          "ups": {
+            "ability": "cha",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           },
           "uro": {
-            "value": 0,
-            "ability": "dex"
+            "ability": "dex",
+            "bonus": 0,
+            "proficiency": 0,
+            "rank": 0
           }
         },
         "traits": {
@@ -457,7 +588,8 @@
     "armor": {
       "templates": ["itemDescription", "physicalItem"],
       "enhancement": "+0",
-      "maxDex": "+0",
+      "equipped": false,
+      "maxDex": "",
       "penality": "+0",
       "proficient": true,
       "type": "light",
@@ -486,8 +618,7 @@
       "levels": 1,
       "hitDice": "d6", 
       "bab": {
-        "progression": "good",
-        "table": "undefined"
+        "progression": "good"
       },
       "skillProficiency": {
         "app": false,
@@ -539,6 +670,11 @@
         "uma": false,
         "ups": false,
         "uro": false
+      },
+      "savesProgression":{
+        "for": "",
+        "ref": "",
+        "wil": ""
       },
       "spellcasting":{
         "ability":"",
@@ -747,6 +883,7 @@
         "type2": ""
       },
       "enhancement": 0,
+      "equipped": false,
       "extraDamage":{
         "parts": []
       },

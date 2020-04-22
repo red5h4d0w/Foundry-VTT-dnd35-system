@@ -656,6 +656,18 @@ DND35E.CHARACTER_EXP_LEVELS =  [
   78000, 91000, 105000, 120000, 136000, 153000, 171000, 190000]
 ;
 
+DND35E.AC_SIZE_MODIFIER = {
+  "fine": "+8",
+  "dim": "+4",
+  "tiny": "+2",
+  "sm": "+1",
+  "med": "+0",
+  "lg": "-1",
+  "huge": "-2",
+  "grg": "-4",
+  "col": "-8"
+}
+
 DND35E.BAB_TABLES = {
   "average": [0, 1, 2, 3, 3, 4, 5, 6, 6, 7, 8, 9, 9, 10, 11, 12, 12, 13, 14, 15],
   "good": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
@@ -685,6 +697,32 @@ DND35E.CR_EXP_LEVELS = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 43200, 31200, 25200, 18000, 14400, 13200, 8100, 5700, 4000], // cr 19
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 46800, 33600, 27000, 19200, 15300, 10800, 8550, 6000] // cr 20
 ];
+
+DND35E.GRAPPLE_SIZE_MODIFIER = {
+  "fine": "-16",
+  "dim": "-12",
+  "tiny": "-8",
+  "sm": "-4",
+  "med": "+0",
+  "lg": "+4",
+  "huge": "+8",
+  "grg": "+12",
+  "col": "+16"
+}
+
+
+// Note could be reworked as formula as a first attempt to make rules epic
+// Base Save Bonus Table
+DND35E.SAVE_TABLE = {
+  "good": [2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12],
+  "poor": [0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6]
+};
+
+/**
+ * Enumerate the skills that can be used if untrained
+ * @type {Array.<string>}
+ */
+DND35E.UNTRAINED_SKILLS = ["app", "bal", "blu", "cli", "con", "cra", "dip", "dis", "esc", "for", "gat", "hea", "hid", "int", "jum", "lis", "mov", "per", "rid", "sea", "sen", "spo", "sur", "swi", "uro"]
 
 // Configure Optional Character Flags
 DND35E.characterFlags = {

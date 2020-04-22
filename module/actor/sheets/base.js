@@ -31,7 +31,8 @@ export class ActorSheet35e extends ActorSheet {
         ".inventory .inventory-list",
         ".features .inventory-list",
         ".spellbook .inventory-list"
-      ]
+      ],
+      tabs: [{navSelector: ".tabs", contentSelector: ".sheet-body", initial: "description"}]
     });
   }
 
@@ -100,8 +101,7 @@ export class ActorSheet35e extends ActorSheet {
       "ci": CONFIG.DND35E.conditionTypes,
       "languages": CONFIG.DND35E.languages,
       "armorProf": CONFIG.DND35E.armorProficiencies,
-      "weaponProf": CONFIG.DND35E.weaponProficiencies,
-      "toolProf": CONFIG.DND35E.toolProficiencies
+      "weaponProf": CONFIG.DND35E.weaponProficiencies
     };
     for ( let [t, choices] of Object.entries(map) ) {
       const trait = traits[t];

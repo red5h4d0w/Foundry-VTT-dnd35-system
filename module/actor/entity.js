@@ -19,6 +19,7 @@ export class Actor35e extends Actor {
     const actorData = this.data;
     const data = actorData.data;
     const flags = actorData.flags;
+    const config = CONFIG.DND35E;
 
     // Prepare Character data
     if ( actorData.type === "character" ) this._prepareCharacterData(actorData);
@@ -26,31 +27,67 @@ export class Actor35e extends Actor {
 
     // Ranged Weapon/Melee Weapon/Ranged Spell/Melee Spell attack bonuses are added when rolled since they are not a fixed value.
     // Damage bonus added when rolled since not a fixed value.
+    // Spell DC depends on class and spell level so it is not there
 
-    // Ability modifiers and saves
-    // Character All Ability Check" and All Ability Save bonuses added when rolled since not a fixed value.
-    const saveBonus = parseInt(data.bonuses.abilities.save) || 0;
+    // Ability modifiers
     for (let abl of Object.values(data.abilities)) {
       abl.mod = Math.floor((abl.value - 10) / 2);
-      abl.save = abl.mod + ((abl.proficient || 0) * data.attributes.prof) + saveBonus;
+      // There are temp modifier to add
     }
+
+    // Armor Class
+    let ac = data.attributes.ac
+    ac.armorBonus = this.getArmorBonus();
+    ac.shieldBonus = this.getShieldBonus();
+    ac.dexMod = this.getArmorDexterityModifier();
+    ac.natural = parseInt(ac.natural || 0);
+    ac.size = this.getArmorSizeModifier();
+    ac.misc = parseInt(ac.misc || 0);
+    // There is a Deflection bonus not implemented yet
+    // Dodge AC is not implemented yet and normally is specifid to targets
+    ac.value = 10 + ac.armorBonus + ac.shieldBonus + ac.dexMod + ac.natural + ac.size + ac.misc;
+    ac.touch = ac.value - ac.armorBonus - ac.shieldBonus - ac.natural
+    ac.flatFooted = ac.value - ac.dexMod
+
+    // Base Attack Bonus
+    data.attributes.bab.value = this.getBaseAttackBonus();
+
+    // Saving throw bonus
+    for (const save in data.saves) {
+      // Gets the base save bonus of the actor for the save
+      const baseSaveBonus = this.getBaseSaveBonus(save);
+      data.saves[save].magic = parseInt(data.saves[save].magic || 0);
+      data.saves[save].misc = parseInt(data.saves[save].misc || 0);
+      data.saves[save].temp = parseInt(data.saves[save].temp || 0);
+      // Add the ability modifier associated with the saving throw
+      data.saves[save].mod = baseSaveBonus + data.abilities[data.saves[save].ability].mod + data.saves[save].magic + data.saves[save].misc + data.saves[save].temp;
+    };
 
     // Skill modifiers
-    for (let skl of Object.values(data.skills)) {
-      skl.value = parseFloat(skl.value || 0);
-      skl.bonus = parseInt(skl.bonus || 0);
-      skl.mod = data.abilities[skl.ability].mod + skl.bonus + Math.floor(skl.value * data.attributes.prof);
-      skl.passive = 10 + skl.mod;
+    for (const skill in data.skills) {
+      // Sets the proficiencies for the skill
+      this.setSkillProficiency(skill);
+      data.skills[skill].rank = parseFloat(data.skills[skill].rank || 0);
+      data.skills[skill].bonus = parseInt(data.skills[skill].bonus || 0);
+      data.skills[skill].mod = Math.floor(data.abilities[data.skills[skill].ability].mod + skl.bonus);
     }
 
+    // Spell Resistance
+    data.attributes.spellResistance = parseInt(data.attributes.spellResistance);
+
     // Initiative
-    const init = data.attributes.init;
+    let init = data.attributes.init;
     init.mod = data.abilities.dex.mod;
-    init.bonus = init.value + (getProperty(flags, "dnd35e.initiativeAlert") ? 5 : 0);
+    init.bonus = parseInt(init.bonus) || 0;
     init.total = init.mod + init.prof + init.bonus;
 
-    // Spell DC
-    data.attributes.spelldc = this.getSpellDC(data.attributes.spellcasting);
+    // Grapple Modifier
+    let grapple = data.attributes.grapple;
+    grapple.bab = data.attributes.bab.value;
+    grapple.strMod = data.abilities.str.value;
+    grapple.sizeMod = this.getGrappleSizeModifier();
+    grapple.misc = parseInt(grapple.misc);
+    grapple.value = grapple.bab + grapple.strMod + grapple.sizeMod + grapple.misc;
   }
 
   /* -------------------------------------------- */
@@ -107,6 +144,100 @@ export class Actor35e extends Actor {
 
   /* -------------------------------------------- */
 
+  /* -------------------------------------------- */
+  /*  Getters
+  /* -------------------------------------------- */
+
+  getArmorBonus(){
+    let armorBonus;
+    // Find Armors
+    let armors = this.items.filter(item => item.type = "armor");
+    // Removes Shields
+    armors = armors.filter(armor => armor.data.data.type !== "shield");
+    // Find Equipped Armors
+    const equippedArmors = armors.filter(armor => armor.data.data.equipped);
+    // Find and Add their respective Armor Bonus
+    for (armor of equippedArmors) {
+      armorBonus += parseInt(armor.data.data.value);
+    };
+    return armorBonus;
+  };
+
+
+  getArmorDexterityModifier(dexMod){
+    let maxDexModifier;
+    // Find Equipped Armors and Find their Max Dex modifier
+    const armors = this.items.filter(item => item.type = "armor");
+    const equippedArmors = armors.filter(armor => armor.data.data.equipped);
+    for (armor of equippedArmors) {
+      // Checks if Armor Imposes a Maximal Dexterity Modifier
+      if (armor.data.data.maxDex) {
+        // Checks Whether the Maximal Dexterity Modifier is Inferior to the Current Maximal Dexterity Modifier if it Exists
+        if ( (parseInt(armor.data.data.maxDex) < maxDexModifier) || !maxDexModifier){
+          maxDexModifier = armor.data.data.maxDex;
+        };
+      };
+    };
+    // Gets the Dexterity Modifier or it's maximal value
+    const armorDexMod = Math.min(maxDexModifier, dexMod);
+    return armorDexMod;
+  };
+
+  getArmorSizeModifier(){
+    const config = CONFIG.DND35E;
+    return config.AC_SIZE_MODIFIER[this.data.data.attribute.size];
+  };
+
+
+  /**
+   * Returns the base attack bonus for this actor
+   * @return {number}           The base attack bonus
+   */
+  getBaseAttackBonus(){
+    let baseAttackBonus = 0;
+    const data = this.data.data;
+    // Checks if there is a custom base attack bonus defined (NPCs do not have base attack bonus derived from owned classes)
+    if (data.attributes.bab.custom) {
+      return data.attributes.bab.custom;
+    };
+    // Checks all classes owned by the actor to find their Base Attack Bonuses and add them
+    const config = CONFIG.DND35E;
+    const classes = this.items.filter(item => item.type = "class");
+    // Could probably be rewritten with a reduce() method instead
+    for (const c of classes) {
+      const classLevel = c.data.data.levels;
+      if (c.data.data.bab.progression) {
+        const table = config.BAB_TABLES[c.data.data.bab.progression]
+        baseAttackBonus += table[classLevel];
+      };
+    };
+    return baseAttackBonus
+  };
+
+
+  /* -------------------------------------------- */
+  
+  /**
+   * Returns the base save bonus for this actor using a certain saving throw
+   * @param {string} save       The saving throw used
+   * @return {number}           The base save bonus for the saving throw
+   */
+  getBaseSaveBonus(save){
+    let baseSaveBonus = 0
+    const config = CONFIG.DND35E;
+    const classes = this.items.filter(item => item.type = "class");
+    for (const c of classes) {
+      const classLevel = c.data.data.levels;
+      if (c.data.data.savesProgression){
+        const table = config.SAVE_TABLE[c.data.data.savesProgression[save]];
+        baseSaveBonus += table[classLevel];
+      };
+    };
+    return baseSaveBonus;
+  };
+
+  /* -------------------------------------------- */
+
   /**
    * Return the amount of experience required to gain a certain character level.
    * @param level {Number}  The desired level
@@ -133,17 +264,48 @@ export class Actor35e extends Actor {
 
   /* -------------------------------------------- */
 
-  /**
-   * Return the spell DC for this actor using a certain ability score
-   * @param {string} ability    The ability score, i.e. "str"
-   * @return {number}           The spell DC
-   */
-  getSpellDC(ability) {
-    const actorData = this.data.data;
-    const bonus = parseInt(getProperty(actorData, "bonuses.spell.dc")) || 0;
-    ability = actorData.abilities[ability];
-    return 10 + (ability ? ability.mod : 0)  + bonus;
+  getGrappleSizeModifier(){
+    const config = CONFIG.DND35E;
+    return config.GRAPPLE_SIZE_MODIFIER[this.data.data.attribute.size];
+  };
+
+
+  getShieldBonus() {
+    let shieldBonus;
+    let armors = this.items.filter(item => item.type = "armor");
+    // Removes Items that are not shields
+    armors = armors.filter(armor => armor.data.data.type === "shield");
+    // Find Equipped Shields
+    const equippedShields = armors.filter(armor => armor.data.data.equipped);
+    // Find and Add their Respective Shield Bonus
+    for (shield of equippedShields) {
+      shieldBonus += parseInt(shield.data.data.value);
+    };
+    return shieldBonus;
   }
+
+  /* -------------------------------------------- */
+  
+  /**
+  * Return the spell DC for this actor using a certain ability score
+  * @param {string} skill    The skill identifier, i.e. "jum"
+  * @return {number}         The proficiency of that skill
+  */
+
+  getSkillProficiency(skill) {
+    let proficiency = 0;
+    // Checks if skill can be used untrained and if so gives half-proficiency
+    CONFIG.DND35E.UNTRAINED_SKILLS.includes(skill)? proficiency = 0.5 : 0;
+    // Checks whether classes owned by the actor have said proficiency
+    const classes = this.items.filter(item => item.type === "class");
+    for (c of classes){
+      if (c.data.data.skillProficiency[skill]){
+        proficiency = 1
+      };
+    };
+    return proficiency;
+  };
+
 
   /* -------------------------------------------- */
   /*  Socket Listeners and Handlers
