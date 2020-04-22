@@ -70,6 +70,7 @@ export class Actor35e extends Actor {
       skill.proficiency = this.getSkillProficiency(skill);
       skill.rank = parseFloat(skill.rank || 0);
       skill.bonus = parseInt(skill.bonus || 0);
+      console.log(data.abilities[skill.ability]);
       skill.mod = Math.floor(skill.rank + data.abilities[skill.ability].mod + skill.bonus);
     }
 
