@@ -191,7 +191,7 @@ export class Actor35e extends Actor {
 
   getArmorSizeModifier(){
     const config = CONFIG.DND35E;
-    return config.AC_SIZE_MODIFIER[this.data.data.attribute.size];
+    return config.AC_SIZE_MODIFIER[this.data.data.attributes.size];
   };
 
 
@@ -281,7 +281,7 @@ export class Actor35e extends Actor {
 
   getGrappleSizeModifier(){
     const config = CONFIG.DND35E;
-    return config.GRAPPLE_SIZE_MODIFIER[this.data.data.attribute.size];
+    return config.GRAPPLE_SIZE_MODIFIER[this.data.data.attributes.size];
   };
 
 
