@@ -67,17 +67,14 @@ export class ActorSheet35e extends ActorSheet {
     data.filters = this._filters;
 
     // Ability Scores
-    for ( let [a, abl] of Object.entries(data.actor.data.abilities)) {
-      abl.icon = this._getProficiencyIcon(abl.proficient);
-      abl.hover = CONFIG.DND35E.proficiencyLevels[abl.proficient];
+    for ( let [a, abl] of Object.entries(data.actor.data.abilities)) { 
       abl.label = CONFIG.DND35E.abilities[a];
     }
 
     // Update skill labels
     for ( let [s, skl] of Object.entries(data.actor.data.skills)) {
-      skl.ability = data.actor.data.abilities[skl.ability].label.substring(0, 3);
-      skl.icon = this._getProficiencyIcon(skl.value);
-      skl.hover = CONFIG.DND35E.proficiencyLevels[skl.value];
+      skl.icon = this._getProficiencyIcon(skl.proficiency);
+      skl.hover = CONFIG.DND35E.proficiencyLevels[skl.proficiency];
       skl.label = CONFIG.DND35E.skills[s];
     }
 

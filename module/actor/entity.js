@@ -66,7 +66,7 @@ export class Actor35e extends Actor {
     // Skill modifiers
     for (const skill in data.skills) {
       // Sets the proficiencies for the skill
-      this.setSkillProficiency(skill);
+      data.skills[skill].proficiency = this.getSkillProficiency(skill);
       data.skills[skill].rank = parseFloat(data.skills[skill].rank || 0);
       data.skills[skill].bonus = parseInt(data.skills[skill].bonus || 0);
       data.skills[skill].mod = Math.floor(data.abilities[data.skills[skill].ability].mod + skl.bonus);
