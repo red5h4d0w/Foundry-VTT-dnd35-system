@@ -5,12 +5,12 @@
 
         <div class="header-details flexrow">
             <h1 class="charname">
-                <input name="name" type="text" value="{{actor.name}}" placeholder="Character Name"/>
+                <input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'DND35E.CharacterName' }}"/>
             </h1>
 
             <div class="charlevel">
                 <div class="level {{#if disableExperience}}noxp{{/if}}">
-                    <label>Level {{data.details.level}}</label>
+                    <label>{{localize 'DND35E.Level'}} {{data.details.level}}</label>
                 </div>
                 {{#unless disableExperience}}
                 <div class="experience">
@@ -27,20 +27,17 @@
             {{!-- Character Summary --}}
             <ul class="summary">
                 <li>
-                    <input type="text" name="data.details.race" value="{{data.details.race}}" placeholder="Race"/>
+                    <input type="text" name="data.details.race" value="{{data.details.race}}" placeholder="{{localize 'DND35E.Race'}}"/>
                 </li>
                 <li>
-                    <input type="text" name="data.details.classes" value="{{data.details.classes}}" placeholder="Background"/>
-                </li>
-                <li>
-                    <input type="text" name="data.details.alignment" value="{{data.details.alignment}}" placeholder="Alignment"/>
+                    <input type="text" name="data.details.alignment" value="{{data.details.alignment}}" placeholder="{{localize 'DND35E.EvilOrGood'}}"/>
                 </li>
             </ul>
 
             {{!-- Header Attributes --}}
             <ul class="attributes flexrow">
                 <li class="attribute health">
-                    <h4 class="attribute-name box-title">{{ localize "DND5E.Health" }}</h4>
+                    <h4 class="attribute-name box-title">{{ localize "DND35E.Health" }}</h4>
                     <div class="attribute-value multiple">
                         <input name="data.attributes.hp.value" type="text" value="{{data.attributes.hp.value}}"
                                data-dtype="Number" placeholder="10"/>
@@ -57,7 +54,7 @@
                 </li>
 
                 <li class="attribute">
-                    <h4 class="attribute-name box-title">{{ localize "DND35E.ArmorClass" }}</h4>
+                    <h4 class="attribute-name box-title">{{ localize 'DND35E.ArmorClass' }}</h4>
                     <div class="attribute-value">
                         <input name="data.attributes.ac.value" type="text" value="{{data.attributes.ac.value}}"
                                data-dtype="Number" placeholder="10"/>
@@ -65,7 +62,7 @@
                 </li>
 
                 <li class="attribute">
-                    <h4 class="attribute-name box-title">{{ localize "DND35E.Speed" }}</h4>
+                    <h4 class="attribute-name box-title">{{ localize 'DND35E.Speed' }}</h4>
                     <div class="attribute-value">
                         <input name="data.attributes.speed.value" type="text"
                                value="{{data.attributes.speed.value}}" placeholder="0"/>
@@ -77,9 +74,9 @@
                 </li>
 
                 <li class="attribute">
-                    <h4 class="attribute-name box-title">{{ localize "DND35E.BaseAttackBonus" }}</h4>
+                    <h4 class="attribute-name box-title">{{ localize "DND35E.BAB" }}</h4>
                     <div class="attribute-value multiple">
-                        <label class="hit-dice">{{data.attributes.bab}}</label>
+                        <label>{{data.attributes.bab.value}}</label>
                     </div>
                 </li>
             </ul>
@@ -103,11 +100,11 @@
             {{!-- Ability Scores --}}
             <ul class="ability-scores flexrow">
             {{#each data.abilities as |ability id|}}
-                <li class="ability {{#if ability.proficient}}proficient{{/if}}" data-ability="{{id}}">
-                    <h4 class="ability-name box-title rollable">{{ability.label}}</h4>
+                <li class="ability" data-ability="{{id}}">
+                    <h4 class="ability-name box-title rollable">{{localize ability.label}}</h4>
                     <input class="ability-score" name="data.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10"/>
                     <div class="ability-modifiers flexrow">
-                        <span class="ability-mod" title="Modifier">{{numberFormat ability.mod decimals=0 sign=true}}</span>
+                        <span class="ability-mod" title="{{localize 'DND35E.Modifier'}}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
                     </div>
                 </li>
             {{/each}}
@@ -119,10 +116,10 @@
                 <li class="skill flexrow {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}">
                     <input type="hidden" name="data.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number"/>
                     <a class="proficiency-toggle skill-proficiency" title="{{skill.hover}}">{{{skill.icon}}}</a>
-                    <h4 class="skill-name rollable">{{skill.label}}</h4>
+                    <h4 class="skill-name rollable">{{localize skill.label}}</h4>
                     <span class="skill-ability">{{skill.ability}}</span>
+                    {{log skill.mod}}
                     <span class="skill-mod">{{numberFormat skill.mod decimals=0 sign=true}}</span>
-                    <span class="skill-passive">({{skill.passive}})</span>
                 </li>
             {{/each}}
             </ul>
@@ -131,7 +128,7 @@
 
                 {{!-- Body Attributes --}}
                 <ul class="attributes flexrow">
-                    {{#each saves as |save|}}
+                    {{#each data.attributes.saves as |save|}}
                     <li class="attribute resource">
                         <h4 class="attribute-name box-title">
                             <input name="data.resources.{{res.name}}.label" type="text" value="{{res.label}}"

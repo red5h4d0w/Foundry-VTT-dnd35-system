@@ -64,9 +64,9 @@ export class Actor35e extends Actor {
     };
 
     // Skill modifiers
-    for (const skill in data.skills) {
+    for (const skl in data.skills) {
       // Sets the proficiencies for the skill
-      let skill = data.skills[skill];
+      let skill = data.skills[skl];
       skill.proficiency = this.getSkillProficiency(skill);
       skill.rank = parseFloat(skill.rank || 0);
       skill.bonus = parseInt(skill.bonus || 0);
@@ -192,7 +192,7 @@ export class Actor35e extends Actor {
 
   getArmorSizeModifier(){
     const config = CONFIG.DND35E;
-    return config.AC_SIZE_MODIFIER[this.data.data.attributes.size];
+    return config.AC_SIZE_MODIFIER[this.data.data.traits.size];
   };
 
 
@@ -282,7 +282,7 @@ export class Actor35e extends Actor {
 
   getGrappleSizeModifier(){
     const config = CONFIG.DND35E;
-    return config.GRAPPLE_SIZE_MODIFIER[this.data.data.attributes.size];
+    return config.GRAPPLE_SIZE_MODIFIER[this.data.data.traits.size];
   };
 
 
