@@ -72,7 +72,7 @@ export class ActorSheet35e extends ActorSheet {
     };
 
     // Update Saving Throws labels
-    for ( let [s, save] of Object.entries(data.actor.data.attributes)) {
+    for ( let [s, save] of Object.entries(data.actor.data.attributes.saves)) {
       save.label = CONFIG.DND35E.saves[s];
     };
 
