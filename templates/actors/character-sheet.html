@@ -33,7 +33,7 @@
                     <select name="data.details.alignements">
                         {{#select data.details.alignement}}
                             <option value="">{{localize 'DND35E.None'}}</option>
-                            {{#each config.alignements as |name key|}}
+                            {{#each config.alignments as |name key|}}
                             <option value="{{key}}">{{localize name}}</option>
                             {{/each}}
                         {{/select}}

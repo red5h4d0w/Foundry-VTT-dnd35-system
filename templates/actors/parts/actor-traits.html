@@ -19,7 +19,7 @@
         <label for="data.traits.languages">{{localize "DND35E.Languages"}}</label>
         <ul class="traits-list">
         {{#each data.traits.languages.selected as |v k|}}
-            <li class="tag {{k}}">{{v}}</li>
+            <li class="tag {{k}}">{{localize v}}</li>
         {{/each}}
         </ul>
         <a class="trait-selector" data-options="languages"><i class="fas fa-edit"></i></a>
@@ -29,7 +29,7 @@
         <label for="data.traits.di">{{localize "DND35E.DamImm"}}</label>
         <ul class="traits-list">
         {{#each data.traits.di.selected as |v k|}}
-            <li class="tag {{k}}">{{v}}</li>
+            <li class="tag {{k}}">{{localize v}}</li>
         {{/each}}
         </ul>
         <a class="trait-selector" data-options="damageTypes"><i class="fas fa-edit"></i></a>
@@ -59,7 +59,7 @@
         <label for="data.traits.ci">{{localize "DND35E.ConImm"}}</label>
         <ul class="traits-list">
         {{#each data.traits.ci.selected as |v k|}}
-            <li class="tag {{k}}">{{v}}</li>
+            <li class="tag {{k}}">{{localize v}}</li>
         {{/each}}
         </ul>
         <a class="trait-selector" data-options="conditionTypes"><i class="fas fa-edit"></i></a>
@@ -70,7 +70,7 @@
         <label for="data.traits.weaponProf">{{localize "DND35E.TraitWeaponProf"}}</label>
         <ul class="traits-list">
         {{#each data.traits.weaponProf.selected as |v k|}}
-            <li class="tag {{k}}">{{v}}</li>
+            <li class="tag {{k}}">{{localize v}}</li>
         {{/each}}
         </ul>
         <a class="trait-selector" data-options="weaponProficiencies"><i class="fas fa-edit"></i></a>
@@ -80,7 +80,7 @@
         <label for="data.traits.armorProf">{{localize "DND35E.TraitArmorProf"}}</label>
         <ul class="traits-list">
         {{#each data.traits.armorProf.selected as |v k|}}
-            <li class="tag {{k}}">{{v}}</li>
+            <li class="tag {{k}}">{{localize v}}</li>
         {{/each}}
         </ul>
         <a class="trait-selector" data-options="armorProficiencies"><i class="fas fa-edit"></i></a>
