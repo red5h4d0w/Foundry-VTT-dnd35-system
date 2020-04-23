@@ -69,14 +69,19 @@ export class ActorSheet35e extends ActorSheet {
     // Ability Scores
     for ( let [a, abl] of Object.entries(data.actor.data.abilities)) { 
       abl.label = CONFIG.DND35E.abilities[a];
-    }
+    };
+
+    // Update Saving Throws labels
+    for ( let [s, save] of Object.entries(data.actor.data.attributes)) {
+      save.label = CONFIG.DND35E.saves[s];
+    };
 
     // Update skill labels
     for ( let [s, skl] of Object.entries(data.actor.data.skills)) {
       skl.icon = this._getProficiencyIcon(skl.proficiency);
       skl.hover = CONFIG.DND35E.proficiencyLevels[skl.proficiency];
       skl.label = CONFIG.DND35E.skills[s];
-    }
+    };
 
     // Update traits
     this._prepareTraits(data.actor.data.traits);
@@ -85,7 +90,7 @@ export class ActorSheet35e extends ActorSheet {
     this._prepareItems(data);
 
     // Return data to the sheet
-    return data
+    return data;
   }
 
   /* -------------------------------------------- */

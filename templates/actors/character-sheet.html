@@ -27,10 +27,17 @@
             {{!-- Character Summary --}}
             <ul class="summary">
                 <li>
-                    <input type="text" name="data.details.race" value="{{data.details.race}}" placeholder="{{localize 'DND35E.Race'}}"/>
+                    <input type="text" name="data.details.race" value="{{data.details.race}}" placeholder="{{localize 'DND35E.Race'}}">
                 </li>
                 <li>
-                    <input type="text" name="data.details.alignment" value="{{data.details.alignment}}" placeholder="{{localize 'DND35E.EvilOrGood'}}"/>
+                    <select name="data.details.alignements">
+                        {{#select data.details.alignement}}
+                            <option value="">{{localize 'DND35E.None'}}</option>
+                            {{#each config.alignements as |name key|}}
+                            <option value="{{key}}">{{localize name}}</option>
+                            {{/each}}
+                        {{/select}}
+                    </select>
                 </li>
             </ul>
 
@@ -128,16 +135,12 @@
 
                 {{!-- Body Attributes --}}
                 <ul class="attributes flexrow">
-                    {{#each data.attributes.saves as |save|}}
-                    <li class="attribute resource">
-                        <h4 class="attribute-name box-title">
-                            <input name="data.resources.{{res.name}}.label" type="text" value="{{res.label}}"
-                                   placeholder="{{res.placeholder}}" />
-                        </h4>
+                    {{#each data.attributes.saves as |save key|}}
+                    <li class="attribute save">
+                        <h4 class="attribute-name box-title">{{localize save.label}}</h4>
                         <div class="attribute-value multiple">
-                            <input name="data.attributes.{{save.name}}.value" type="text" value="{{numberFormat save.value sign=true}}"
-                                   data-dtype="Number" placeholder="0"/>
-                            <span class="sep"> / </span>
+                            <input name="data.attributes.save.{{key}}.value" type="text" value="{{numberFormat save.value sign=true}}"
+                                   data-dtype="Number" placeholder="0">
                         </div>
                     </li>
                     {{/each}}
@@ -148,7 +151,7 @@
                             <span>{{numberFormat data.attributes.init.total decimals=0 sign=true}}</span>
                         </div>
                         <footer class="attribute-footer">
-                            <span>Modifier</span>
+                            <span>{{localize 'DND35E.Modifier'}}</span>
                             <input name="data.attributes.init.value" type="text" placeholder="0" data-dtype="Number"
                                    value="{{numberFormat data.attributes.init.value decimals=0 sign=true}}"/>
                         </footer>

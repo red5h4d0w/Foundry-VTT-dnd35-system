@@ -39,6 +39,9 @@
             "min": 0,
             "custom": null
           },
+          "grapple": {
+            "value": 0
+          },
           "hp": {
             "value": 10,
             "min": 0,

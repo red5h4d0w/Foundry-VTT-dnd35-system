@@ -1235,18 +1235,18 @@
 .dnd35e.sheet.actor.character .sheet-header .attributes .hit-dice {
   font-size: 24px;
 }
-.dnd35e.sheet.actor.character .attributes .resource .attribute-name {
+.dnd35e.sheet.actor.character .attributes .save .attribute-name {
   margin: 0 8px;
 }
-.dnd35e.sheet.actor.character .attributes .resource .attribute-name input[type="text"] {
+.dnd35e.sheet.actor.character .attributes .save .attribute-name input[type="text"] {
   height: 20px;
   margin: 2px 0 -2px;
   line-height: 24px;
 }
-.dnd35e.sheet.actor.character .attributes .resource label.checkbox {
+.dnd35e.sheet.actor.character .attributes .save label.checkbox {
   margin: 0 3px;
 }
-.dnd35e.sheet.actor.character .attributes .resource label.checkbox input[type="checkbox"] {
+.dnd35e.sheet.actor.character .attributes .save label.checkbox input[type="checkbox"] {
   transform: scale(1.2);
 }
 .dnd35e.sheet.actor.character .attributes .initiative .attribute-footer input {
