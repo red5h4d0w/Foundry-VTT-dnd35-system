@@ -3,7 +3,7 @@
         <label>{{localize "DND35E.Size"}}</label>
         <select class="actor-size" name="data.traits.size">
             {{#select data.traits.size}}
-            {{#each config.actorSizes as |label size|}}
+            {{#each config.sizes as |label size|}}
                 <option value="{{size}}">{{localize label}}</option>
             {{/each}}
             {{/select}}
@@ -16,9 +16,9 @@
     </div>
 
     <div class="form-group {{data.traits.languages.cssClass}}">
-        <label for="data.traits.languages">{{localize "DND35E.Languages"}}</label>
+        <label for="data.traits.languages.value">{{localize "DND35E.Languages"}}</label>
         <ul class="traits-list">
-        {{#each data.traits.languages.selected as |v k|}}
+        {{#each data.traits.languages.value as |v k|}}
             <li class="tag {{k}}">{{localize v}}</li>
         {{/each}}
         </ul>
@@ -26,9 +26,9 @@
     </div>
 
     <div class="form-group {{data.traits.di.cssClass}}">
-        <label for="data.traits.di">{{localize "DND35E.DamImm"}}</label>
+        <label for="data.traits.di.value">{{localize "DND35E.DamImm"}}</label>
         <ul class="traits-list">
-        {{#each data.traits.di.selected as |v k|}}
+        {{#each data.traits.di.value as |v k|}}
             <li class="tag {{k}}">{{localize v}}</li>
         {{/each}}
         </ul>
@@ -36,9 +36,9 @@
     </div>
 
     <div class="form-group {{data.traits.dr.cssClass}}">
-        <label for="data.traits.dr">{{localize "DND35E.DamRes"}}</label>
+        <label for="data.traits.dr.value">{{localize "DND35E.DamRes"}}</label>
         <ul class="traits-list">
-        {{#each data.traits.dr.selected as |v k|}}
+        {{#each data.traits.dr.value as |v k|}}
             <li class="tag {{k}}">{{v}}</li>
         {{/each}}
         </ul>
@@ -46,9 +46,9 @@
     </div>
 
     <div class="form-group {{data.traits.dv.cssClass}}">
-        <label for="data.traits.dv">{{localize "DND35E.DamVuln"}}</label>
+        <label for="data.traits.dv.value">{{localize "DND35E.DamVuln"}}</label>
         <ul class="traits-list">
-        {{#each data.traits.dv.selected as |v k|}}
+        {{#each data.traits.dv.value as |v k|}}
             <li class="tag {{k}}">{{v}}</li>
         {{/each}}
         </ul>
@@ -56,9 +56,9 @@
     </div>
 
     <div class="form-group {{data.traits.ci.cssClass}}">
-        <label for="data.traits.ci">{{localize "DND35E.ConImm"}}</label>
+        <label for="data.traits.ci.value">{{localize "DND35E.ConImm"}}</label>
         <ul class="traits-list">
-        {{#each data.traits.ci.selected as |v k|}}
+        {{#each data.traits.ci.value as |v k|}}
             <li class="tag {{k}}">{{localize v}}</li>
         {{/each}}
         </ul>
@@ -67,17 +67,17 @@
 
     {{#if isCharacter}}
     <div class="form-group {{data.traits.weaponProf.cssClass}}">
-        <label for="data.traits.value">{{localize "DND35E.TraitWeaponProf"}}</label>
+        <label for="data.traits.weponProf.value">{{localize "DND35E.TraitWeaponProf"}}</label>
         <ul class="traits-list">
         {{#each data.traits.weaponProf.value as |v k|}}
             <li class="tag {{k}}">{{localize v}}</li>
         {{/each}}
         </ul>
-        <a class="trait-selector" data-options="data.traits.weaponProficiencies"><i class="fas fa-edit"></i></a>
+        <a class="trait-selector" data-options="weaponProficiencies"><i class="fas fa-edit"></i></a>
     </div>
 
     <div class="form-group {{data.traits.armorProf.cssClass}}">
-        <label for="data.traits.armorProf">{{localize "DND35E.TraitArmorProf"}}</label>
+        <label for="data.traits.armorProf.value">{{localize "DND35E.TraitArmorProf"}}</label>
         <ul class="traits-list">
         {{#each data.traits.armorProf.selected as |v k|}}
             <li class="tag {{k}}">{{localize v}}</li>
