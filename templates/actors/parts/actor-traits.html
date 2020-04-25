@@ -12,14 +12,15 @@
 
     <div class="form-group {{#unless data.traits.senses}}inactive{{/unless}}">
         <label>{{localize "DND35E.Senses"}}</label>
-        <input type="text" name="data.traits.senses" value="{{data.traits.senses}}" placeholder="None"/>
+        <input type="text" name="data.traits.senses" value="{{data.traits.senses}}" placeholder="{{localize 'DND35E.None'}}">
     </div>
 {{log '17'}}
     <div class="form-group {{data.traits.languages.cssClass}}">
-        <label for="data.traits.languages">{{localize "DND35E.Languages"}}</label>
+        <label for="data.traits.languages">{{localize 'DND35E.Languages'}}</label>
         <ul class="traits-list">
         {{#each data.traits.languages as |v k|}}
             {{#if v}}
+        {{log v}}
                 <li class="tag {{k}}">{{localize v}}</li>
             {{/if}}
         {{/each}}

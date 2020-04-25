@@ -7,7 +7,8 @@ export class Selector extends FormApplication {
 	  const options = super.defaultOptions;
 	  options.id = "trait-selector";
 	  options.classes = ["dnd35e"];
-	  options.title = "Item/Spell Selection";
+    options.title = "Item/Spell Selection";
+    options.type = "item"
 	  options.template = "systems/dnd35e/templates/apps/selector.html";
 	  options.width = 320;
 	  options.height = "auto";
@@ -65,9 +66,14 @@ export class Selector extends FormApplication {
     const choices = {};
     const updateData = {};
     for ( let [k, v] of Object.entries(formData) ) {
-      if ( v ) choices[k] = Object.assign({},game.data.items.find(a => a._id === k));
+      if (this.options.type === "item") {
+        if ( v ) choices[k] = Object.assign({},game.data.items.find(a => a._id === k));
+      }
+      else if (this.options.type === "trait"){
+        if ( v ) choices[k] = v;
+      };
       if ( !v ) updateData[this.delattribute + "." + k] = null;
-    }
+    };
     updateData[this.attribute] = choices;
     this.object.update(updateData);
   }

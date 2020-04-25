@@ -628,26 +628,26 @@ DND35E.conditionTypes = {
 
 // Languages
 DND35E.languages = {
-  "common": "Common",
-  "abyssal": "Abyssal",
-  "aquan": "Aquan",
-  "auran": "Auran",
-  "celestial": "Celestial",
-  "draconic": "Draconic",
-  "druidic": "Druidic",
-  "dwarven": "Dwarven",
-  "elven": "Elven",
-  "giant": "Giant",
-  "gnome": "Gnome",
-  "goblin": "Goblin",
-  "gnoll": "Gnoll",
-  "halfling": "Halfling",
-  "ignan": "Ignan",
-  "infernal": "Infernal",
-  "orc": "Orc",
-  "sylvan": "Sylvan",
-  "terran": "Terran",
-  "undercommon": "Undercommon"
+  "common": "DND35E.LangCommon",
+  "abyssal": "DND35E.LangAbyssal",
+  "aquan": "DND35E.LangAquan",
+  "auran": "DND35E.LangAuran",
+  "celestial": "DND35E.LangCelestial",
+  "draconic": "DND35E.LangDraconic",
+  "druidic": "DND35E.LangDruidic",
+  "dwarven": "DND35E.LangDwarven",
+  "elven": "DND35E.LangElven",
+  "giant": "DND35E.LangGiant",
+  "gnome": "DND35E.LangGnome",
+  "goblin": "DND35E.LangGoblin",
+  "gnoll": "DND35E.LangGnoll",
+  "halfling": "DND35E.LangHalfling",
+  "ignan": "DND35E.LangIgnan",
+  "infernal": "DND35E.LangInfernal",
+  "orc": "DND35E.LangOrc",
+  "sylvan": "DND35E.LangSylvan",
+  "terran": "DND35E.LangTerran",
+  "undercommon": "DND35E.LangUndercommon"
 };
 
 // Character Level XP Requirements

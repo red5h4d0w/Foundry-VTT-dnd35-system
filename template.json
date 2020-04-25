@@ -384,21 +384,11 @@
         "traits": {
           "size": "med",
           "senses": "",
-          "languages": {
-            "custom": ""
-          },
-          "di": {
-            "custom": ""
-          },
-          "dr": {
-            "custom": ""
-          },
-          "dv": {
-            "custom": ""
-          },
-          "ci": {
-            "custom": ""
-          }
+          "languages": {},
+          "di": {},
+          "dr": {},
+          "dv": {},
+          "ci": {}
         },
         "currency": {
           "pp": 0,
@@ -476,12 +466,8 @@
         }
       },
       "traits": {
-        "weaponProf": {
-          "custom": ""
-        },
-        "armorProf": {
-          "custom": ""
-        }
+        "weaponProf": {},
+        "armorProf": {}
       }
     },
     "npc": {
