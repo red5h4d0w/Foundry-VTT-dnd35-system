@@ -582,7 +582,6 @@ export class ActorSheet35e extends ActorSheet {
     event.preventDefault();
     const a = event.currentTarget;
     const label = a.parentElement.querySelector("label");
-    console.log(label.getAttribute("for"));
     const options = {
       name: label.getAttribute("for"),
       title: label.innerText,

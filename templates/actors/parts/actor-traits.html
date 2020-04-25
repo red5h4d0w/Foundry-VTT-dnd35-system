@@ -18,8 +18,10 @@
     <div class="form-group {{data.traits.languages.cssClass}}">
         <label for="data.traits.languages">{{localize "DND35E.Languages"}}</label>
         <ul class="traits-list">
-        {{#each data.traits.languages.value as |v k|}}
-            <li class="tag {{k}}">{{localize v}}</li>
+        {{#each data.traits.languages as |v k|}}
+            {{#if v}}
+                <li class="tag {{k}}">{{localize v}}</li>
+            {{/if}}
         {{/each}}
         </ul>
         <a class="trait-selector" data-options="languages"><i class="fas fa-edit"></i></a>
@@ -28,8 +30,10 @@
     <div class="form-group {{data.traits.di.cssClass}}">
         <label for="data.traits.di">{{localize "DND35E.DamImm"}}</label>
         <ul class="traits-list">
-        {{#each data.traits.di.value as |v k|}}
-            <li class="tag {{k}}">{{localize v}}</li>
+        {{#each data.traits.di as |v k|}}
+            {{#if v}}
+                <li class="tag {{k}}">{{localize v}}</li>
+            {{/if}}
         {{/each}}
         </ul>
         <a class="trait-selector" data-options="damageTypes"><i class="fas fa-edit"></i></a>
@@ -38,28 +42,34 @@
     <div class="form-group {{data.traits.dr.cssClass}}">
         <label for="data.traits.dr.value">{{localize "DND35E.DamRes"}}</label>
         <ul class="traits-list">
-        {{#each data.traits.dr.value as |v k|}}
-            <li class="tag {{k}}">{{v}}</li>
+        {{#each data.traits.dr as |v k|}}
+            {{#if v}}
+                <li class="tag {{k}}">{{v}}</li>
+            {{/if}}
         {{/each}}
         </ul>
         <a class="trait-selector" data-options="damageTypes"><i class="fas fa-edit"></i></a>
     </div>
 
     <div class="form-group {{data.traits.dv.cssClass}}">
-        <label for="data.traits.dv.value">{{localize "DND35E.DamVuln"}}</label>
+        <label for="data.traits.dv">{{localize "DND35E.DamVuln"}}</label>
         <ul class="traits-list">
-        {{#each data.traits.dv.value as |v k|}}
-            <li class="tag {{k}}">{{v}}</li>
+        {{#each data.traits.dv as |v k|}}
+            {{#if v}}
+                <li class="tag {{k}}">{{v}}</li>
+            {{/if}}
         {{/each}}
         </ul>
         <a class="trait-selector" data-options="damageTypes"><i class="fas fa-edit"></i></a>
     </div>
 
     <div class="form-group {{data.traits.ci.cssClass}}">
-        <label for="data.traits.ci.value">{{localize "DND35E.ConImm"}}</label>
+        <label for="data.traits.ci">{{localize "DND35E.ConImm"}}</label>
         <ul class="traits-list">
-        {{#each data.traits.ci.value as |v k|}}
-            <li class="tag {{k}}">{{localize v}}</li>
+        {{#each data.traits.ci as |v k|}}
+            {{#if v}}
+                <li class="tag {{k}}">{{localize v}}</li>
+            {{/if}}
         {{/each}}
         </ul>
         <a class="trait-selector" data-options="conditionTypes"><i class="fas fa-edit"></i></a>
@@ -67,20 +77,24 @@
 
     {{#if isCharacter}}
     <div class="form-group {{data.traits.weaponProf.cssClass}}">
-        <label for="data.traits.weponProf">{{localize "DND35E.TraitWeaponProf"}}</label>
+        <label for="data.traits.weaponProf">{{localize "DND35E.TraitWeaponProf"}}</label>
         <ul class="traits-list">
-        {{#each data.traits.weaponProf.value as |v k|}}
-            <li class="tag {{k}}">{{localize v}}</li>
+        {{#each data.traits.weaponProf as |v k|}}
+            {{#if v}}
+                <li class="tag {{k}}">{{localize v}}</li>
+            {{/if}}
         {{/each}}
         </ul>
         <a class="trait-selector" data-options="weaponProficiencies"><i class="fas fa-edit"></i></a>
     </div>
 
     <div class="form-group {{data.traits.armorProf.cssClass}}">
-        <label for="data.traits.armorProf.value">{{localize "DND35E.TraitArmorProf"}}</label>
+        <label for="data.traits.armorProf">{{localize "DND35E.TraitArmorProf"}}</label>
         <ul class="traits-list">
-        {{#each data.traits.armorProf.selected as |v k|}}
-            <li class="tag {{k}}">{{localize v}}</li>
+        {{#each data.traits.armorProf as |v k|}}
+            {{#if v}}
+                <li class="tag {{k}}">{{localize v}}</li>
+            {{/if}}
         {{/each}}
         </ul>
         <a class="trait-selector" data-options="armorProficiencies"><i class="fas fa-edit"></i></a>

@@ -38,8 +38,6 @@ export class Selector extends FormApplication {
   getData() {
 
     // Get current values
-    console.log(this.object.data);
-    console.log(this.attribute);
     let attr = getProperty(this.object.data, this.attribute);
 
 	  // Populate choices
@@ -64,7 +62,6 @@ export class Selector extends FormApplication {
    * @private
    */
   _updateObject(event, formData) {
-    console.log(formData);
     const choices = {};
     const updateData = {};
     for ( let [k, v] of Object.entries(formData) ) {
@@ -72,7 +69,6 @@ export class Selector extends FormApplication {
       if ( !v ) updateData[this.delattribute + "." + k] = null;
     }
     updateData[this.attribute] = choices;
-    console.log(updateData);
     this.object.update(updateData);
   }
 }
