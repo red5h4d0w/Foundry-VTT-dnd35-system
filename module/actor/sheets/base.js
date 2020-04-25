@@ -587,6 +587,7 @@ export class ActorSheet35e extends ActorSheet {
       title: label.innerText,
       choices: CONFIG.DND35E[a.dataset.options]
     };
+    console.log(options.choices);
     new Selector(this.actor, options).render(true)
   }
 }
