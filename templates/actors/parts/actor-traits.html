@@ -67,9 +67,9 @@
 
     {{#if isCharacter}}
     <div class="form-group {{data.traits.weaponProf.cssClass}}">
-        <label for="data.traits.weaponProf">{{localize "DND35E.TraitWeaponProf"}}</label>
+        <label for="data.traits.value">{{localize "DND35E.TraitWeaponProf"}}</label>
         <ul class="traits-list">
-        {{#each data.traits.weaponProf.selected as |v k|}}
+        {{#each data.traits.weaponProf.value as |v k|}}
             <li class="tag {{k}}">{{localize v}}</li>
         {{/each}}
         </ul>

@@ -30,6 +30,7 @@
                     <input type="text" name="data.details.race" value="{{data.details.race}}" placeholder="{{localize 'DND35E.Race'}}">
                 </li>
                 <li>
+                    <h3>{{localize 'DND35E.Alignment'}}: </h3>
                     <select name="data.details.alignements">
                         {{#select data.details.alignement}}
                             <option value="">{{localize 'DND35E.None'}}</option>
@@ -152,8 +153,8 @@
                         </div>
                         <footer class="attribute-footer">
                             <span>{{localize 'DND35E.Modifier'}}</span>
-                            <input name="data.attributes.init.value" type="text" placeholder="0" data-dtype="Number"
-                                   value="{{numberFormat data.attributes.init.value decimals=0 sign=true}}"/>
+                            <input name="data.attributes.init.total" type="text" placeholder="0" data-dtype="Number"
+                                   value="{{numberFormat data.attributes.init.total decimals=0 sign=true}}"/>
                         </footer>
                     </li>
                 </ul>

@@ -39,7 +39,7 @@ export class Actor35e extends Actor {
     let ac = data.attributes.ac
     ac.armorBonus = this.getArmorBonus();
     ac.shieldBonus = this.getShieldBonus();
-    ac.dexMod = this.getArmorDexterityModifier();
+    ac.dexMod = this.getArmorDexterityModifier(data.abilities.dex.mod);
     ac.natural = parseInt(ac.natural || 0);
     ac.size = this.getArmorSizeModifier();
     ac.misc = parseInt(ac.misc || 0);

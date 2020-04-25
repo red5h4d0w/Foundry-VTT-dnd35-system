@@ -403,9 +403,6 @@
           "ci": {
             "value": [],
             "custom": ""
-          },
-          "perception": {
-            "_deprecated": true
           }
         },
         "currency": {
