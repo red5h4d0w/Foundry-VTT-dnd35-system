@@ -38,6 +38,8 @@ export class Selector extends FormApplication {
   getData() {
 
     // Get current values
+    console.log(this.object.data);
+    console.log(this.attribute);
     let attr = getProperty(this.object.data, this.attribute);
 
 	  // Populate choices

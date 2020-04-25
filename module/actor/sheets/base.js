@@ -582,13 +582,12 @@ export class ActorSheet35e extends ActorSheet {
     event.preventDefault();
     const a = event.currentTarget;
     const label = a.parentElement.querySelector("label");
-    console.log(a.dataset);
+    console.log(label.getAttribute("for"));
     const options = {
       name: label.getAttribute("for"),
       title: label.innerText,
       choices: CONFIG.DND35E[a.dataset.options]
     };
-    console.log(options.choices);
     new Selector(this.actor, options).render(true)
   }
 }
