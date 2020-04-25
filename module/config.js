@@ -53,32 +53,18 @@ DND35E.alignments = {
  * @type {Object}
  */
 DND35E.armorProficiencies = {
-  "lgt": "Light Armor",
-  "med": "Medium Armor",
-  "hvy": "Heavy Armor",
-  "shl": "Shields"
+  "lgt": "DND35E.ArmorLight",
+  "med": "DND35E.ArmorMedium",
+  "hvy": "DND35E.ArmorHeavy",
+  "shl": "DND35E.ArmorShield"
 };
 
 DND35E.weaponProficiencies = {
-  "sim": "Simple Weapons",
-  "mar": "Martial Weapons",
-  "exo": "Exotic Weapons"
+  "sim": "DND35E.WeaponSimple",
+  "mar": "DND35E.WeaponMartial",
+  "exo": "DND35E.WeaponExotic"
 };
 
-/*
-DND35E.toolProficiencies = {
-  "art": "Artisan's Tools",
-  "disg": "Disguise Kit",
-  "forg": "Forgery Kit",
-  "game": "Gaming Set",
-  "herb": "Herbalism Kit",
-  "music": "Musical Instrument",
-  "navg": "Navigator's Tools",
-  "pois": "Poisoner's Kit",
-  "thief": "Thieves' Tools",
-  "vehicle": "Vehicle (Land or Water)"
-};
-*/
 /* -------------------------------------------- */
 
 /**

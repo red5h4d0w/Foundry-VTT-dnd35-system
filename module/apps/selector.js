@@ -52,7 +52,7 @@ export class Selector extends FormApplication {
       }
       else if (this.options.type === "trait") {
         choices[k] = {
-          label: v,
+          label: game.i18n.localize(v),
           chosen: !!attr[k]
         };
       };

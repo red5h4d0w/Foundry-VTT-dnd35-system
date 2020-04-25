@@ -305,6 +305,7 @@
   color: #4b4a44;
 }
 .dnd35e.sheet .sheet-header .summary li:last-child {
+  display: flex;
   border-right: none;
   width: 30%
 }
