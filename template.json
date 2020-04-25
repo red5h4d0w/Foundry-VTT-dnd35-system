@@ -385,7 +385,6 @@
           "size": "med",
           "senses": "",
           "languages": {
-            "value": [],
             "custom": ""
           },
           "di": {
@@ -482,7 +481,6 @@
       },
       "traits": {
         "weaponProf": {
-          "value": [],
           "custom": ""
         },
         "armorProf": {
