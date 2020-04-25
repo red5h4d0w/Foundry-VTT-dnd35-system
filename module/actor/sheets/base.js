@@ -90,6 +90,7 @@ export class ActorSheet35e extends ActorSheet {
     this._prepareItems(data);
 
     // Return data to the sheet
+    console.log(data);
     return data;
   }
 
