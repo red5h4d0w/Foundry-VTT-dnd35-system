@@ -82,7 +82,7 @@
         <ul class="traits-list">
         {{#each data.traits.weaponProf as |v k|}}
             {{#if v}}
-                <li class="tag {{k}}">{{localize v}}</li>
+                <li class="tag {{k}}">{{localize (lookup ../../config/weaponProficiencies k)}}</li>
             {{/if}}
         {{/each}}
         </ul>
@@ -94,7 +94,7 @@
         <ul class="traits-list">
         {{#each data.traits.armorProf as |v k|}}
             {{#if v}}
-                <li class="tag {{k}}">{{localize v}}</li>
+                <li class="tag {{k}}">{{localize (lookup ../../config/armorProficiencies k)}}</li>
             {{/if}}
         {{/each}}
         </ul>
