@@ -20,7 +20,7 @@
         <ul class="traits-list">
         {{#each data.traits.languages as |v k|}}
             {{#if v}}
-        {{log v}}
+        {{log ../..}}
                 <li class="tag {{k}}">{{localize (lookup ../../config/languages k)}}</li>
             {{/if}}
         {{/each}}
@@ -41,7 +41,7 @@
     </div>
 {{log '41'}}
     <div class="form-group {{data.traits.dr.cssClass}}">
-        <label for="data.traits.dr.value">{{localize "DND35E.DamRes"}}</label>
+        <label for="data.traits.dr">{{localize "DND35E.DamRes"}}</label>
         <ul class="traits-list">
         {{#each data.traits.dr as |v k|}}
             {{#if v}}

@@ -30,8 +30,8 @@
                     <input type="text" name="data.details.race" value="{{data.details.race}}" placeholder="{{localize 'DND35E.Race'}}">
                 </li>
                 <li>
-                    <h3>{{localize 'DND35E.Alignment'}}: </h3>
-                    <select name="data.details.alignements">
+                    <h3>{{localize 'DND35E.Alignment'}}: \t </h3>
+                    <select name="data.details.alignement">
                         {{#select data.details.alignement}}
                             <option value="">{{localize 'DND35E.None'}}</option>
                             {{#each config.alignments as |name key|}}
@@ -67,6 +67,10 @@
                         <input name="data.attributes.ac.value" type="text" value="{{data.attributes.ac.value}}"
                                data-dtype="Number" placeholder="10"/>
                     </div>
+                    <footer class="attribute-footer">
+                        <div>{{localize 'DND35E.ArmorClassTouch'}}: {{data.attributes.ac.touch}}</div>
+                        <div>{{localize 'DND35E.ArmorClassFlatFooted'}}: {{data.attributes.ac.flatFooted}}</div>
+                    </footer>
                 </li>
 
                 <li class="attribute">
@@ -110,7 +114,7 @@
             {{#each data.abilities as |ability id|}}
                 <li class="ability" data-ability="{{id}}">
                     <h4 class="ability-name box-title rollable">{{localize ability.label}}</h4>
-                    <input class="ability-score" name="data.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10"/>
+                    <input class="ability-score" name="data.abilities.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10">
                     <div class="ability-modifiers flexrow">
                         <span class="ability-mod" title="{{localize 'DND35E.Modifier'}}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
                     </div>

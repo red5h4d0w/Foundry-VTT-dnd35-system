@@ -37,11 +37,11 @@ export class Actor35e extends Actor {
 
     // Armor Class
     let ac = data.attributes.ac
-    ac.armorBonus = this.getArmorBonus();
-    ac.shieldBonus = this.getShieldBonus();
-    ac.dexMod = this.getArmorDexterityModifier(data.abilities.dex.mod);
+    ac.armorBonus = parseInt(this.getArmorBonus());
+    ac.shieldBonus = parseInt(this.getShieldBonus());
+    ac.dexMod = parseInt(this.getArmorDexterityModifier(data.abilities.dex.mod));
     ac.natural = parseInt(ac.natural || 0);
-    ac.size = this.getArmorSizeModifier();
+    ac.size = parseInt(this.getArmorSizeModifier());
     ac.misc = parseInt(ac.misc || 0);
     // There is a Deflection bonus not implemented yet
     // Dodge AC is not implemented yet and normally is specifid to targets
