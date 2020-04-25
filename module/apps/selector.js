@@ -44,9 +44,17 @@ export class Selector extends FormApplication {
 	  // Populate choices
     const choices = duplicate(this.options.choices);
     for ( let [k, v] of Object.entries(choices) ) {
-      choices[k] = {
-        label: v.name,
-        chosen: !!attr[k]
+      if (this.options.type === "item") {
+        choices[k] = {
+          label: v.name,
+          chosen: !!attr[k]
+        };
+      }
+      else if (this.options.type === "trait") {
+        choices[k] = {
+          label: v,
+          chosen: !!attr[k]
+        };
       };
     };
 
