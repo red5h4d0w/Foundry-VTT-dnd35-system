@@ -388,19 +388,15 @@
             "custom": ""
           },
           "di": {
-            "value": [],
             "custom": ""
           },
           "dr": {
-            "value": [],
             "custom": ""
           },
           "dv": {
-            "value": [],
             "custom": ""
           },
           "ci": {
-            "value": [],
             "custom": ""
           }
         },
@@ -484,11 +480,6 @@
           "custom": ""
         },
         "armorProf": {
-          "value": [],
-          "custom": ""
-        },
-        "toolProf": {
-          "value": [],
           "custom": ""
         }
       }
