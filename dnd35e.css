@@ -388,7 +388,7 @@
   /* ----------------------------------------- */
   /*  Inventory Lists                          */
   /* ----------------------------------------- */
-  /* Inventory List Filters */
+  /* Inventory List Filters                    */
   /* ----------------------------------------- */
   /*  Spellbook                                */
   /* ----------------------------------------- */
@@ -558,7 +558,8 @@
   border-radius: 3px;
 }
 .dnd35e.sheet.actor ul.skills-list li.skill {
-  height: 22px;
+  align-items: center;
+  height: fit-content;
   padding: 3px 0;
 }
 .dnd35e.sheet.actor ul.skills-list li.skill h4 {
@@ -566,6 +567,7 @@
   margin: 0;
   font-size: 11px;
   line-height: 18px;
+  text-align: center;
 }
 .dnd35e.sheet.actor ul.skills-list li.skill .skill-proficiency {
   flex: 0 0 16px;
