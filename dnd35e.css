@@ -482,7 +482,6 @@
 .dnd35e.sheet.actor ul.attributes li.attribute .attribute-value input {
   display: inline;
   max-width: 80%;
-  height: 28px;
   margin: 0;
   font-size: 24px;
 }
