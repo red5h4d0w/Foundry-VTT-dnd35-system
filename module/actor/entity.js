@@ -53,14 +53,15 @@ export class Actor35e extends Actor {
     data.attributes.bab.value = this.getBaseAttackBonus();
 
     // Saving throw bonus
-    for (const save in data.saves) {
+    for (const s in data.attributes.saves) {
+      let save = data.attributes.saves[s];
       // Gets the base save bonus of the actor for the save
-      const baseSaveBonus = this.getBaseSaveBonus(save);
-      data.saves[save].magic = parseInt(data.saves[save].magic || 0);
-      data.saves[save].misc = parseInt(data.saves[save].misc || 0);
-      data.saves[save].temp = parseInt(data.saves[save].temp || 0);
+      save.baseSaveBonus = this.getBaseSaveBonus(save);
+      save.magic = parseInt(save.magic || 0);
+      save.misc = parseInt(save.misc || 0);
+      save.temp = parseInt(save.temp || 0);
       // Add the ability modifier associated with the saving throw
-      data.saves[save].mod = baseSaveBonus + data.abilities[data.attributes.saves[save].ability].mod + data.saves[save].magic + data.saves[save].misc + data.saves[save].temp;
+      save.mod = save.baseSaveBonus + data.abilities[save.ability].mod + save.magic + save.misc + save.temp;
     };
 
     // Skill modifiers
