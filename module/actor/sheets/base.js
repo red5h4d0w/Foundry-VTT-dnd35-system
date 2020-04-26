@@ -259,10 +259,7 @@ export class ActorSheet35e extends ActorSheet {
 
     /* -------------------------------------------- */
     /*  Abilities, Skills, and Traits
-     /* -------------------------------------------- */
-
-    // Ability Proficiency
-    html.find('.ability-proficiency').click(this._onToggleAbilityProficiency.bind(this));
+    /* -------------------------------------------- */
 
     // Ability Checks
     html.find('.ability-name').click(this._onRollAbilityTest.bind(this));
