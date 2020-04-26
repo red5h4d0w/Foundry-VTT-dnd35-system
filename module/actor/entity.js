@@ -239,8 +239,8 @@ export class Actor35e extends Actor {
   getBaseSaveBonus(save){
     let baseSaveBonus = 0
     const config = CONFIG.DND35E;
-    if (this.data.data.attributes.saves[save].custom) {
-      return this.data.data.attributes.saves[save].custom;
+    if (save.custom) {
+      return save.custom;
     };
     if (this.items) {
       const classes = this.items.filter(item => item.type = "class");
@@ -519,7 +519,7 @@ export class Actor35e extends Actor {
    * @return {Promise.<Roll>}   A Promise which resolves to the created Roll instance
    */
   rollAbilityTest(abilityId, options={}) {
-    const label = game.i18n(CONFIG.DND35E.abilities[abilityId]);
+    const label = game.i18n.localize(CONFIG.DND35E.abilities[abilityId]);
     const abl = this.data.data.abilities[abilityId];
     const parts = ["@mod"];
     const data = {mod: abl.mod};
