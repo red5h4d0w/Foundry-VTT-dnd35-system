@@ -139,8 +139,8 @@
                 {{!-- Body Attributes --}}
                 <ul class="attributes flexrow">
                     {{#each data.attributes.saves as |save key|}}
-                    <li class="attribute save">
-                        <h4 class="attribute-name box-title">{{localize save.label}}</h4>
+                    <li class="attribute save" data-save={{save}}>
+                        <h4 class="attribute-name box-title saving-throw-name">{{localize save.label}}</h4>
                         <div class="attribute-value multiple">
                             <input name="data.attributes.saves.{{key}}.value" type="text" value="{{numberFormat save.value sign=true}}"
                                    data-dtype="Number" placeholder="0">

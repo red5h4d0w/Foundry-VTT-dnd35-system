@@ -267,6 +267,9 @@ export class ActorSheet35e extends ActorSheet {
     // Ability Checks
     html.find('.ability-name').click(this._onRollAbilityTest.bind(this));
 
+    // Saving Throws
+    html.find('.saving-throw-name').click(this._onRollSavingThrow.bind(this));
+
     // Toggle Skill Proficiency
     html.find('.skill-proficiency').on("click contextmenu", this._onCycleSkillProficiency.bind(this));
 
@@ -505,7 +508,7 @@ export class ActorSheet35e extends ActorSheet {
   /* -------------------------------------------- */
 
   /**
-   * Handle rolling an Ability check, either a test or a saving throw
+   * Handle rolling an Ability check
    * @param {Event} event   The originating click event
    * @private
    */
@@ -513,6 +516,19 @@ export class ActorSheet35e extends ActorSheet {
     event.preventDefault();
     let ability = event.currentTarget.parentElement.dataset.ability;
     this.actor.rollAbility(ability, {event: event});
+  }
+
+  /* -------------------------------------------- */
+
+  /**
+   * Handle rolling an Ability check
+   * @param {Event} event   The originating click event
+   * @private
+   */
+  _onRollSavingThrow(event) {
+    event.preventDefault();
+    let save = event.currentTarget.parentElement.dataset.save;
+    this.actor.rollSavingThrow(save, {event: event});
   }
 
   /* -------------------------------------------- */
@@ -526,19 +542,6 @@ export class ActorSheet35e extends ActorSheet {
     event.preventDefault();
     const skill = event.currentTarget.parentElement.dataset.skill;
     this.actor.rollSkill(skill, {event: event});
-  }
-
-  /* -------------------------------------------- */
-
-  /**
-   * Handle toggling Ability score proficiency level
-   * @param {Event} event     The originating click event
-   * @private
-   */
-  _onToggleAbilityProficiency(event) {
-    event.preventDefault();
-    const field = event.currentTarget.previousElementSibling;
-    this.actor.update({[field.name]: 1 - parseInt(field.value)});
   }
 
   /* -------------------------------------------- */

@@ -529,7 +529,7 @@ export class Actor35e extends Actor {
     if ( !!actorBonus ) {
       parts.push("@checkBonus");
       data.checkBonus = actorBonus;
-    }
+    };
 
     // Roll and return
     return Dice35e.d20Roll({
@@ -552,23 +552,23 @@ export class Actor35e extends Actor {
    */
   rollSavingThrow(saveId, options={}) {
     const label = CONFIG.DND35E.saves[saveId];
-    const abl = this.data.data.saves[saveId];
+    const save = this.data.data.attributes.saves[saveId];
     const parts = ["@mod"];
-    const data = {mod: abl.save};
+    const data = {mod: save.mod};
 
     // Include a global actor ability save bonus
     const actorBonus = getProperty(this.data.data.bonuses, "abilities.save");
     if ( actorBonus ) {
       parts.push("@saveBonus");
       data.saveBonus = actorBonus;
-    }
+    };
 
     // Roll and return
     return Dice35e.d20Roll({
       event: options.event,
       parts: parts,
       data: data,
-      title: `${label} Saving Throw`,
+      title: `${game.i18n.localize(label)} Saving Throw`,
       speaker: ChatMessage.getSpeaker({actor: this}),
     });
   }
