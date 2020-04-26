@@ -21,13 +21,14 @@ export class Dice35e {
    *
    * @return {Promise}              A Promise which resolves once the roll workflow has completed
    */
-  static async d20Roll({parts=[], data={}, event={}, template=null, title=null, speaker=null, flavor=null,
-                         fastForward=true, critical=20, fumble=1, onClose, dialogOptions}={}) {
+  static async d20Roll({parts=[], data={}, event={}, rollMode=null, template=null, title=null, speaker=null,
+                        flavor=null, onClose, dialogOptions, 
+                        critical=20, fumble=1}={}) {
 
     // Handle input arguments
     flavor = flavor || title;
     speaker = speaker || ChatMessage.getSpeaker();
-    const rollMode = game.settings.get("core", "rollMode");
+    rollMode = rollMode || game.settings.get("core", "rollMode");
     parts = parts.concat(["@bonus"]);
     let rolled = false;
 
@@ -35,19 +36,10 @@ export class Dice35e {
     const _roll = function(parts, form=null) {
 
       // Include the d20 roll
-      parts.unshift('d20');
+      parts.unshift('1d20');
 
       // Optionally include a situational bonus
-      if ( form !== null ) data['bonus'] = form.find('[name="bonus"]').val();
-      if ( !data["bonus"] ) parts.pop();
-
-      // Optionally include an ability score selection (used for tool checks)
-      const ability = form ? form.find('[name="ability"]') : null;
-      if ( ability && ability.length && ability.val() ) {
-        data.ability = ability.val();
-        const abl = data.abilities[data.ability];
-        if ( abl ) data.mod = abl.mod;
-      }
+      if ( form !== null ) data['bonus'] = form.bonus.val();
 
       // Execute the roll and flag critical thresholds on the d20
       let roll = new Roll(parts.join(" + "), data).roll();
@@ -56,19 +48,14 @@ export class Dice35e {
       d20.options.fumble = fumble;
 
       // Convert the roll to a chat message and return the roll
+      rollMode = form ? form.rollMode.value : rollMode;
       roll.toMessage({
         speaker: speaker,
-        flavor: flavor,
-        rollMode: form ? form.find('[name="rollMode"]').val() : rollMode
-      });
+        flavor: flavor
+        }, { rollMode });
       rolled = true;
       return roll;
     };
-
-    // Optionally allow fast-forwarding to specify advantage or disadvantage
-    if ( fastForward ) {
-      if (event.shiftKey) return _roll(parts, 0);
-    }
 
     // Render modal dialog
     template = template || "systems/dnd35e/templates/chat/roll-dialog.html";
@@ -89,8 +76,8 @@ export class Dice35e {
         content: html,
         buttons: {
           normal: {
-            label: "Normal",
-            callback: html => roll = _roll(parts, 0, html)
+            label: game.i18n.localize("DND35E.RollExclamation"),
+            callback: html => roll = _roll(parts, html[0].children[0])
           }
         },
         default: "normal",
@@ -105,7 +92,7 @@ export class Dice35e {
   /* -------------------------------------------- */
 
   /**
-   * A standardized helper function for managing core 5e "d20 rolls"
+   * A standardized helper function for managing core 3.5e "d20 rolls"
    *
    * Holding SHIFT, ALT, or CTRL when the attack is rolled will "fast-forward".
    * This chooses the default options of a normal attack with no bonus, Critical, or no bonus respectively

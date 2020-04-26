@@ -496,18 +496,14 @@ export class Actor35e extends Actor {
    * @param {Object} options      Options which configure how ability tests or saving throws are rolled
    */
   rollAbility(abilityId, options={}) {
-    const label = CONFIG.DND35E.abilities[abilityId];
+    const label = game.i18n.localize(CONFIG.DND35E.abilities[abilityId]);
     new Dialog({
       title: `${label} Ability Check`,
-      content: `<p>What type of ${label} check?</p>`,
+      content: `<p>${label} check?</p>`,
       buttons: {
         test: {
-          label: "Ability Test",
+          label: "Roll!",
           callback: () => this.rollAbilityTest(abilityId, options)
-        },
-        save: {
-          label: "Saving Throw",
-          callback: () => this.rollAbilitySave(abilityId, options)
         }
       }
     }).render(true);
@@ -517,13 +513,13 @@ export class Actor35e extends Actor {
 
   /**
    * Roll an Ability Test
-   * Prompt the user for input regarding Advantage/Disadvantage and any Situational Bonus
+   * Prompt the user for any Situational Bonus regarding the test
    * @param {String} abilityId    The ability ID (e.g. "str")
    * @param {Object} options      Options which configure how ability tests are rolled
    * @return {Promise.<Roll>}   A Promise which resolves to the created Roll instance
    */
   rollAbilityTest(abilityId, options={}) {
-    const label = CONFIG.DND35E.abilities[abilityId];
+    const label = game.i18n(CONFIG.DND35E.abilities[abilityId]);
     const abl = this.data.data.abilities[abilityId];
     const parts = ["@mod"];
     const data = {mod: abl.mod};
