@@ -20,8 +20,8 @@
         <ul class="traits-list">
         {{#each data.traits.languages as |v k|}}
             {{#if v}}
-        {{log ../..}}
-                <li class="tag {{k}}">{{localize (lookup ../../config/languages k)}}</li>
+        {{log ../../}}
+                <li class="tag {{k}}">{{localize (lookup ../../../config.languages k)}}</li>
             {{/if}}
         {{/each}}
         </ul>
