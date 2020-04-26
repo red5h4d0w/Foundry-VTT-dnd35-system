@@ -558,6 +558,7 @@
   border-radius: 3px;
 }
 .dnd35e.sheet.actor ul.skills-list li.skill {
+  display: inline-block;
   height: 22px;
   padding: 3px 0;
 }
@@ -576,11 +577,6 @@
 }
 .dnd35e.sheet.actor ul.skills-list li.skill .skill-mod {
   flex: 0 0 20px;
-}
-.dnd35e.sheet.actor ul.skills-list li.skill .skill-passive {
-  flex: 0 0 26px;
-  text-align: center;
-  color: #7a7971;
 }
 .dnd35e.sheet.actor .counters {
   flex: 0 0 100%;

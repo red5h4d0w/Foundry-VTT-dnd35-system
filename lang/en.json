@@ -66,8 +66,8 @@
   "DND35E.ArmorNatural": "Natural Armor",
   "DND35E.ArmorShield": "Shield",
   "DND35E.ArmorClass": "Armor Class",
-  "DND35E.ArmorClassTouch": "Touch AC",
-  "DND35E.ArmorClassFlatFooted": "Flat-Footed AC",
+  "DND35E.ArmorClassTouch": "Touch",
+  "DND35E.ArmorClassFlatFooted": "Flat-Footed",
   "DND35E.ArmorMaxDexModifier": "Max Dex. Modifier",
   "DND35E.ArmorPenality": "Armor Check Penality",
 
