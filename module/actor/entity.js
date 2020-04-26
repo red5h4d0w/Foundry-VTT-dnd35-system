@@ -80,9 +80,9 @@ export class Actor35e extends Actor {
 
     // Initiative
     let init = data.attributes.init;
-    init.mod = data.abilities.dex.mod;
+    init.mod = parseInt(data.abilities.dex.mod);
     init.bonus = parseInt(init.bonus) || 0;
-    init.total = init.mod + init.prof + init.bonus;
+    init.total = init.mod + init.bonus;
 
     // Grapple Modifier
     let grapple = data.attributes.grapple;
