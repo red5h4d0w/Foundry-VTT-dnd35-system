@@ -276,6 +276,7 @@
   border-bottom: none;
 }
 .dnd35e.sheet .sheet-header .summary li {
+  align-items: center;
   width: 35%;
   float: left;
   height: 34px;
@@ -284,6 +285,13 @@
   border-right: 2px groove #eeede0;
   line-height: 34px;
   color: #4b4a44;
+}
+.dnd35e.sheet .sheet-header .summary h3 {
+  flex: 1;
+  margin: 0;
+}
+.dnd35e.sheet .sheet-header .summary li.twothirds {
+  width: 65%;
 }
 .dnd35e.sheet .sheet-header .feattype {
   flex: 0 0 100%;
@@ -437,6 +445,9 @@
   padding-right: 5px;
   font-size: 16px;
   color: #4b4a44;
+}
+.dnd35e.sheet.actor .sheet-header .summary {
+  margin-top: 10px;
 }
 .dnd35e.sheet.actor .attributes input.temphp {
   width: 48%;
