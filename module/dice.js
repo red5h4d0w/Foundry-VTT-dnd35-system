@@ -39,7 +39,7 @@ export class Dice35e {
       parts.unshift('1d20');
 
       // Optionally include a situational bonus
-      if ( form !== null ) data['bonus'] = form.bonus.val();
+      if ( form !== null ) data['bonus'] = form.bonus.value;
 
       // Execute the roll and flag critical thresholds on the d20
       let roll = new Roll(parts.join(" + "), data).roll();
