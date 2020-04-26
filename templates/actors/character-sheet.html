@@ -123,16 +123,13 @@
             </ul>
 
             {{!-- Skills --}}
-            <ul class="skills-list">
+            <ul class="skills-list flexcol">
             {{#each data.skills as |skill s|}}
-                <li class="skill {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}">
-                    <div class="flexrow">
-                        <a class="proficiency-toggle skill-proficiency" title="{{skill.hover}}">{{skill.icon}}</a>
-                        <h4 class="skill-name rollable">{{localize skill.label}}</h4>
-                        <span class="skill-ability">{{skill.ability}}</span>
-                        <span class="skill-mod">{{numberFormat skill.mod decimals=0 sign=true}}</span>
-                    </div>
-
+                <li class="skill flexrow {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}">
+                    <a class="proficiency-toggle skill-proficiency" title="{{skill.hover}}">{{{skill.icon}}}</a>
+                    <h4 class="skill-name rollable">{{localize skill.label}}</h4>
+                    <span class="skill-ability">{{skill.ability}}</span>
+                    <span class="skill-mod">{{numberFormat skill.mod decimals=0 sign=true}}</span>
                 </li>
             {{/each}}
             </ul>
