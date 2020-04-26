@@ -60,7 +60,7 @@ export class Actor35e extends Actor {
       data.saves[save].misc = parseInt(data.saves[save].misc || 0);
       data.saves[save].temp = parseInt(data.saves[save].temp || 0);
       // Add the ability modifier associated with the saving throw
-      data.saves[save].mod = baseSaveBonus + data.abilities[data.saves[save].ability].mod + data.saves[save].magic + data.saves[save].misc + data.saves[save].temp;
+      data.saves[save].mod = baseSaveBonus + data.abilities[data.attributes.saves[save].ability].mod + data.saves[save].magic + data.saves[save].misc + data.saves[save].temp;
     };
 
     // Skill modifiers
