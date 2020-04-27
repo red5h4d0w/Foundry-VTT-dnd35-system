@@ -472,6 +472,9 @@
   font-size: 20px;
   text-align: center;
 }
+.dnd35e.sheet.actor ul.attributes li.attribute .saving-throw-name {
+  flex: 0 0 18px;
+}
 .dnd35e.sheet.actor ul.attributes li.attribute .attribute-name {
   flex: 0 0 18px;
 }
