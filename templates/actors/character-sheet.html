@@ -139,7 +139,7 @@
                 {{!-- Body Attributes --}}
                 <ul class="attributes flexrow">
                     {{#each data.attributes.saves as |save key|}}
-                    <li class="attribute save" data-save={{save}}>
+                    <li class="attribute save" data-save="{{key}}">
                         <h4 class="box-title saving-throw-name rollable">{{localize save.label}}</h4>
                         <div class="attribute-value multiple">
                             <input name="data.attributes.saves.{{key}}.custom" type="text" value="{{numberFormat save.mod decimals=0 sign=true}}"
