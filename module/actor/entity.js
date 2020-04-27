@@ -57,7 +57,7 @@ export class Actor35e extends Actor {
       let save = data.attributes.saves[s];
       save.ablMod = parseInt(data.abilities[save.ability].mod);
       // Gets the base save bonus of the actor for the save
-      save.baseSaveBonus = praseInt(this.getBaseSaveBonus(s));
+      save.baseSaveBonus = parseInt(this.getBaseSaveBonus(s));
       save.magic = parseInt(save.magic || 0);
       save.misc = parseInt(save.misc || 0);
       save.temp = parseInt(save.temp || 0);
