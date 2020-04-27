@@ -62,14 +62,11 @@ export class Actor35e extends Actor {
       save.misc = parseInt(save.misc || 0);
       save.temp = parseInt(save.temp || 0);
       // Add the ability modifier associated with the saving throw
-      console.log(save.baseSaveBonus);
-      console.log(save.ablMod);
-      console.log(save.magic);
-      console.log(save.temp);
       save.mod = save.baseSaveBonus + save.ablMod + save.magic + save.misc + save.temp;
-      if (save.custom !== save.mod) {
+      if ((save.custom !== save.mod) && save.custom) {
         save.mod = save.custom;
       };
+      console.log(save.mod);
     };
 
     // Skill modifiers
@@ -557,6 +554,7 @@ export class Actor35e extends Actor {
    */
   rollSavingThrow(saveId, options={}) {
     const label = CONFIG.DND35E.saves[saveId];
+    console.log(saveId);
     const save = this.data.data.attributes.saves[saveId];
     const parts = ["@mod"];
     const data = {mod: save.mod};
