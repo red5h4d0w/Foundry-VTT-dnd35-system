@@ -253,7 +253,7 @@ export class Actor35e extends Actor {
         if (c.data.data.savesProgression){
           const table = config.SAVE_TABLE[c.data.data.savesProgression[save]];
           if (table) {
-            baseSaveBonus += table[classLevel];
+            baseSaveBonus += table[classLevel-1];
           };
         };
       };
