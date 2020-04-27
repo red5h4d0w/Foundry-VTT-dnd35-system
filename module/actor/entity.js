@@ -181,7 +181,7 @@ export class Actor35e extends Actor {
     // Checks if Embedded Entities have been Loaded
     if (this.items) {
       // Find Equipped Armors and Find their Max Dex modifier
-      const armors = this.items.filter(item => item.type = "armor");
+      const armors = this.items.filter(item => item.type === "armor");
       const equippedArmors = armors.filter(armor => armor.data.data.equipped);
       for (armor of equippedArmors) {
         // Checks if Armor Imposes a Maximal Dexterity Modifier
