@@ -65,18 +65,22 @@ DND35E.weaponProficiencies = {
   "exo": "DND35E.WeaponExotic"
 };
 
-/* -------------------------------------------- */
-
-/**
- * This describes the ways that an ability can be activated
- * @type {Object}
- */
-
 DND35E.saves = {
   "for": "DND35E.SaveFor",
   "ref": "DND35E.SaveRef",
   "wil": "DND35E.SaveWil"
 };
+
+DND35E.saveProgressionName = {
+  "for": "DND35E.SaveFor",
+  "ref": "DND35E.SaveRef",
+  "wil": "DND35E.SaveWil"
+}
+
+DND35E.saveProgression = {
+  "good": "DND35E.Good",
+  "poor": "DND35E.Poor"
+}
 
 DND35E.saveTypes = {
   "none": "DND35E.None",
@@ -91,9 +95,9 @@ DND35E.baseAttackBonus = {
 }
 
 DND35E.babProgression = {
-  "good": "DND35E.BABGood",
-  "average": "DND35E.BABAverage",
-  "poor": "DND35E.BABPoor"
+  "good": "DND35E.Good",
+  "average": "DND35E.Average",
+  "poor": "DND35E.Poor"
 }
 
 DND35E.abilityActivationTypes = {

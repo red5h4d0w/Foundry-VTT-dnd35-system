@@ -60,6 +60,21 @@
                     {{/select}}
                 </select>
             </div>
+
+            {{!-- Saving Throws Progression --}}
+            {{#each config.saves as |name id|}}
+                <div class="form-group">
+                    <label>{{ localize (lookup ../config.savesProgressionName id) }}</label>
+                    <select name="data.savesProgression.{{id}}">
+                        {{#select (lookup ../data.savesProgression id)}}
+                        <option value="">{{localize 'DND35E.None'}}</option>
+                        {{#each ../config.savesProgressionName as |name id|}}
+                        <option value="{{id}}">{{localize name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </div>
+            {{/each}}
         </div>
 
         {{!-- Skills Tab --}}

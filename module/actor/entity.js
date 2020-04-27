@@ -224,8 +224,10 @@ export class Actor35e extends Actor {
       for (const c of classes) {
         const classLevel = c.data.data.levels;
         if (c.data.data.bab.progression) {
-          const table = config.BAB_TABLES[c.data.data.bab.progression]
-          baseAttackBonus += table[classLevel];
+          const table = config.BAB_TABLES[c.data.data.bab.progression];
+          if (table) {
+            baseAttackBonus += table[classLevel];
+          };
         };
       };
     };
@@ -250,7 +252,9 @@ export class Actor35e extends Actor {
         const classLevel = c.data.data.levels;
         if (c.data.data.savesProgression){
           const table = config.SAVE_TABLE[c.data.data.savesProgression[save]];
-          baseSaveBonus += table[classLevel];
+          if (table) {
+            baseSaveBonus += table[classLevel];
+          };
         };
       };
     };
