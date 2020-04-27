@@ -142,8 +142,8 @@
                     <li class="attribute save" data-save={{save}}>
                         <h4 class="box-title saving-throw-name rollable">{{localize save.label}}</h4>
                         <div class="attribute-value multiple">
-                            <input name="data.attributes.saves.{{key}}.value" type="text" value="{{numberFormat save.value sign=true}}"
-                                   data-dtype="Number" placeholder="0">
+                            <input name="data.attributes.saves.{{key}}.custom" type="text" value="{{numberFormat save.mod decimals=0 sign=true}}"
+                                   data-dtype="Number" placeholder="+0">
                         </div>
                     </li>
                     {{/each}}

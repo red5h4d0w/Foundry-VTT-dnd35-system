@@ -235,14 +235,6 @@ export class ActorSheet35e extends ActorSheet {
    */
   activateListeners(html) {
 
-    // Activate tabs
-    new Tabs(html.find(".tabs"), {
-      initial: this["_sheetTab"],
-      callback: clicked => {
-        this["_sheetTab"] = clicked.data("tab");
-      }
-    });
-
     // Activate Item Filters
     const filterLists = html.find(".filter-list");
     filterLists.each(this._initializeFilterItemList.bind(this));

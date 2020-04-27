@@ -62,12 +62,11 @@ export class ActorSheet35eCharacter extends ActorSheet35e {
 
     // Categorize items as inventory, spellbook, features, and classes
     const inventory = {
-      weapon: { label: "Weapons", items: [], dataset: {type: "weapon"} },
-      equipment: { label: "Equipment", items: [], dataset: {type: "equipment"} },
-      consumable: { label: "Consumables", items: [], dataset: {type: "consumable"} },
-      tool: { label: "Tools", items: [], dataset: {type: "tool"} },
+      weapon: { label: game.i18n.localize("DND35E.Weapons"), items: [], dataset: {type: "weapon"} },
+      equipment: { label: game.i18n.localize("DND35E.Equipment"), items: [], dataset: {type: "equipment"} },
+      consumable: { label: game.i18n.localize("DND35E.Consumables"), items: [], dataset: {type: "consumable"} },
       backpack: { label: game.i18n.localize("DND35E.ItemContainerHeader"), items: [], dataset: {type: "backpack"} },
-      loot: { label: "Loot", items: [], dataset: {type: "loot"} }
+      loot: { label: game.i18n.localize("DND35E.Loot"), items: [], dataset: {type: "loot"} }
     };
 
     // Partition items by category
@@ -76,13 +75,7 @@ export class ActorSheet35eCharacter extends ActorSheet35e {
       // Item details
       item.img = item.img || DEFAULT_TOKEN;
       item.isStack = item.data.quantity ? item.data.quantity > 1 : false;
-
-      // Item usage
-      item.hasUses = item.data.uses && (item.data.uses.max > 0);
-      item.isOnCooldown = item.data.recharge && !!item.data.recharge.value && (item.data.recharge.charged === false);
-      item.isDepleted = item.isOnCooldown && (item.data.uses.per && (item.data.uses.value > 0));
-      item.hasTarget = !!item.data.target && !(["none",""].includes(item.data.target.type));
-
+      
       // Item toggle state
       this._prepareItemToggleState(item);
 

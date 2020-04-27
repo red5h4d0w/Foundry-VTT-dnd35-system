@@ -125,6 +125,7 @@
   "DND35E.ConExhaustion": "Exhaustion",
   "DND35E.ConDiseased": "Diseased",
 
+  "DND35E.Consumables": "DND35E.Consumables",
   "DND35E.ConsumableDetails": "Consumable Details",
   "DND35E.ConsumableType": "Consumable Type",
 
@@ -356,6 +357,8 @@
   "DND35E.TraitToolProf": "Tool Proficiencies",
   "DND35E.TraitWeaponProf": "Weapon Proficiencies",
 
+  "DND35E.Weapon": "Weapon",
+  "DND35E.Weapons": "Weapons",
   "DND35E.WeaponAttack": "Weapon Attack",
   "DND35E.WeaponCategory": "Weapon Category",
   "DND35E.WeaponDetails": "Weapon Details",
@@ -422,6 +425,7 @@
   "DND35E.Languages": "Languages",
   "DND35E.Level": "Level",
   "DND35E.List": "List",
+  "DND35E.Loot": "Loot",
   "DND35E.Modifier": "Modifier",
   "DND35E.No": "No",
   "DND35E.None": "None",
