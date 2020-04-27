@@ -57,11 +57,15 @@ export class Actor35e extends Actor {
       let save = data.attributes.saves[s];
       save.ablMod = parseInt(data.abilities[save.ability].mod);
       // Gets the base save bonus of the actor for the save
-      save.baseSaveBonus = this.getBaseSaveBonus(save);
+      save.baseSaveBonus = praseInt(this.getBaseSaveBonus(s));
       save.magic = parseInt(save.magic || 0);
       save.misc = parseInt(save.misc || 0);
       save.temp = parseInt(save.temp || 0);
       // Add the ability modifier associated with the saving throw
+      console.log(save.baseSaveBonus);
+      console.log(save.ablMod);
+      console.log(save.magic);
+      console.log(save.temp);
       save.mod = save.baseSaveBonus + save.ablMod + save.magic + save.misc + save.temp;
       if (save.custom !== save.mod) {
         save.mod = save.custom;
@@ -237,15 +241,12 @@ export class Actor35e extends Actor {
   
   /**
    * Returns the base save bonus for this actor using a certain saving throw
-   * @param {string} save       The saving throw used
+   * @param {string} save       The identifier for the saving throw used
    * @return {number}           The base save bonus for the saving throw
    */
   getBaseSaveBonus(save){
     let baseSaveBonus = 0
     const config = CONFIG.DND35E;
-    if (save.custom) {
-      return save.custom;
-    };
     if (this.items) {
       const classes = this.items.filter(item => item.type = "class");
       for (const c of classes) {
