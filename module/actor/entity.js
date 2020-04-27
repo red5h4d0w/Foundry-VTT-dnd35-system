@@ -327,7 +327,7 @@ export class Actor35e extends Actor {
     if (this.items) {
       // Checks whether classes owned by the actor have said proficiency
       const classes = this.items.filter(item => item.type === "class");
-      for (c of classes){
+      for (const c of classes){
         if (c.data.data.skillProficiency[skill]){
           proficiency = 1
         };
