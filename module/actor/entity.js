@@ -50,7 +50,12 @@ export class Actor35e extends Actor {
     ac.flatFooted = ac.value - ac.dexMod
 
     // Base Attack Bonus
-    data.attributes.bab.value = this.getBaseAttackBonus();
+    let bab = data.attributes.bab
+    bab.value = this.getBaseAttackBonus();
+    // Check if a custom value is given for the Base Attack Bonus
+    if ((bab.custom !== bab.value) && bab.custom) {
+      bab.value = bab.custom;
+    };
 
     // Saving throw bonus
     for (const s in data.attributes.saves) {

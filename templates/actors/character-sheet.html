@@ -89,7 +89,7 @@
                     <h4 class="attribute-name box-title">{{ localize "DND35E.BAB" }}</h4>
                     <div class="attribute-value">
                         <input name="data.attributes.bab.custom" type="text"
-                               value="{{data.attributes.bab.value}}" placeholder="+0">
+                               value="{{numberFormat data.attributes.bab.value decimals=0 sign=true}}" placeholder="+0">
                     </div>
                 </li>
             </ul>
