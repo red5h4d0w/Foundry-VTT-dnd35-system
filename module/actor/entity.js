@@ -219,7 +219,7 @@ export class Actor35e extends Actor {
     if (this.items) {
       // Checks all classes owned by the actor to find their Base Attack Bonuses and add them
       const config = CONFIG.DND35E;
-      const classes = this.items.filter(item => item.type = "class");
+      const classes = this.items.filter(item => item.type === "class");
       // Could probably be rewritten with a reduce() method instead
       for (const c of classes) {
         const classLevel = c.data.data.levels;
