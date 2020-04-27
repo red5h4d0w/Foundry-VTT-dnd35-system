@@ -162,7 +162,7 @@ export class Actor35e extends Actor {
     // Checks if Embedded Entities have been loaded
     if (this.items) {
       // Find Armors
-      let armors = this.items.filter(item => item.type = "armor");
+      let armors = this.items.filter(item => item.type === "armor");
       // Removes Shields
       armors = armors.filter(armor => armor.data.data.type !== "shield");
       // Find Equipped Armors
@@ -245,7 +245,7 @@ export class Actor35e extends Actor {
     let baseSaveBonus = 0
     const config = CONFIG.DND35E;
     if (this.items) {
-      const classes = this.items.filter(item => item.type = "class");
+      const classes = this.items.filter(item => item.type === "class");
       for (const c of classes) {
         const classLevel = c.data.data.levels;
         if (c.data.data.savesProgression){
@@ -294,7 +294,7 @@ export class Actor35e extends Actor {
   getShieldBonus() {
     let shieldBonus = 0;
     if (this.items) {
-      let armors = this.items.filter(item => item.type = "armor");
+      let armors = this.items.filter(item => item.type === "armor");
       // Removes Items that are not shields
       armors = armors.filter(armor => armor.data.data.type === "shield");
       // Find Equipped Shields
