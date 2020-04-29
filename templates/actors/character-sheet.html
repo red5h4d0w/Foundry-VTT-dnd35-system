@@ -130,7 +130,7 @@
                     <a class="proficiency-toggle skill-proficiency" title="{{skill.hover}}">{{{skill.icon}}}</a>
                     <h4 class="skill-name rollable">{{localize skill.label}}</h4>
                     <span class="skill-ability">{{skill.ability}}</span>
-                    <input type="number" title="{{localize 'DND35E.SkillRank'}}" name="data.skills.{{s}}.rank" value="{{skill.rank}}" min=0 step="0.5">
+                    <input class="skill-rank" type="number" title="{{localize 'DND35E.SkillRank'}}" name="data.skills.{{s}}.rank" value="{{skill.rank}}" min=0 step="0.5">
                     <span class="skill-mod">{{numberFormat skill.mod decimals=0 sign=true}}</span>
                 </li>
             {{/each}}

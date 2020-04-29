@@ -596,6 +596,10 @@
 .dnd35e.sheet.actor ul.skills-list li.skill .skill-ability {
   flex: 0 0 26px;
 }
+.dnd35e.sheet.actor ul.skills-list li.skill .skill-rank {
+  width: 64px;
+  flex: 0 1;
+}
 .dnd35e.sheet.actor ul.skills-list li.skill .skill-mod {
   flex: 0 0 20px;
 }
