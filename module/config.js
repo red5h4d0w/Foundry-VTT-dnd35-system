@@ -72,9 +72,8 @@ DND35E.saves = {
 };
 
 DND35E.savesProgressionName = {
-  "for": "DND35E.SaveFor",
-  "ref": "DND35E.SaveRef",
-  "wil": "DND35E.SaveWil"
+  "good": "DND35E.Good",
+  "poor": "DND35E.Poor"
 }
 
 DND35E.saveProgression = {
