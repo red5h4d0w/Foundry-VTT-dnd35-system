@@ -216,11 +216,6 @@ export class Actor35e extends Actor {
    */
   getBaseAttackBonus(){
     let baseAttackBonus = 0;
-    const data = this.data.data;
-    // Checks if there is a custom base attack bonus defined (NPCs do not have base attack bonus derived from owned classes)
-    if (data.attributes.bab.custom) {
-      return data.attributes.bab.custom;
-    };
     // Checks if embedded entities have been loaded
     if (this.items) {
       // Checks all classes owned by the actor to find their Base Attack Bonuses and add them
@@ -237,6 +232,7 @@ export class Actor35e extends Actor {
         };
       };
     };
+    return baseAttackBonus;
   };
 
 
