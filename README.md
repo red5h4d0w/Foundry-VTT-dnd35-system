@@ -13,7 +13,7 @@ content is available in full from Wizards of the Coast.
 To install the D&D3.5E system for Foundry Virtual Tabletop, simply paste the following URL into the **Install System**
 dialog on the Setup menu of the application.
 
-**Note:** The system is still in development so there are features missing (see [Feature Planning](#markdown-header-feature-planning))
+**Note:** The system is still in development so there are features missing (see [Feature Planning](#https://github.com/red5h4d0w/Foundry-VTT-dnd35-system#feature-planning))
 
 https://raw.githubusercontent.com/red5h4d0w/Foundry-VTT-dnd35-system/master/system.json
 
