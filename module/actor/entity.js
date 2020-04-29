@@ -227,10 +227,11 @@ export class Actor35e extends Actor {
       const classes = this.items.filter(item => item.type === "class");
       // Could probably be rewritten with a reduce() method instead
       for (const c of classes) {
-        const classLevel = c.data.data.levels;
+        let classLevel = c.data.data.levels;
         if (c.data.data.bab.progression) {
-          const table = config.BAB_TABLES[c.data.data.bab.progression];
+          let table = config.BAB_TABLES[c.data.data.bab.progression];
           if (table) {
+            print(table[classLevel]);
             baseAttackBonus += table[classLevel];
           };
         };
