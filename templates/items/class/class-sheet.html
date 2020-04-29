@@ -64,7 +64,7 @@
             {{!-- Saving Throws Progression --}}
             {{#each config.saves as |name id|}}
                 <div class="form-group">
-                    <label>{{ localize (lookup ../config.savesProgressionName id) }}</label>
+                    <label>{{ localize name }}</label>
                     <select name="data.savesProgression.{{id}}">
                         {{#select (lookup ../data.savesProgression id)}}
                         <option value="">{{localize 'DND35E.None'}}</option>
