@@ -52,8 +52,9 @@ export class Actor35e extends Actor {
     // Base Attack Bonus
     let bab = data.attributes.bab
     bab.value = this.getBaseAttackBonus();
+    console.log(bab.value);
     // Check if a custom value is given for the Base Attack Bonus
-    if ((bab.custom !== bab.value) && bab.custom) {
+    if ((bab.custom !== bab.value) && bab.custom && !Number.isNaN(bab.custom)) {
       bab.value = bab.custom;
     };
 
@@ -78,6 +79,7 @@ export class Actor35e extends Actor {
       let skill = data.skills[skl];
       // Sets the proficiencies for the skill
       skill.proficiency = this.getSkillProficiency(skill);
+      console.log(skill.proficiency);
       skill.rank = parseFloat(skill.rank || 0);
       skill.bonus = parseInt(skill.bonus || 0);
       // Checks whether Skill has an ability, if so sets the ability modifier
