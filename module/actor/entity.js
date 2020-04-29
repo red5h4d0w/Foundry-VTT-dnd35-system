@@ -71,7 +71,6 @@ export class Actor35e extends Actor {
       if ((save.custom !== save.mod) && save.custom) {
         save.mod = save.custom;
       };
-      console.log(save.mod);
     };
 
     // Skill modifiers
@@ -231,14 +230,11 @@ export class Actor35e extends Actor {
         if (c.data.data.bab.progression) {
           let table = config.BAB_TABLES[c.data.data.bab.progression];
           if (table) {
-            print(table[classLevel]);
-            baseAttackBonus += table[classLevel];
+            baseAttackBonus += table[classLevel-1];
           };
         };
       };
     };
-
-    return baseAttackBonus;
   };
 
 
