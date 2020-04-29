@@ -39,8 +39,8 @@ reach out on the Foundry Community Discord with any questions.
 ## Feature Planning
 
 * Add Macros
-..* Weapons.
-..* Spells.
+    * Weapons.
+    * Spells.
 * Document Code
 * Psionic Full Support
 * SRD release
