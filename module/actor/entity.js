@@ -78,7 +78,7 @@ export class Actor35e extends Actor {
     for (const skl in data.skills) {
       let skill = data.skills[skl];
       // Sets the proficiencies for the skill
-      skill.proficiency = this.getSkillProficiency(skill);
+      skill.proficiency = this.getSkillProficiency(skl);
       console.log(skill.proficiency);
       skill.rank = parseFloat(skill.rank || 0);
       skill.bonus = parseInt(skill.bonus || 0);
