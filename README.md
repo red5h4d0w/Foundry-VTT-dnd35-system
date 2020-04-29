@@ -42,8 +42,9 @@ reach out on the Foundry Community Discord with any questions.
     * Weapons.
     * Spells.
 * Document Code
-* Psionic Full Support
+* Psionic (SRD) Support
 * SRD release
+* Epic Rules Support
 * Feel free to suggest other things to implement
 
 
