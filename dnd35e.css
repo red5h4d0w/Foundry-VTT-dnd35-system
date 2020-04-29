@@ -73,12 +73,15 @@
   color: #191813;
 }
 .dnd35e input[type="text"],
+.dnd35e input[type="number"],
 .dnd35e select {
   height: calc(100% - 2px);
   border: 1px solid #7a7971;
   background: rgba(0, 0, 0, 0.05);
   color: #191813;
 }
+.dnd35e input[type="number"]:hover,
+.dnd35e input[type="number"]:focus,
 .dnd35e input[type="text"]:hover,
 .dnd35e input[type="text"]:focus {
   border: 1px solid #111;
