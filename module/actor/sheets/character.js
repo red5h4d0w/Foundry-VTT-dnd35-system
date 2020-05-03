@@ -111,14 +111,10 @@ export class ActorSheet35eCharacter extends ActorSheet35e {
 
     // Organize Features
     const features = {
-      classes: { label: "Class Levels", items: [], hasActions: false, dataset: {type: "class"}, isClass: true },
-      active: { label: "Active", items: [], hasActions: true, dataset: {type: "feat", "activation.type": "action"} },
-      passive: { label: "Passive", items: [], hasActions: false, dataset: {type: "feat"} }
+      classes: { label: game.i18n.localize('DND35E.Classes'), items: [], hasActions: false, dataset: {type: "class"}, isClass: true },
+      feats: { label: game.i18n.localize('DND35E.Feats'), items: [], hasActions: false, dataset: {type: "feat"} }
     };
-    for ( let f of feats ) {
-      if ( f.data.activation.type ) features.active.items.push(f);
-      else features.passive.items.push(f);
-    }
+    feats.sort((a,b) => a.name.localeCompare(b.name));
     classes.sort((a, b) => b.levels - a.levels);
     features.classes.items = classes;
 

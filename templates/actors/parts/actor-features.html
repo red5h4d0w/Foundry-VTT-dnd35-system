@@ -19,8 +19,8 @@
 
         {{#if ../owner}}
         <div class="item-controls">
-            <a class="item-control item-create" title="Create Item" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
-                <i class="fas fa-plus"></i> Add
+            <a class="item-control item-create" title="{{localize 'DND35E.CreateItem'}}" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
+                <i class="fas fa-plus"></i> {{localize 'DND35E.Add'}}
             </a>
         </div>
         {{/if}}
@@ -42,7 +42,7 @@
                 {{localize "DND35E.Charged"}}
 
                 {{else if item.hasUses}}
-                <input type="text" value="{{item.data.uses.value}}" placeholder="0"/>/ {{item.data.uses.max}}
+                <input type="text" value="{{item.data.uses.value}}" placeholder="0">/ {{item.data.uses.max}}
                 {{/if}}
             </div>
 
