@@ -115,6 +115,7 @@ export class ActorSheet35eCharacter extends ActorSheet35e {
       feats: { label: game.i18n.localize('DND35E.Feats'), items: [], hasActions: false, dataset: {type: "feat"} }
     };
     feats.sort((a,b) => a.name.localeCompare(b.name));
+    features.feats.items = feats;
     classes.sort((a, b) => b.levels - a.levels);
     features.classes.items = classes;
 
@@ -168,9 +169,6 @@ export class ActorSheet35eCharacter extends ActorSheet35e {
       grg: 8
     }[actorData.data.traits.size] || 1;
 
-    // Apply Powerful Build feat
-    if ( this.actor.getFlag("dnd35e", "powerfulBuild") ) mod = Math.min(mod * 2, 8);
-
     // Add Currency Weight
     if ( game.settings.get("dnd35e", "currencyWeight") ) {
       const currency = actorData.data.currency;
@@ -180,10 +178,11 @@ export class ActorSheet35eCharacter extends ActorSheet35e {
 
     // Compute Encumbrance percentage
     const enc = {
-      max: actorData.data.abilities.str.value * 15 * mod,
+      max: this.actor.getMaxLoad(),
       value: Math.round(totalWeight * 10) / 10,
     };
     enc.pct = Math.min(enc.value * 100 / enc.max, 99);
+    enc.lightlyEnc = enc.pct > (1/3);
     enc.encumbered = enc.pct > (2/3);
     return enc;
   }
@@ -205,26 +204,11 @@ export class ActorSheet35eCharacter extends ActorSheet35e {
 
     // Item State Toggling
     html.find('.item-toggle').click(this._onToggleItem.bind(this));
-
-    // Short and Long Rest
-    html.find('.short-rest').click(this._onShortRest.bind(this));
-    html.find('.long-rest').click(this._onLongRest.bind(this));
-
-    // Death saving throws
-    html.find('.death-save').click(this._onDeathSave.bind(this));
   }
 
   /* -------------------------------------------- */
 
-  /**
-   * Handle rolling a death saving throw for the Character
-   * @param {MouseEvent} event    The originating click event
-   * @private
-   */
-  _onDeathSave(event) {
-    event.preventDefault();
-    return this.actor.rollDeathSave({event: event});
-  }
+
 
   /* -------------------------------------------- */
 

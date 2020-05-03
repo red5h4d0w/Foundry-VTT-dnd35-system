@@ -46,8 +46,12 @@ export class Actor35e extends Actor {
     // There is a Deflection bonus not implemented yet
     // Dodge AC is not implemented yet and normally is specifid to targets
     ac.value = 10 + ac.armorBonus + ac.shieldBonus + ac.dexMod + ac.natural + ac.size + ac.misc;
+    if ((ac.custom !== ac.value) && ac.custom) {
+      ac.value = ac.custom;
+    };
     ac.touch = ac.value - ac.armorBonus - ac.shieldBonus - ac.natural
     ac.flatFooted = ac.value - ac.dexMod
+    
 
     // Base Attack Bonus
     let bab = data.attributes.bab
@@ -292,6 +296,19 @@ export class Actor35e extends Actor {
     const config = CONFIG.DND35E;
     return config.GRAPPLE_SIZE_MODIFIER[this.data.data.traits.size];
   };
+
+  getMaxLoad(str = 0){
+    str = str? str: this.data.data.abilities.str.value;
+    if( str >= 0 && str <= 11){
+      return 10 * str;
+    }
+    else if (str > 14) {
+      return (2 * this.getMaxLoad(str-5));
+    }
+    else {
+      return  [115, 130, 150, 175][str-11];
+    }
+  }
 
 
   getShieldBonus() {
