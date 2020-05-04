@@ -299,7 +299,7 @@ export class Actor35e extends Actor {
 
   getMaxLoad(str = 0){
     str = str? str: this.data.data.abilities.str.value;
-    if( str >= 0 && str <= 11){
+    if( str >= 0 && str < 11){
       return 10 * str;
     }
     else if (str > 14) {
