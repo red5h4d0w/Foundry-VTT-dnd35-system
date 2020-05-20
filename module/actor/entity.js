@@ -46,7 +46,7 @@ export class Actor35e extends Actor {
     // There is a Deflection bonus not implemented yet
     // Dodge AC is not implemented yet and normally is specifid to targets
     ac.value = 10 + ac.armorBonus + ac.shieldBonus + ac.dexMod + ac.natural + ac.size + ac.misc;
-    if ((ac.custom !== ac.value) && ac.custom && ac.cache !== ac.value) {
+    if ((ac.custom !== ac.value) && ac.custom && (ac.cache !== ac.custom)) {
       ac.value = ac.custom;
     };
     ac.touch = ac.value - ac.armorBonus - ac.shieldBonus - ac.natural
@@ -74,7 +74,7 @@ export class Actor35e extends Actor {
       save.temp = parseInt(save.temp || 0);
       // Add the ability modifier associated with the saving throw
       save.mod = save.baseSaveBonus + save.ablMod + save.magic + save.misc + save.temp;
-      if ((save.custom !== save.mod) && save.custom && save.cache !== save.value) {
+      if ((save.custom !== save.mod) && save.custom && (save.cache !== save.custom)) {
         save.mod = save.custom;
       };
       save.cache = save.mod
