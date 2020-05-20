@@ -122,10 +122,9 @@ export class Actor35e extends Actor {
         const classLevels = parseInt(item.data.levels) || 1;
         lvl += classLevels;
       }
-      return arr;
+      return lvl;
     }, 0);
     data.details.level = level;
-    data.attributes.hd = hd;
 
     // Character proficiency bonus
     data.attributes.prof = Math.floor((level + 7) / 4);
@@ -358,8 +357,8 @@ export class Actor35e extends Actor {
   };
 
   loadSpellbook(c) {
-    for (num in [...Array(10).keys]) {
-      const spellbook = c.data
+    for (lvl in [...Array(10).keys]) {
+      const spellbook = c.data.data.spellcasting["level"+lvl]
       
     };
   };
