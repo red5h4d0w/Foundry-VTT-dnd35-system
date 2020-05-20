@@ -38,6 +38,7 @@ reach out on the Foundry Community Discord with any questions.
 
 ## Feature Planning
 
+* Spells support on character sheet
 * Add Macros
     * Weapons.
     * Spells.

@@ -2,7 +2,7 @@
   "name": "dnd35e",
   "title": "Dungeons & Dragons 3.5th Edition",
   "description": "A comprehensive game system for running games of Dungeons & Dragons 3.5th Edition in the Foundry VTT environment.",
-  "version": "0.2.91",
+  "version": "0.2.92",
   "author": "red5h4d0w",
   "esmodules": ["dnd35e.js"],
   "styles": ["dnd35e.css"],
@@ -21,7 +21,7 @@
   "primaryTokenAttribute": "attributes.hp",
   "secondaryTokenAttribute": null,
   "minimumCoreVersion": "0.5.0",
-  "compatibleCoreVersion": "0.5.5",
+  "compatibleCoreVersion": "0.5.7",
   "url": "https://github.com/red5h4d0w/Foundry-VTT-dnd35-system",
   "manifest": "https://raw.githubusercontent.com/red5h4d0w/Foundry-VTT-dnd35-system/master/system.json",
   "download": "https://github.com/red5h4d0w/Foundry-VTT-dnd35-system/archive/master.zip"
