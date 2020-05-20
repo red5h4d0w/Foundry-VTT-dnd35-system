@@ -361,13 +361,16 @@ export class Actor35e extends Actor {
   loadSpellbook(c) {
     const classname = c.name;
     for (lvl in [...Array(10).keys]) {
+      console.log("level"+lvl);
       const spells = c.data.data.spellcasting["level"+lvl];
       for (let spell in spells) {
         if (spell) {
+          console.log(spell);
           let itemData = game.data.items.find(item => item._id).data;
           itemData.data.origin.class = classname;
           itemData.data.origin.level = lvl;
           this.createOwnedItem(itemData);
+          console.log("succesfully created Owneditem")
         }
       }
       
