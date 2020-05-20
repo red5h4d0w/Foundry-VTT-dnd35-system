@@ -57,7 +57,6 @@ export class Actor35e extends Actor {
     // Base Attack Bonus
     let bab = data.attributes.bab
     bab.value = this.getBaseAttackBonus();
-    console.log(bab.value);
     // Check if a custom value is given for the Base Attack Bonus
     if ((bab.custom !== bab.value) && bab.custom && !Number.isNaN(bab.custom)) {
       bab.value = bab.custom;
@@ -74,6 +73,7 @@ export class Actor35e extends Actor {
       save.temp = parseInt(save.temp || 0);
       // Add the ability modifier associated with the saving throw
       save.mod = save.baseSaveBonus + save.ablMod + save.magic + save.misc + save.temp;
+      // Checks if save has been changed and is different from calculated
       if ((save.custom !== save.mod) && save.custom && (save.cache !== save.custom)) {
         save.mod = save.custom;
       };
@@ -359,8 +359,17 @@ export class Actor35e extends Actor {
   };
 
   loadSpellbook(c) {
+    const classname = c.name;
     for (lvl in [...Array(10).keys]) {
-      const spellbook = c.data.data.spellcasting["level"+lvl]
+      const spells = c.data.data.spellcasting["level"+lvl];
+      for (let spell in spells) {
+        if (spell) {
+          let itemData = game.data.items.find(item => item._id).data;
+          itemData.data.origin.class = classname;
+          itemData.data.origin.level = lvl;
+          this.createOwnedItem(itemData);
+        }
+      }
       
     };
   };
@@ -408,16 +417,17 @@ export class Actor35e extends Actor {
   /** @override */
   async createOwnedItem(itemData, options) {
 
+    let t = itemData.type;
     // Assume NPCs are always proficient with weapons and always have spells prepared
     if ( !this.isPC ) {
-      let t = itemData.type;
       let initial = {};
       if ( t === "weapon" ) initial["data.proficient"] = true;
       if ( ["weapon", "equipment"].includes(t) ) initial["data.equipped"] = true;
       if ( t === "spell" ) initial["data.prepared"] = true;
-      if (t === "class") this.loadSpellbook(itemData);
       mergeObject(itemData, initial);
     }
+    // If creating a claass for the character, you need to create its spells
+    if (t === "class") this.loadSpellbook(itemData);
     return super.createOwnedItem(itemData, options);
   }
 
